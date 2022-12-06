@@ -1,0 +1,72 @@
+@use "variables" as v;
+
+@mixin button_1 {
+  cursor: pointer;
+  outline: none;
+  width: 120px;
+  height: 75px;
+  font-family: Barlow sans-serif;
+  font-size: 1.5625rem; // 25px
+  color: v.$primary_2;
+  text-shadow: 0 2px 5px v.$primary_1;
+  background: linear-gradient(to top, #696969, #575757);
+  border: 2px solid v.$primary_1;
+  border-radius: 7px;
+  box-shadow: inset 0 20px 4px -19px rgba(255, 255, 255, 0.7),
+    0 12px 12px 0 rgba(0, 0, 0, 0.3);
+
+  &:hover {
+    background: linear-gradient(to bottom, #696969, #575757);
+  }
+  &:active {
+    transform: translateY(3px);
+    box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.3);
+  }
+}
+
+@mixin button_2 {
+  cursor: pointer;
+  outline: none;
+  font-size: 1.2rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 10px;
+  color: v.$primary_2;
+  background: v.$primary_1;
+  outline: none;
+  padding: 0.5rem 1.8rem;
+  box-shadow: 0 0.3rem rgba(121, 121, 121, 0.65);
+
+  &:hover {
+    filter: brightness(110%);
+  }
+
+  &:active {
+    transform: translate(0, 0.3rem);
+    box-shadow: 0 0.1rem rgba(255, 255, 255, 0.65);
+  }
+}
+
+@mixin largeSmartPhone {
+  @media screen and (min-width: v.$mobile_breakpoints) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: v.$tablet_breakpoints) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: v.$desktop_breakpoints) {
+    @content;
+  }
+}
+
+@mixin display_flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
