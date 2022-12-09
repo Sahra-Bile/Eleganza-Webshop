@@ -36,49 +36,39 @@
 
           a {
             text-decoration: none;
-            color: #fff;
+            color: v.$primary_2;
             font-size: 2rem;
             letter-spacing: 4px;
             transition: transform 0.2s ease-out 100ms;
           }
 
           a:hover {
-            background-color: ghostwhite;
+            background-color: v.$color-transparent;
           }
         }
       }
-
       #title {
         font-family: "Monoton", cursive;
         font-size: 3rem;
         display: inline;
         margin: 0;
-        color: #fff;
+        color: v.$primary_2;
       }
 
       #icons {
         margin: 0 auto;
-        font-size: 2.4rem;
+        font-size: 3.5rem;
         display: flex;
         flex-direction: row;
         gap: 60px;
         align-items: center;
         cursor: pointer;
-        color: #fff;
+        color: v.$primary_2;
+        border-bottom-style: outset;
       }
       #icons i:hover {
         transform: scale(1.2);
       }
     }
   }
-}
-
-#border {
-  position: absolute;
-  bottom: 0;
-  margin-left: -1px;
-}
-#wave {
-  margin-bottom: -10px;
-  font-size: 4rem;
 }

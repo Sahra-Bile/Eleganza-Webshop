@@ -5,18 +5,18 @@
   width: 100%;
   height: 15vh;
   text-align: center;
-  background-color: #2a4b55;
+  background-color: v.$primary_6;
 
   &__title {
     text-align: center;
-    color: #fff;
+    color: v.$primary_2;
     padding-top: 50px;
-    font-size: 4rem;
-    border: 2px #000;
+    font-size: 3.5rem;
+    box-shadow: 10px 5px 5px v.$primary_2;
   }
 }
 .section__container {
-  background-color: #2a4b55;
+  background-color: v.$primary_6;
   width: 100%;
 
   &__product {
@@ -26,15 +26,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #2a4b55;
+    background-color: v.$primary_6;
+
     &__title {
       font-size: 2rem;
       font-family: v.$first_page_font;
-      color: #fff;
+      color: v.$primary_2;
     }
     &__image {
-      width: 50%;
+      width: 80%;
       height: 100vh;
+      @include m.desktop {
+        width: 40%;
+      }
     }
     &__description {
       width: 50%;
@@ -42,7 +46,7 @@
       font-size: 1.2rem;
       font-family: v.$first_page_font;
       padding: 3%;
-      color: #fff;
+      color: v.$primary_2;
     }
   }
 }

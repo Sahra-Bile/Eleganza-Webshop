@@ -1,11 +1,17 @@
+// color
 $primary_1: #000;
 $primary_2: #fff;
 $primary_3: #b2b2b2;
 $primary_4: #181818;
 $primary_5: #e2e2e2;
+$primary_6: #2a4b55; // hemsidans färg
 $color-transparent: rgba(255, 255, 255, 0.2);
+
+// medie query
 $mobile_breakpoints: 280px;
 $tablet_breakpoints: 768px;
 $desktop_breakpoints: 1024px;
+
+// font family
 $header_font: "Monoton", cursive;
 $first_page_font: "Josefin Sans", sans-serif;

@@ -10,13 +10,6 @@ header {
   align-items: center;
   background-color: v.$primary_1;
 
-  // width: 100%;
-  // height: 8vh;
-  // background-color: white;
-  // position: absolute;
-  // top: 0;
-  // z-index: 4;
-
   .container-desktop {
     // desktop nav
     display: none;
@@ -49,11 +42,12 @@ header {
   }
 
   &__icons {
-    font-size: 1.7rem;
+    font-size: 2rem;
     display: inline-flex;
     flex-direction: row;
     gap: 10px;
-    color: #fff;
+    border-bottom-style: outset;
+    color: v.$primary_2;
   }
   &__hamburgare {
     display: none;
