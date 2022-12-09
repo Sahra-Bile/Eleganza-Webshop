@@ -1,0 +1,75 @@
+@use "../variables" as v;
+@use "../mixins" as m;
+
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Monoton&display=swap");
+
+header {
+  width: 100%;
+  height: 8vh;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  z-index: 4;
+
+  .container-desktop {
+    // desktop nav
+    display: none;
+  }
+}
+.container-phone {
+  width: 95%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  @include m.mixnav;
+
+  #menu-icon {
+    font-size: 1.7rem;
+    margin: 0;
+  }
+
+  &__title {
+    font-family: v.$header_font;
+    font-size: 2.7rem;
+    display: inline;
+    margin: 0;
+    padding: 0;
+    color: #2a4b55;
+  }
+
+  &__icons {
+    font-size: 1.7rem;
+    display: inline-flex;
+    flex-direction: row;
+    gap: 10px;
+    color: #2a4b55;
+  }
+  &__hamburgare {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: v.$primary_5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 40;
+  }
+
+  #close {
+    font-size: 1.7rem;
+    right: 7px;
+    top: 7px;
+    position: absolute;
+  }
+}
+
+.block {
+  display: block;
+}
+.none {
+  display: none;
+}
