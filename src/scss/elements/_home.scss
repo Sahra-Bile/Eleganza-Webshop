@@ -1,0 +1,13 @@
+#home {
+  // background-image: url("/src/assert/watch3.jpeg");
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position-x: 100px;
+  background-position-y: 80px;
+  // background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}

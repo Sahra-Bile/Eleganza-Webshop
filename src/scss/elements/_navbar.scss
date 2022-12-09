@@ -1,0 +1,84 @@
+@use "../variables" as v;
+@use "../mixins" as m;
+@import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
+
+@include m.desktop {
+  header {
+    height: 12vh;
+
+    #phone {
+      display: none;
+    }
+    .container-desktop {
+      padding: 60px;
+      display: flex;
+      flex-direction: row;
+      justify-content: end;
+      align-items: center;
+      height: 100%;
+
+      ul {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        list-style: none;
+        gap: 60px;
+
+        li {
+          font-family: Nunito, sans-serif;
+
+          li:hover {
+            border-bottom: 1px solid black;
+          }
+
+          a {
+            text-decoration: none;
+            color: #000;
+            font-size: 2rem;
+            letter-spacing: 4px;
+            transition: transform 0.2s ease-out 100ms;
+          }
+
+          a:hover {
+            background-color: ghostwhite;
+          }
+        }
+      }
+
+      #title {
+        font-family: "Monoton", cursive;
+        font-size: 3rem;
+        display: inline;
+        margin: 0;
+        color: #2a4b55;
+      }
+
+      #icons {
+        margin: 0 auto;
+        font-size: 2.4rem;
+        display: flex;
+        flex-direction: row;
+        gap: 60px;
+        align-items: center;
+        cursor: pointer;
+        color: #2a4b55;
+      }
+      #icons i:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+#border {
+  position: absolute;
+  bottom: 0;
+  margin-left: -1px;
+}
+#wave {
+  margin-bottom: -10px;
+  font-size: 4rem;
+}

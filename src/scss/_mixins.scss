@@ -1,5 +1,60 @@
 @use "variables" as v;
+@import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
 
+@mixin largeSmartPhone {
+  @media screen and (min-width: v.$mobile_breakpoints) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: v.$tablet_breakpoints) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: v.$desktop_breakpoints) {
+    @content;
+  }
+}
+
+@mixin display_flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin mixnav {
+  ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 60%;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+  }
+  li {
+    font-size: 1.5rem;
+    font-family: Nunito, sans-serif;
+  }
+
+  a {
+    text-decoration: none;
+    color: v.$primary_1;
+    text-transform: uppercase;
+    &:hover {
+      color: v.$primary_2;
+    }
+  }
+
+  #heading {
+    font-family: v.$header_font;
+  }
+}
+// förberede några buttons
 @mixin button_1 {
   cursor: pointer;
   outline: none;
@@ -45,28 +100,4 @@
     transform: translate(0, 0.3rem);
     box-shadow: 0 0.1rem rgba(255, 255, 255, 0.65);
   }
-}
-
-@mixin largeSmartPhone {
-  @media screen and (min-width: v.$mobile_breakpoints) {
-    @content;
-  }
-}
-
-@mixin tablet {
-  @media screen and (min-width: v.$tablet_breakpoints) {
-    @content;
-  }
-}
-
-@mixin desktop {
-  @media screen and (min-width: v.$desktop_breakpoints) {
-    @content;
-  }
-}
-
-@mixin display_flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
