@@ -54,6 +54,13 @@
     font-family: v.$header_font;
   }
 }
+
+@mixin section_home {
+  text-align: center;
+  font-size: 3.5rem;
+  color: white;
+}
+
 // förberede några buttons
 @mixin button_1 {
   cursor: pointer;
