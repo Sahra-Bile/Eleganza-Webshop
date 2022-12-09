@@ -1,7 +1,7 @@
 @use "../variables" as v;
 @use "../mixins" as m;
 
-.section__home {
+.section-home {
   width: 100%;
   height: 15vh;
   text-align: center;
@@ -15,7 +15,7 @@
     box-shadow: 10px 5px 5px v.$primary_2;
   }
 }
-.section__container {
+.section-container {
   background-color: v.$primary_6;
   width: 100%;
 
