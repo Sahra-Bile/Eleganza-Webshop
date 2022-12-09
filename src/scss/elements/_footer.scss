@@ -1,6 +1,7 @@
 @use "../variables" as v;
 @use "../mixins" as m;
 
+// har haft svårt att använda class name då jag styler med bootstrap //sahra
 footer {
   background-color: #222222;
 }
@@ -50,4 +51,16 @@ footer p {
 
 footer .copyright img {
   width: 30%;
+}
+
+.Eleganza-img {
+  width: 40%;
+  @include m.desktop {
+    width: 50%;
+  }
+}
+
+.pt-3 {
+  font-size: 2rem;
+  color: #fff;
 }
