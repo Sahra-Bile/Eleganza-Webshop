@@ -1,24 +1,26 @@
 
-let shoppingCartDesktop: HTMLElement = document.getElementById('shopping-cart-desktop') as HTMLElement; 
+import {ProductDetails} from "../models/productData"
+let shpingCart:HTMLElement = document.getElementById('shopping-cart') as HTMLElement;
+let cartAmountDiv: HTMLDivElement = document.getElementById('cartAmount') as HTMLDivElement;
+let shopDiv: HTMLDivElement = document.getElementById('shop') as HTMLDivElement;
+let labelDiv: HTMLDivElement = document.getElementById('shop') as HTMLDivElement;
 
-let shoppingCartPhone: HTMLElement = document.getElementById('shopping-cart-phone') as HTMLElement; 
 
-let dropdown: HTMLDivElement = document.getElementById('dropdown') as HTMLDivElement; 
+/**
+  * ! varuKorg för alla valda föremål
+  * ? getItem-delen hämtar data från den lokala lagringen
+  *  ? om local storage är tomt  korgen getItem blir en tom array 
+  */
+ 
+let elegansaProduct:[] = JSON.parse(localStorage.getItem("ProductDetails") || "[]")
 
-let display:HTMLDivElement = document.createElement('div');
+ console.log(elegansaProduct);
+/**
+ * !För att beräkna det totala antalet valda produkter
+ */
 
-dropdown.appendChild(display);
+let calculation = () => {
+  cartAmountDiv.innerHTML = elegansaProduct.map((x:any) => x.item).reduce((x:number, y:number) => x + y, 0);
+};
 
-function displayMessage(message:string){
-  display.innerHTML = message;
-}
-
-function createProductsCheckout(){
-
- if( shoppingCartDesktop || shoppingCartPhone === null || ""){
- console.log(displayMessage("Your cart is empty, tap an item and add it to the cart to proceed"));
- }
- return false;
-}
-shoppingCartDesktop.addEventListener('click', createProductsCheckout);
-shoppingCartPhone.addEventListener('click', createProductsCheckout);
+calculation();
