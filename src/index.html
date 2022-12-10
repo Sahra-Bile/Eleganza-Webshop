@@ -29,6 +29,7 @@
       crossorigin="anonymous"></script>
 
     <script src="./ts/main.ts" type="module" defer></script>
+    <script src="./ts/functions/cart.ts" type="module" defer></script>
 
     <title>Eleganza Shop</title>
   </head>
@@ -55,22 +56,34 @@
             >
           </li>
           <li class="conatiner-desktop__list__item">
-            <a class="conatiner-desktop__list__item__links" href="#contact"
+            <a
+              class="conatiner-desktop__list__item__links"
+              href="/src/html/contact.html"
               >contact</a
             >
           </li>
         </ul>
-        <div class="conatiner-desktop__icons" id="icons">
-          <i class="fas fa-shopping-cart" id="shopping-cart-desktop"></i>
-        </div>
+        <a href="#">
+          <div class="conatiner-desktop__icons" id="cart">
+            <i class="fas fa-shopping-cart" id="shopping-cart"></i>
+            <div id="cartAmount" class="cartAmount">0</div>
+          </div>
+        </a>
+        <div class="shop" id="shop"></div>
       </nav>
       <!-- home navbar i mobil läge -->
       <nav class="container-phone" id="phone">
         <i class="fas fa-bars" id="menu-icon"></i>
         <h1 class="container-phone__title">Eleganza</h1>
-        <div class="container-phone__icons" id="icons">
-          <i class="fas fa-shopping-cart" id="shopping-cart-phone"></i>
-        </div>
+
+        <a href="#">
+          <div class="conatiner-phone__icons" id="cart">
+            <i class="fas fa-shopping-cart" id="shopping-cart"></i>
+            <div id="cartAmount" class="cartAmount">0</div>
+          </div>
+        </a>
+        <div class="shop" id="shop"></div>
+
         <div class="container-phone__hamburgare" id="hamburger">
           <i class="fas fa-times" id="close"></i>
 
@@ -240,5 +253,7 @@
         </div>
       </div>
     </footer>
+
+    <!-- varukorg -->
   </body>
 </html>

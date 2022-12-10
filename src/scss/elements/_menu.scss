@@ -36,18 +36,31 @@ header {
     font-family: v.$header_font;
     font-size: 2.7rem;
     display: inline;
-    margin: 0;
+    margin: 10px;
     padding: 0;
     color: #fff;
   }
 
-  &__icons {
-    font-size: 2rem;
-    display: inline-flex;
-    flex-direction: row;
-    gap: 10px;
+  #cart {
+    position: relative;
+    font-size: 30px;
+    gap: 40px;
+    display: block;
     border-bottom-style: outset;
+    background-color: v.$primary_2;
+    color: v.$primary_1;
+    left: 40px;
+  }
+
+  #cartAmount {
+    position: absolute;
+    top: -15px;
+    right: -10px;
+    font-size: 16px;
+    background-color: v.$primary_6;
     color: v.$primary_2;
+    padding: 5px;
+    border-radius: 5px;
   }
   &__hamburgare {
     display: none;
