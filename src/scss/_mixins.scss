@@ -21,6 +21,7 @@
 
 @mixin display_flex {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -54,6 +55,13 @@
     font-family: v.$header_font;
   }
 }
+
+@mixin section_home {
+  text-align: center;
+  font-size: 3.5rem;
+  color: #fff;
+}
+
 // förberede några buttons
 @mixin button_1 {
   cursor: pointer;

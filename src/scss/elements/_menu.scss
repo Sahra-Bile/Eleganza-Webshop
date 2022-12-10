@@ -4,12 +4,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Monoton&display=swap");
 
 header {
-  width: 100%;
-  height: 8vh;
-  background-color: white;
-  position: absolute;
-  top: 0;
-  z-index: 4;
+  display: flexbox;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: v.$primary_1;
 
   .container-desktop {
     // desktop nav
@@ -30,29 +29,44 @@ header {
   #menu-icon {
     font-size: 1.7rem;
     margin: 0;
+    color: #fff;
   }
 
   &__title {
     font-family: v.$header_font;
     font-size: 2.7rem;
     display: inline;
-    margin: 0;
+    margin: 10px;
     padding: 0;
-    color: #2a4b55;
+    color: #fff;
   }
 
-  &__icons {
-    font-size: 1.7rem;
-    display: inline-flex;
-    flex-direction: row;
-    gap: 10px;
-    color: #2a4b55;
+  #cart {
+    position: relative;
+    font-size: 30px;
+    gap: 40px;
+    display: block;
+    border-bottom-style: outset;
+    background-color: v.$primary_2;
+    color: v.$primary_1;
+    left: 40px;
+  }
+
+  #cartAmount {
+    position: absolute;
+    top: -15px;
+    right: -10px;
+    font-size: 16px;
+    background-color: v.$primary_6;
+    color: v.$primary_2;
+    padding: 5px;
+    border-radius: 5px;
   }
   &__hamburgare {
     display: none;
     width: 100vw;
     height: 100vh;
-    background-color: v.$primary_5;
+    background-color: v.$color-transparent;
     position: fixed;
     top: 0;
     left: 0;

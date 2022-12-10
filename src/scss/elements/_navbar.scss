@@ -26,6 +26,9 @@
         width: 80%;
         list-style: none;
         gap: 60px;
+        @include m.tablet {
+          gap: 30px;
+        }
 
         li {
           font-family: Nunito, sans-serif;
@@ -36,49 +39,51 @@
 
           a {
             text-decoration: none;
-            color: #000;
+            color: v.$primary_2;
             font-size: 2rem;
             letter-spacing: 4px;
             transition: transform 0.2s ease-out 100ms;
+            @include m.tablet {
+              font-size: 1.5rem;
+            }
           }
 
           a:hover {
-            background-color: ghostwhite;
+            background-color: v.$color-transparent;
           }
         }
       }
-
       #title {
         font-family: "Monoton", cursive;
         font-size: 3rem;
         display: inline;
         margin: 0;
-        color: #2a4b55;
+        color: v.$primary_2;
+        @include m.tablet {
+          font-size: 2rem;
+        }
       }
 
-      #icons {
-        margin: 0 auto;
-        font-size: 2.4rem;
-        display: flex;
-        flex-direction: row;
-        gap: 60px;
-        align-items: center;
-        cursor: pointer;
-        color: #2a4b55;
+      #cart {
+        position: relative;
+        background-color: v.$primary_2;
+        color: v.$primary_1;
+        font-size: 30px;
       }
-      #icons i:hover {
+      #cart i:hover {
         transform: scale(1.2);
+      }
+
+      #cartAmount {
+        position: absolute;
+        top: -15px;
+        right: -10px;
+        font-size: 16px;
+        background-color: v.$primary_6;
+        color: v.$primary_2;
+        padding: 3px;
+        border-radius: 3px;
       }
     }
   }
-}
-
-#border {
-  position: absolute;
-  bottom: 0;
-  margin-left: -1px;
-}
-#wave {
-  margin-bottom: -10px;
-  font-size: 4rem;
 }

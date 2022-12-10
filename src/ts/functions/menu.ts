@@ -3,7 +3,7 @@ let menuIcon:HTMLElement =  document.getElementById("menu-icon") as HTMLElement;
 let hamburgare:HTMLDivElement = document.getElementById('hamburger') as HTMLDivElement;
 let closeElement: HTMLElement = document.getElementById("close") as HTMLElement;
 
-export function activateMenu() {
+export function activateMenu() :void {
 
   menuIcon.addEventListener("click", () => {
     hamburgare.style.display = "block";

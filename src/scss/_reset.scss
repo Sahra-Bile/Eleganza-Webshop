@@ -1,3 +1,4 @@
+@use "./variables" as v;
 @import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
 
 * {
@@ -12,8 +13,7 @@ html {
 
 body {
   margin: 0;
-  background-color: #e2e2e2;
-  font-size: 12pt;
-  position: relative;
+  background-color: v.$primary_6;
+  width: 100%;
   font-family: Nunito, sans-serif;
 }

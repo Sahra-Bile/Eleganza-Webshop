@@ -1,13 +1,52 @@
-#home {
-  // background-image: url("/src/assert/watch3.jpeg");
+@use "../variables" as v;
+@use "../mixins" as m;
+
+.section-home {
   width: 100%;
-  height: 100vh;
-  background-size: cover;
-  background-position-x: 100px;
-  background-position-y: 80px;
-  // background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  height: 15vh;
+  text-align: center;
+  background-color: v.$primary_6;
+
+  &__title {
+    text-align: center;
+    color: v.$primary_2;
+    padding-top: 50px;
+    font-size: 3.5rem;
+    box-shadow: 10px 5px 5px v.$primary_2;
+  }
+}
+.section-container {
+  background-color: v.$primary_6;
+  width: 100%;
+
+  &__product {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: v.$primary_6;
+
+    &__title {
+      font-size: 2rem;
+      font-family: v.$first_page_font;
+      color: v.$primary_2;
+    }
+    &__image {
+      width: 80%;
+      height: 100vh;
+      @include m.desktop {
+        width: 40%;
+      }
+    }
+    &__description {
+      width: 50%;
+      text-align: center;
+      font-size: 1.2rem;
+      font-family: v.$first_page_font;
+      padding: 3%;
+      color: v.$primary_2;
+    }
+  }
 }
