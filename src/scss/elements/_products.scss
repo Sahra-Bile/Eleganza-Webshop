@@ -1,0 +1,136 @@
+@use "../variables" as v;
+@use "../mixins" as m;
+@import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: v.$primary_6;
+  margin: 0;
+  padding: 0;
+
+  .hero {
+    margin: 0 auto;
+    width: 100%;
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url("https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2052&q=80");
+    &__text {
+      width: 90%;
+      height: 50%;
+      background-color: #000;
+      text-align: center;
+      padding: 2% 5%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      @include m.tablet {
+        width: 60%;
+      }
+      @include m.desktop {
+        width: 40%;
+      }
+
+      &__header-text2 {
+        color: v.$primary_2;
+        font-size: 1rem;
+        font-family: Nunito, sans-serif;
+        font-weight: bold;
+      }
+
+      &__header-title {
+        margin: 0;
+        text-align: center;
+        color: v.$primary_2;
+        font-family: v.$header_font;
+      }
+    }
+  }
+
+  .product-main {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 1%;
+    justify-content: space-evenly;
+    @include m.tablet {
+      width: 95%;
+    }
+    @include m.desktop {
+      width: 80%;
+      margin-top: 2vh;
+    }
+
+    &__product {
+      background-color: v.$primary_3;
+      width: 48%;
+      height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      box-shadow: black;
+      margin-top: 3%;
+      border-radius: 5px;
+      position: relative;
+      @include m.tablet {
+        width: 32%;
+        height: 50vh;
+      }
+      @include m.desktop {
+        width: 24%;
+        height: 35vh;
+      }
+
+      &__img-wrapper {
+        width: 80%;
+        height: 70%;
+        margin: 0;
+        position: relative;
+
+        img {
+          width: 90%;
+          height: 90%;
+          object-fit: contain;
+          object-position: top;
+        }
+      }
+
+      &__price {
+        font-family: v.$first_page_font;
+        color: v.$primary_2;
+        font-size: 1.3rem;
+      }
+      &__desc {
+        text-align: center;
+        color: v.$primary_1;
+        font-size: 0.5rem;
+        margin-block-end: 0;
+        margin-block-start: 0;
+        font-family: Nunito, sans-serif;
+        @include m.desktop {
+          font-size: 1rem;
+        }
+      }
+
+      &__product-title {
+        font-family: v.$first_page_font;
+        padding-top: 2%;
+        margin-top: 2%;
+        font-size: 1rem;
+        font-weight: bold;
+        color: v.$primary_2;
+        @include m.desktop {
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+}

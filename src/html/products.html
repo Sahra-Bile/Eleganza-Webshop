@@ -4,20 +4,202 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" />
-    <title>Products</title>
-    <script src="/src/ts/functions/cart.ts" type="module" defer></script>
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous" />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+      defer></script>
+
+    <link rel="stylesheet" href="/src/scss/main.scss" />
+    <script
+      src="https://kit.fontawesome.com/ff901abd43.js"
+      crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+    <script
+      src="https://kit.fontawesome.com/bc5eefc1c7.js"
+      crossorigin="anonymous"></script>
+
+    <script src="../ts/main.ts" type="module" defer></script>
+
+    <title>Eleganza Shop</title>
   </head>
   <body>
-    <a href="#">
-      <div class="conatiner-phone__icons" id="cart">
-        <i class="fas fa-shopping-cart" id="shopping-cart"></i>
-        <div id="cartAmount" class="cartAmount">0</div>
-      </div>
-    </a>
+    <header>
+      <!-- home navbar i desktop läge -->
+      <nav class="container-desktop" id="desktop">
+        <h1 class="conatiner-desktop__Eleganza" id="title">Eleganza</h1>
 
-    <div id="label" class="text-center"></div>
-    <div class="shop" id="shop"></div>
+        <ul class="conatiner-desktop__list">
+          <li class="conatiner-desktop__list__item">
+            <a class="conatiner-desktop__list__item__links" href="../index.html"
+              >home</a
+            >
+          </li>
+          <li class="conatiner-desktop__list__item">
+            <a class="conatiner-desktop__list__item__links" href="#"
+              >products</a
+            >
+          </li>
+          <li class="conatiner-desktop__list__item">
+            <a class="conatiner-desktop__list__item__links" href="#about"
+              >about</a
+            >
+          </li>
+          <li class="conatiner-desktop__list__item">
+            <a
+              class="conatiner-desktop__list__item__links"
+              href="/src/html/contact.html"
+              >contact</a
+            >
+          </li>
+        </ul>
+        <a href="#">
+          <div class="conatiner-desktop__icons" id="cart">
+            <i class="fas fa-shopping-cart" id="shopping-cart"></i>
+            <div id="cartAmount" class="cartAmount">0</div>
+          </div>
+        </a>
+        <div class="shop" id="shop"></div>
+      </nav>
+      <!-- home navbar i mobil läge -->
+      <nav class="container-phone" id="phone">
+        <i class="fas fa-bars" id="menu-icon"></i>
+        <h1 class="container-phone__title">Eleganza</h1>
+
+        <a href="./products.html">
+          <div class="conatiner-phone__icons" id="cart">
+            <i class="fas fa-shopping-cart" id="shopping-cart"></i>
+            <div id="cartAmount" class="cartAmount">0</div>
+          </div>
+        </a>
+        <div class="shop" id="shop"></div>
+
+        <div class="container-phone__hamburgare" id="hamburger">
+          <i class="fas fa-times" id="close"></i>
+
+          <ul class="container-phone__list">
+            <li id="heading">Eleganza</li>
+            <li class="conatiner-phone__list__item">
+              <a class="conatiner-phone__list__item__links" href="../index.html"
+                >home</a
+              >
+            </li>
+            <li class="conatiner-phone__list__item">
+              <a
+                class="conatiner-phone__list__item__links"
+                href="./products.html"
+                >products</a
+              >
+            </li>
+            <li class="conatiner-phone__list__item">
+              <a class="conatiner-phone__list__item__links" href="#about"
+                >about</a
+              >
+            </li>
+            <li class="conatiner-phone__list__item">
+              <a class="conatiner-phone__list__item__links" href="#contact"
+                >contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <!-- hero for product page -->
+    <div class="hero" id="hero">
+      <div class="hero__text" id="hero-text">
+        <h1 class="hero__text__header-title">Products</h1>
+        <p class="hero__text__header-text2">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
+          reprehenderit voluptatibus sequi necessitatibus consequuntur in,
+          consequatur eos id laborum saepe eveniet, molestiae eum repellendus
+          dolorem dignissimos nulla, quae laudantium modi.
+        </p>
+      </div>
+    </div>
+    <div class="product-main" id="main-products"></div>
+
+    <!--Footer-->
+    <footer id="contact" class="mt-5 py-5">
+      <div class="row container mx-auto pt-5" id="contact">
+        <div class="footer-one col-lg-3 col-md-6 col-sm-12">
+          <p class="pt-3">
+            We provide the best products for the most affordable prices
+          </p>
+        </div>
+
+        <div class="footer-one col-lg-3 col-md-6 col-sm-12">
+          <h5 class="pb-2">Contact Us</h5>
+          <img
+            class="Eleganza-img"
+            src="/src/assert/Vanilla-1s-280px.svg"
+            alt="" />
+          <div>
+            <h6 class="text-uppercase">Address</h6>
+            <p>1234 Street Name, City</p>
+          </div>
+          <div>
+            <h6 class="text-uppercase">Phone</h6>
+            <p>123 456 7890</p>
+          </div>
+          <div>
+            <h6 class="text-uppercase">Email</h6>
+            <p>contact@eleganza.com</p>
+          </div>
+        </div>
+        <div class="footer-one col-lg-3 col-md-6 col-sm-12">
+          <h5 class="pb-2">Instagram</h5>
+          <div class="row">
+            <img
+              src="https://www.elgiganten.se/image/dv_web_D1800012549538/pt/mobile-phone--resize-240-240.jpg"
+              class="img-fluid w-25 h-100 m-2" />
+            <img
+              src="https://www.klockor.se/media/catalog/product/cache/372b6bec62b1dd7ffaea65556e69748b/8/0/80120_3nm_buidn.jpg"
+              class="img-fluid w-25 h-100 m-2" />
+            <img
+              src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQdEN3-n466WDocPjvh1GAaobMsDBDQ7vRftJQAwLsl-_YmSsMeMef2m6HngLHihUyHwkTNnWI&usqp=CAc"
+              class="img-fluid w-25 h-100 m-2" />
+            <img
+              src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTFPOfLWgXJsE8FVt_-F1Ry6XOrShOUSn7REg9vyJM8-q2EpPumI0zEVU8TbHg7dFSJE8NvZL1AVA&usqp=CAc"
+              class="img-fluid w-25 h-100 m-2" />
+            <img
+              src="https://www.elgiganten.se/image/dv_web_D1800010021173476/525076/google-pixel-7-pro-smartphone-12128gb-hazel--pdp_zoom-3000--pdp_main-960.jpg"
+              width="50"
+              height="50"
+              class="img-fluid w-25 h-100 m-2" />
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright mt-5">
+        <div class="row container mx-auto">
+          <div class="col-lg-3 col-md-5 col-sm-12 mb-4">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDM_MZ9ZZStGuHsEq_4tiXhrzUTje9AJzBzQ&usqp=CAU" />
+          </div>
+          <div class="col-lg-3 col-md-5 col-sm-12 mb-4 text-nowrap mb-2">
+            <p>E-commerce Eleganza &copy; 2022 All Right Reserved</p>
+          </div>
+          <div class="col-lg-3 col-md-5 col-sm-12 mb-4">
+            <a href="https://www.facebook.com/"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="https://www.instagram.com/"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://twitter.com/intent?"
+              ><i class="fab fa-twitter"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
