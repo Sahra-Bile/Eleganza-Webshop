@@ -1,0 +1,139 @@
+@use "../variables" as v;
+@use "../mixins" as m;
+@import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
+
+.model-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 100;
+  @include m.tablet {
+    width: auto;
+  }
+
+  &__body {
+    height: 80%;
+    padding: 3%;
+    width: 90%;
+    border-radius: 1%;
+    border: 1px solid v.$primary_3;
+    background-color: v.$primary_2;
+    font-family: sans-serif;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    @include m.tablet {
+      width: auto;
+    }
+
+    &__closeBtn {
+      grid-column: 8;
+      justify-self: end;
+      font-size: 2rem;
+      background: none;
+      font-weight: bold;
+      color: v.$primary_1;
+      border: none;
+      cursor: pointer;
+    }
+
+    &__img-wrapper {
+      grid-column: 2 / 6;
+      grid-row: 3 / 10;
+      display: flex;
+      justify-content: center;
+      &___producstImg {
+        width: 100%;
+        height: 100%;
+        // border: 10px solid v.$primary_1;
+      }
+    }
+
+    &__amount-lebel,
+    &__color-lebel {
+      @include m.for-lebels;
+      grid-row: 12/13;
+      grid-column: 2/4;
+      justify-self: center;
+      align-self: flex-end;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    &__amount-lebel {
+      grid-column: 4/6;
+    }
+
+    &__select,
+    &__input {
+      width: 70%;
+      grid-row: 13/13;
+      grid-column: 2/4;
+      justify-self: center;
+      align-self: center;
+      font-family: Nunito sans-serif;
+    }
+
+    &__input {
+      grid-column: 4/6;
+    }
+
+    &__addBtn {
+      align-items: center;
+      grid-column: 2 / 6;
+      justify-self: center;
+      align-self: center;
+      font-weight: bolder;
+      grid-row: 16;
+
+      text-transform: uppercase;
+      @include m.button_2;
+    }
+    &__model-total {
+      grid-column: 2 / 6;
+      justify-self: center;
+      align-self: center;
+      font-weight: bolder;
+      grid-row: 15;
+    }
+
+    &__title {
+      font-family: Nunito sans-serif;
+      font-weight: bolder;
+      font-size: 1.8rem;
+      margin-block-start: 0;
+      margin-block-end: 0;
+      grid-column: 2 / 6;
+      grid-row: 2 / 1;
+      text-align: center;
+      align-self: center;
+    }
+    &__desc {
+      font-family: monospace sans-serif;
+      font-size: 1.3rem;
+      margin-block-start: 0;
+      margin-block-end: 0;
+      grid-column: 2 / 6;
+      grid-row: 11 / 11;
+      gap: 20px;
+      text-align: center;
+      align-self: center;
+    }
+
+    .showProduct-modal {
+      display: flex;
+      justify-content: space-evenly;
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+}

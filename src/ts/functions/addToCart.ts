@@ -1,6 +1,6 @@
 
 import {Iproducts} from "../models/Iproducts" //! interface
-import {StorageProduct} from "../models/products" //! class 
+import {Product} from "../models/products" //! class 
 import{ProductDetails} from "../models/productData" //! lagrat alla produkter i en array
 
 

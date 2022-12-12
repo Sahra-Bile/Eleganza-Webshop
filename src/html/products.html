@@ -39,29 +39,53 @@
           <i class="fas fa-times"></i>
         </button>
         <!-- produkt bilder -->
+        <p class="model-container__body__title" id="modal-title">Elegsnza</p>
         <div class="model-container__body__img-wrapper" id="modal-img-wrapper">
           <img
+            src="/src/assert/iphone14.png"
             class="model-container__body__img-wrapper__producstImg"
             id="modal-img" />
         </div>
         <!-- produkt title -->
-        <p class="model-container__body_title" id="modal-title"></p>
-        <span class="model-container__body__desc" id="modal-desc"></span>
+
+        <span class="model-container__body__desc" id="modal-desc"
+          >Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
+          animi, quisquam recusandae doloribus beatae delectus quia, possimus ea
+          nemo quas tempore ipsa esse nobis fuga. Ducimus laudantium assumenda
+          !</span
+        >
         <!-- antal product -->
-        <label for="modal-amount" id="modal-amount-label">Quantity:</label>
+        <label
+          for="modal-amount"
+          id="modal-amount-label"
+          class="model-container__body__amount-lebel"
+          >Quantity:
+        </label>
         <!-- label för färg -->
-        <label for="modal-color" id="modal-color-label">Color:</label>
+        <label
+          for="modal-color"
+          id="modal-color-label"
+          class="model-container__body__color-lebel"
+          >Color:
+        </label>
         <!-- option för att kunna välja färgen av produkten -->
-        <select id="modal-colors">
-          <option value="black"></option>
-          <option value="white"></option>
-          <option value="gray"></option>
+        <select id="modal-color" class="model-container__body__select">
+          <option value="black">black</option>
+          <option value="white">white</option>
+          <option value="gray">gray</option>
         </select>
         <!-- input value börjar alltid selectat en produk -->
-        <input value="1" type="number" id="modal-amount" min="1" />
+        <input
+          class="model-container__body__input"
+          value="1"
+          type="number"
+          id="modal-amount"
+          min="1" />
         <!-- totala summan av produkter beroende antal produkt av varje produkt -->
-        <p id="modal-total"></p>
-        <button id="addProduct">Add</button>
+        <p class="model-container__body__model-total" id="modal-total">200</p>
+        <button class="model-container__body__addBtn" id="add-Product">
+          add
+        </button>
       </div>
     </div>
     <header>

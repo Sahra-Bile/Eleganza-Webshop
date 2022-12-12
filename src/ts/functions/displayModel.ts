@@ -1,6 +1,6 @@
 
 import {Iproducts} from "../models/Iproducts" //! interface
-import {StorageProduct} from "../models/products" //! class 
+import {Product} from "../models/products" //! class 
 import{ProductDetails} from "../models/productData" //! lagrat alla produkter i en array
 
 
@@ -33,7 +33,7 @@ let closeProductsModal: HTMLButtonElement = document.getElementById("closeBtn-mo
  * ! modal produkten baserat på vilken produkt som klickades på hemsidan.
  */
 
-modalContainer.classList.add('showProductModal');
+modalContainer.classList.add('showProduct-modal');
 
  modalImg.src = ProductDetails[id].img;
   modalTitle.innerText = ProductDetails[id].title;
@@ -54,16 +54,16 @@ modalContainer.classList.add('showProductModal');
     
       }
  }); 
-  colorInput.addEventListener('click', () =>{
-    if(!colorInput.value){
-   return  ProductDetails[id].color.color_1
-    }
-    if(colorInput.value === ProductDetails[id].color.color_2){
-      return  ProductDetails[id].color.color_2;
-    } if(colorInput.value === ProductDetails[id].color.color_3){
-      return ProductDetails[id].color.color_3
-    }
-  });
+  // colorInput.addEventListener('click', () =>{
+  //   if(!colorInput.value){
+  //  return  ProductDetails[id].color.colors;
+  //   }
+  //   if(colorInput.value === ProductDetails[id].color.colors){
+  //     return  ProductDetails[id].color.colors;
+  //   } if(colorInput.value === ProductDetails[id].color.colors){
+  //     return ProductDetails[id].color.colors;
+  //   }
+  // });
 
  //!stänga Modal
  closeProductsModal.addEventListener("click", (e) => {

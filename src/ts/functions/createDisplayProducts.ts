@@ -1,6 +1,6 @@
 
 import {Iproducts} from "../models/Iproducts" //! interface
-import {StorageProduct} from "../models/products" //! class 
+import {Product} from "../models/products" //! class 
 import{ProductDetails} from "../models/productData" //! lagrat alla produkter i en array
 import { displayModelProducts } from './displayModel';
 
@@ -53,9 +53,6 @@ const mainProducts: HTMLDivElement = document.getElementById("main-products")as 
     let id: number = parseInt(item.id);
     displayModelProducts(id);
   });
-  // imgWrapper.addEventListener("click", () =>{
-  // window.open("/src/html/addToCart.html")
-  // });
 
   }
 
