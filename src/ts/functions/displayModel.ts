@@ -23,9 +23,9 @@ let amountInput: HTMLInputElement = document.getElementById("modal-amount-label"
 let closeProductsModal: HTMLButtonElement = document.getElementById("closeBtn-modal") as HTMLButtonElement;
 
 /**
-  * ! hämta html elements i produkt.html oh dispaly alla produkter 
-  * ? välj en produkt,antal,fäg, pris och se summan av selectat produkter
-  *  ? lägg dom som tryckas add i varukorgen.  
+  * ! 
+  * ? 
+  *  ? .  
   */
   export const displayModelProducts = (id:number) =>{
 
@@ -38,7 +38,7 @@ modalContainer.classList.add('showProductModal');
  modalImg.src = ProductDetails[id].img;
   modalTitle.innerText = ProductDetails[id].title;
   modeldesc.innerText = ProductDetails[id].desc
-  modalTotalPrice.innerText = `total amount: ${ProductDetails[id].price}sek`;
+  modalTotalPrice.innerText = `total amount: ${ProductDetails[id].price}SEK`;
 /**
  * !räkna ihop och uppdatera totala summan baserat antal av produkter man valde
  */
@@ -46,28 +46,22 @@ modalContainer.classList.add('showProductModal');
   let totalPrice: number;
  amountInput.addEventListener('click', () =>{
 
-  if(amountInput.value === "2"){
-    totalPrice = parseInt(amountInput.value) * ProductDetails[id].price
+  if(!amountInput.value ){
+    return totalPrice = parseInt(amountInput.value) * ProductDetails[id].price
   
-    }
-
+    } if(amountInput.value.length ===2){
+      return totalPrice = parseInt(amountInput.value) * ProductDetails[id].price
+    
+      }
  }); 
   colorInput.addEventListener('click', () =>{
-
     if(!colorInput.value){
-      return displayMessage("choose a color");
+   return  ProductDetails[id].color.color_1
     }
-
-    if(colorInput.value === ProductDetails[id].color.color_1){
-      return colorInput.value = ProductDetails[id].color.color_1;
-    }
-
     if(colorInput.value === ProductDetails[id].color.color_2){
-      return colorInput.value = ProductDetails[id].color.color_2;
-    }
-
-    if(colorInput.value === ProductDetails[id].color.color_3){
-      return colorInput.value = ProductDetails[id].color.color_3;
+      return  ProductDetails[id].color.color_2;
+    } if(colorInput.value === ProductDetails[id].color.color_3){
+      return ProductDetails[id].color.color_3
     }
   });
 

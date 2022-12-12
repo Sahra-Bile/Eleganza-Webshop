@@ -26,11 +26,44 @@
       src="https://kit.fontawesome.com/bc5eefc1c7.js"
       crossorigin="anonymous"></script>
 
-    <script src="../ts/main.ts" type="module" defer></script>
+    <script src="/src/ts/productFunctions.ts" type="module" defer></script>
 
     <title>Eleganza Shop</title>
   </head>
   <body>
+    <!-- produkt fönster -->
+    <div class="model-container" id="modal-container">
+      <div class="model-container__body" id="modal-body">
+        <!-- button för att kunna stänga produkt fönstret -->
+        <button class="model-container__body__closeBtn" id="closeBtn-modal">
+          <i class="fas fa-times"></i>
+        </button>
+        <!-- produkt bilder -->
+        <div class="model-container__body__img-wrapper" id="modal-img-wrapper">
+          <img
+            class="model-container__body__img-wrapper__producstImg"
+            id="modal-img" />
+        </div>
+        <!-- produkt title -->
+        <p class="model-container__body_title" id="modal-title"></p>
+        <span class="model-container__body__desc" id="modal-desc"></span>
+        <!-- antal product -->
+        <label for="modal-amount" id="modal-amount-label">Quantity:</label>
+        <!-- label för färg -->
+        <label for="modal-color" id="modal-color-label">Color:</label>
+        <!-- option för att kunna välja färgen av produkten -->
+        <select id="modal-colors">
+          <option value="black"></option>
+          <option value="white"></option>
+          <option value="gray"></option>
+        </select>
+        <!-- input value börjar alltid selectat en produk -->
+        <input value="1" type="number" id="modal-amount" min="1" />
+        <!-- totala summan av produkter beroende antal produkt av varje produkt -->
+        <p id="modal-total"></p>
+        <button id="addProduct">Add</button>
+      </div>
+    </div>
     <header>
       <!-- home navbar i desktop läge -->
       <nav class="container-desktop" id="desktop">
@@ -38,7 +71,9 @@
 
         <ul class="conatiner-desktop__list">
           <li class="conatiner-desktop__list__item">
-            <a class="conatiner-desktop__list__item__links" href="../index.html"
+            <a
+              class="conatiner-desktop__list__item__links"
+              href="/src/index.html"
               >home</a
             >
           </li>
@@ -87,7 +122,9 @@
           <ul class="container-phone__list">
             <li id="heading">Eleganza</li>
             <li class="conatiner-phone__list__item">
-              <a class="conatiner-phone__list__item__links" href="../index.html"
+              <a
+                class="conatiner-phone__list__item__links"
+                href="/src/index.html"
                 >home</a
               >
             </li>
@@ -124,7 +161,9 @@
         </p>
       </div>
     </div>
-    <div class="product-main" id="main-products"></div>
+    <div class="product-main" id="main-products">
+      <a href="./addToCart.html"></a>
+    </div>
 
     <!--Footer-->
     <footer id="contact" class="mt-5 py-5">

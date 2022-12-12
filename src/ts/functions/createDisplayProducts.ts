@@ -42,15 +42,20 @@ const mainProducts: HTMLDivElement = document.getElementById("main-products")as 
   productDiv.appendChild(imgWrapper);
  
   imgWrapper.appendChild(ImgTag);
+  desc.ariaHidden;
   // productDiv.appendChild(desc);
   productDiv.appendChild(price);
+  
  
 
   imgWrapper.addEventListener("click", (e) => {
     let item: HTMLElement = e.target as HTMLElement;
     let id: number = parseInt(item.id);
-    // displayModelProducts(id);
+    displayModelProducts(id);
   });
+  // imgWrapper.addEventListener("click", () =>{
+  // window.open("/src/html/addToCart.html")
+  // });
 
   }
 
