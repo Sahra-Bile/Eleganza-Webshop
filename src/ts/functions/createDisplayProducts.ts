@@ -1,17 +1,15 @@
 
-import {Iproducts} from "../models/Iproducts" //! interface
-import {Product} from "../models/products" //! class 
 import{ProductDetails} from "../models/productData" //! lagrat alla produkter i en array
 import { displayModelProducts } from './displayModel';
 
  export function createHTMLForProducts(){
 
-const mainProducts: HTMLDivElement = document.getElementById("main-products")as HTMLDivElement;
+let mainProducts: HTMLDivElement = document.getElementById("main-products")as HTMLDivElement;
 
 	mainProducts.innerHTML = "";
 
   for(let i = 0; i < ProductDetails.length; i++){
-
+  
    let productDiv:HTMLDivElement = document.createElement('div');
 
    let imgWrapper:HTMLDivElement = document.createElement('div');
@@ -24,11 +22,16 @@ const mainProducts: HTMLDivElement = document.getElementById("main-products")as 
 
    let price:HTMLParagraphElement = document.createElement('p');
 
-   title.innerHTML = ProductDetails[i].title
-   ImgTag.src = ProductDetails[i].img;
-   desc.innerHTML = ProductDetails[i].desc;
-   price.innerHTML = `${ ProductDetails[i].price.toString()}.SEK`;
+   let color:HTMLSelectElement = document.createElement('select');
 
+ 
+   title.innerHTML = ProductDetails[i].title
+   ImgTag.setAttribute("src", ProductDetails[i].url);
+    ImgTag.setAttribute("alt", "Picture of product");
+
+   desc.innerHTML = ProductDetails[i].desc;
+   price.innerHTML = `${ ProductDetails[i].price}.SEK`;
+   
 
   //! placera dem
 
@@ -37,23 +40,21 @@ const mainProducts: HTMLDivElement = document.getElementById("main-products")as 
   desc.classList.add("product-main__product__desc")
   title.classList.add("product-main__product__product-title")
   price.classList.add("product-main__product__price")
+  ImgTag.classList.add("product-main__product__img-wrapper__img")
   mainProducts.appendChild(productDiv);
   productDiv.appendChild(title);
   productDiv.appendChild(imgWrapper);
- 
   imgWrapper.appendChild(ImgTag);
   desc.ariaHidden;
   // productDiv.appendChild(desc);
+  // productDiv.appendChild(color);
   productDiv.appendChild(price);
-  
- 
 
-  imgWrapper.addEventListener("click", (e) => {
+  productDiv.addEventListener("click", (e:MouseEvent) => {
     let item: HTMLElement = e.target as HTMLElement;
     let id: number = parseInt(item.id);
     displayModelProducts(id);
   });
 
   }
-
 }

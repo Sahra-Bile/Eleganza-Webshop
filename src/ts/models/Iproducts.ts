@@ -4,16 +4,9 @@
 export interface Iproducts{
   id:number;
   title:string;
-  img:string;
+  url:string;
   desc:string;
   price: number;
-  color: Icolor;
-
-}
-
-export interface Icolor{
-color_1: string;
-color_2: string;
-color_3: string;
+  author:string;
 
 }

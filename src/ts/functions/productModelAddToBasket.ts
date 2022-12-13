@@ -20,12 +20,10 @@ let modalDescriptionSpan:HTMLSpanElement = document.getElementById('modal-desc')
   ProductDetails.forEach((product) =>{
     productTittle === product.title ? (arriveProduct = product) :null;
   });
+  
   /**
    * !Skapar en ny produkt baserat på den inkommande produkten färg- och antal som användaren har lagt in.
    */
 
-
-  // let product = new Product(arriveProduct,modalColorSelect.value, parseInt(modalAmountInput.value));
  });
-
 }

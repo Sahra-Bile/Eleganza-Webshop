@@ -26,9 +26,9 @@
       src="https://kit.fontawesome.com/bc5eefc1c7.js"
       crossorigin="anonymous"></script>
 
-    <script src="/src/ts/productFunctions.ts" type="module" defer></script>
+    <script src="/src/ts/productPage.ts" type="module" defer></script>
 
-    <title>Eleganza Shop</title>
+    <title>BookLizaz Shop</title>
   </head>
   <body>
     <!-- produkt fönster -->
@@ -39,21 +39,15 @@
           <i class="fas fa-times"></i>
         </button>
         <!-- produkt bilder -->
-        <p class="model-container__body__title" id="modal-title">Elegsnza</p>
+        <p class="model-container__body__title" id="modal-title">BookLizaz</p>
         <div class="model-container__body__img-wrapper" id="modal-img-wrapper">
           <img
-            src="/src/assert/iphone14.png"
             class="model-container__body__img-wrapper__producstImg"
             id="modal-img" />
         </div>
         <!-- produkt title -->
 
-        <span class="model-container__body__desc" id="modal-desc"
-          >Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
-          animi, quisquam recusandae doloribus beatae delectus quia, possimus ea
-          nemo quas tempore ipsa esse nobis fuga. Ducimus laudantium assumenda
-          !</span
-        >
+        <span class="model-container__body__desc" id="modal-desc"></span>
         <!-- antal product -->
         <label
           for="modal-amount"
@@ -70,9 +64,9 @@
         </label>
         <!-- option för att kunna välja färgen av produkten -->
         <select id="modal-color" class="model-container__body__select">
-          <option value="black">black</option>
-          <option value="white">white</option>
-          <option value="gray">gray</option>
+          <option value="black"></option>
+          <option value="white"></option>
+          <option value="gray"></option>
         </select>
         <!-- input value börjar alltid selectat en produk -->
         <input
@@ -82,55 +76,17 @@
           id="modal-amount"
           min="1" />
         <!-- totala summan av produkter beroende antal produkt av varje produkt -->
-        <p class="model-container__body__model-total" id="modal-total">200</p>
+        <p class="model-container__body__model-total" id="modal-total"></p>
         <button class="model-container__body__addBtn" id="add-Product">
           add
         </button>
       </div>
     </div>
     <header>
-      <!-- home navbar i desktop läge -->
-      <nav class="container-desktop" id="desktop">
-        <h1 class="conatiner-desktop__Eleganza" id="title">Eleganza</h1>
-
-        <ul class="conatiner-desktop__list">
-          <li class="conatiner-desktop__list__item">
-            <a
-              class="conatiner-desktop__list__item__links"
-              href="/src/index.html"
-              >home</a
-            >
-          </li>
-          <li class="conatiner-desktop__list__item">
-            <a class="conatiner-desktop__list__item__links" href="#"
-              >products</a
-            >
-          </li>
-          <li class="conatiner-desktop__list__item">
-            <a class="conatiner-desktop__list__item__links" href="#about"
-              >about</a
-            >
-          </li>
-          <li class="conatiner-desktop__list__item">
-            <a
-              class="conatiner-desktop__list__item__links"
-              href="/src/html/contact.html"
-              >contact</a
-            >
-          </li>
-        </ul>
-        <a href="#">
-          <div class="conatiner-desktop__icons" id="cart">
-            <i class="fas fa-shopping-cart" id="shopping-cart"></i>
-            <div id="cartAmount" class="cartAmount">0</div>
-          </div>
-        </a>
-        <div class="shop" id="shop"></div>
-      </nav>
       <!-- home navbar i mobil läge -->
       <nav class="container-phone" id="phone">
         <i class="fas fa-bars" id="menu-icon"></i>
-        <h1 class="container-phone__title">Eleganza</h1>
+        <h1 class="container-phone__title">BookLizaz</h1>
 
         <a href="./products.html">
           <div class="conatiner-phone__icons" id="cart">
@@ -172,6 +128,44 @@
           </ul>
         </div>
       </nav>
+      <!-- home navbar i desktop läge -->
+      <nav class="container-desktop" id="desktop">
+        <h1 class="conatiner-desktop__Eleganza" id="title">BookLizaz</h1>
+
+        <ul class="conatiner-desktop__list">
+          <li class="conatiner-desktop__list__item">
+            <a
+              class="conatiner-desktop__list__item__links"
+              href="/src/index.html"
+              >home</a
+            >
+          </li>
+          <li class="conatiner-desktop__list__item">
+            <a class="conatiner-desktop__list__item__links" href="#"
+              >products</a
+            >
+          </li>
+          <li class="conatiner-desktop__list__item">
+            <a class="conatiner-desktop__list__item__links" href="#about"
+              >about</a
+            >
+          </li>
+          <li class="conatiner-desktop__list__item">
+            <a
+              class="conatiner-desktop__list__item__links"
+              href="/src/html/contact.html"
+              >contact</a
+            >
+          </li>
+        </ul>
+        <a href="#">
+          <div class="conatiner-desktop__icons" id="cart">
+            <i class="fas fa-shopping-cart" id="shopping-cart"></i>
+            <div id="cartAmount" class="cartAmount">0</div>
+          </div>
+        </a>
+        <div class="shop" id="shop"></div>
+      </nav>
     </header>
     <!-- hero for product page -->
     <div class="hero" id="hero">
@@ -186,9 +180,8 @@
       </div>
     </div>
     <div class="product-main" id="main-products">
-      <a href="./addToCart.html"></a>
+      <!-- <a href="./addToCart.html"></a> -->
     </div>
-
     <!--Footer-->
     <footer id="contact" class="mt-5 py-5">
       <div class="row container mx-auto pt-5" id="contact">
@@ -214,26 +207,31 @@
           </div>
           <div>
             <h6 class="text-uppercase">Email</h6>
-            <p>contact@eleganza.com</p>
+            <p>contact@BookLizaz.com</p>
           </div>
         </div>
         <div class="footer-one col-lg-3 col-md-6 col-sm-12">
           <h5 class="pb-2">Instagram</h5>
           <div class="row">
             <img
-              src="https://www.elgiganten.se/image/dv_web_D1800012549538/pt/mobile-phone--resize-240-240.jpg"
+              src="https://s1.adlibris.com/images/48050781/cant-hurt-me.jpg"
               class="img-fluid w-25 h-100 m-2" />
             <img
-              src="https://www.klockor.se/media/catalog/product/cache/372b6bec62b1dd7ffaea65556e69748b/8/0/80120_3nm_buidn.jpg"
+              src="https://s1.adlibris.com/images/756714/start-with-why.jpg"
               class="img-fluid w-25 h-100 m-2" />
             <img
-              src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQdEN3-n466WDocPjvh1GAaobMsDBDQ7vRftJQAwLsl-_YmSsMeMef2m6HngLHihUyHwkTNnWI&usqp=CAc"
+              src="https://s1.adlibris.com/images/62922708/youve-reached-sam.jpg"
               class="img-fluid w-25 h-100 m-2" />
             <img
-              src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTFPOfLWgXJsE8FVt_-F1Ry6XOrShOUSn7REg9vyJM8-q2EpPumI0zEVU8TbHg7dFSJE8NvZL1AVA&usqp=CAc"
+              src="https://s1.adlibris.com/images/62196331/verity.jpg"
               class="img-fluid w-25 h-100 m-2" />
             <img
-              src="https://www.elgiganten.se/image/dv_web_D1800010021173476/525076/google-pixel-7-pro-smartphone-12128gb-hazel--pdp_zoom-3000--pdp_main-960.jpg"
+              src="https://s1.adlibris.com/images/61501171/book-lovers.jpg"
+              width="50"
+              height="50"
+              class="img-fluid w-25 h-100 m-2" />
+            <img
+              src="https://s2.adlibris.com/images/54065912/when-the-sky-fell-on-splendor.jpg"
               width="50"
               height="50"
               class="img-fluid w-25 h-100 m-2" />
@@ -245,10 +243,10 @@
         <div class="row container mx-auto">
           <div class="col-lg-3 col-md-5 col-sm-12 mb-4">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDM_MZ9ZZStGuHsEq_4tiXhrzUTje9AJzBzQ&usqp=CAU" />
+              src="https://s2.adlibris.com/images/58963733/you-and-me-on-vacation.jpg" />
           </div>
           <div class="col-lg-3 col-md-5 col-sm-12 mb-4 text-nowrap mb-2">
-            <p>E-commerce Eleganza &copy; 2022 All Right Reserved</p>
+            <p>E-commerce BookLizaz &copy; 2022 All Right Reserved</p>
           </div>
           <div class="col-lg-3 col-md-5 col-sm-12 mb-4">
             <a href="https://www.facebook.com/"
