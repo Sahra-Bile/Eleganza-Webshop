@@ -10,7 +10,6 @@ let modalAmountInput:HTMLInputElement = document.getElementById('modal-amount') 
 let modalColorSelect:HTMLSelectElement = document.getElementById('modal-color')as HTMLSelectElement;
 let modalDescriptionSpan:HTMLSpanElement = document.getElementById('modal-desc') as HTMLSpanElement;
 
-
 /**
 *! Tar titeln Modal. Kollar min lista över produkter(products[]) och hittar den som har samma namn som modal-titel .   
   */
@@ -20,7 +19,7 @@ let modalDescriptionSpan:HTMLSpanElement = document.getElementById('modal-desc')
   ProductDetails.forEach((product) =>{
     productTittle === product.title ? (arriveProduct = product) :null;
   });
-  
+
   /**
    * !Skapar en ny produkt baserat på den inkommande produkten färg- och antal som användaren har lagt in.
    */

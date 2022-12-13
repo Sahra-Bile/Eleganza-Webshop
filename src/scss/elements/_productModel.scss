@@ -57,45 +57,38 @@
       }
     }
 
-    &__amount-lebel,
-    &__color-lebel {
+    &__amount-lebel {
       @include m.for-lebels;
-      grid-row: 12/13;
-      grid-column: 2/4;
+      grid-row: 9/10;
+      grid-column: 2/6;
       justify-self: center;
       align-self: flex-end;
       font-size: 1rem;
       font-weight: bold;
-    }
-
-    &__amount-lebel {
       grid-column: 4/6;
+      // !styla sen när du kan se producten
     }
 
-    &__select,
     &__input {
       width: 70%;
-      grid-row: 13/13;
-      grid-column: 2/4;
+      grid-row: 10/10;
+      grid-column: 2/6;
       justify-self: center;
       align-self: center;
       font-family: Nunito sans-serif;
-    }
-
-    &__input {
       grid-column: 4/6;
     }
 
     &__addBtn {
+      @include m.button_1;
+      width: 80%;
       align-items: center;
+      text-transform: uppercase;
       grid-column: 2 / 6;
       justify-self: center;
       align-self: center;
       font-weight: bolder;
       grid-row: 16;
-
-      text-transform: uppercase;
-      @include m.button_2;
     }
     &__model-total {
       grid-column: 2 / 6;
@@ -122,7 +115,7 @@
       margin-block-start: 0;
       margin-block-end: 0;
       grid-column: 2 / 6;
-      grid-row: 11 / 11;
+      grid-row: 14;
       gap: 20px;
       text-align: center;
       align-self: center;

@@ -22,7 +22,6 @@ let mainProducts: HTMLDivElement = document.getElementById("main-products")as HT
 
    let price:HTMLParagraphElement = document.createElement('p');
 
-   let color:HTMLSelectElement = document.createElement('select');
 
  
    title.innerHTML = ProductDetails[i].title
@@ -47,7 +46,6 @@ let mainProducts: HTMLDivElement = document.getElementById("main-products")as HT
   imgWrapper.appendChild(ImgTag);
   desc.ariaHidden;
   // productDiv.appendChild(desc);
-  // productDiv.appendChild(color);
   productDiv.appendChild(price);
 
   productDiv.addEventListener("click", (e:MouseEvent) => {

@@ -7,6 +7,6 @@ export interface Iproducts{
   url:string;
   desc:string;
   price: number;
-  author:string;
+ 
 
 }
