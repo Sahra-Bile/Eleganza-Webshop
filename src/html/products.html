@@ -31,52 +31,6 @@
     <title>BookLizaz Shop</title>
   </head>
   <body>
-    <!-- produkt fönster -->
-    <div class="model-container" id="modal-container">
-      <div class="model-container__body" id="modal-body">
-        <!-- button för att kunna stänga produkt fönstret -->
-        <button class="model-container__body__closeBtn" id="closeBtn-modal">
-          <i class="fas fa-times"></i>
-        </button>
-        <!-- produkt bilder -->
-        <p class="model-container__body__title" id="modal-title">BookLizaz</p>
-        <div class="model-container__body__img-wrapper" id="modal-img-wrapper">
-          <img
-            src="https://s1.adlibris.com/images/28226190/rich-dad-poor-dad.jpg"
-            class="model-container__body__img-wrapper__producstImg"
-            id="modal-img" />
-        </div>
-        <!-- produkt title -->
-
-        <p class="model-container__body__desc" id="modal-desc">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus
-          reiciendis dicta similique repellat aspernatur tempora odit commodi
-          aliquam iusto quibusdam beatae ipsa voluptates, cumque atque
-          doloremque eum. Blanditiis, non est.
-        </p>
-
-        <!-- antal product -->
-        <label
-          for="modal-amount"
-          id="modal-amount-label"
-          class="model-container__body__amount-lebel"
-          >Quantity:
-        </label>
-
-        <!-- input value börjar alltid selectat en produk -->
-        <input
-          class="model-container__body__input"
-          value="1"
-          type="number"
-          id="modal-amount"
-          min="1" />
-        <!-- totala summan av produkter beroende antal produkt av varje produkt -->
-        <p class="model-container__body__model-total" id="modal-total"></p>
-        <button class="model-container__body__addBtn" id="add-Product">
-          add
-        </button>
-      </div>
-    </div>
     <header>
       <!-- home navbar i mobil läge -->
       <nav class="container-phone" id="phone">
@@ -173,9 +127,11 @@
         </p>
       </div>
     </div>
-    <div class="product-main" id="main-products">
-      <!-- <a href="./addToCart.html"></a> -->
-    </div>
+    <!-- load products -->
+    <div class="product-main" id="main-products"></div>
+    <!-- model för att lägga produkterna i varrukorgen -->
+    <div class="model-container" id="model-container"></div>
+
     <!--Footer-->
     <footer id="contact" class="mt-5 py-5">
       <div class="row container mx-auto pt-5" id="contact">

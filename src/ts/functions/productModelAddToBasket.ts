@@ -2,27 +2,35 @@ import {Iproducts} from "../models/Iproducts" //! interface
 import {Product} from "../models/products" //! class 
 import{ProductDetails} from "../models/productData" //! lagrat alla produkter i en array
 
-const productModalAddToBasket = () =>{
-let modelContainer:HTMLDivElement = document.getElementById('"modal-container')as HTMLDivElement;
-let modalTitle:HTMLParagraphElement = document.getElementById('modal-title')as HTMLParagraphElement;
-let addButton:HTMLButtonElement = document.getElementById('add-Product') as HTMLButtonElement;
-let modalAmountInput:HTMLInputElement = document.getElementById('modal-amount') as HTMLInputElement;
-let modalColorSelect:HTMLSelectElement = document.getElementById('modal-color')as HTMLSelectElement;
-let modalDescriptionSpan:HTMLSpanElement = document.getElementById('modal-desc') as HTMLSpanElement;
+ export const productModalAddToBasket = () =>{
+let modelContainer:HTMLDivElement = document.getElementById('model-container')as HTMLDivElement;
+let modalTitle:HTMLParagraphElement = document.querySelector('.model-container__body__title')as HTMLParagraphElement;
+let addButton:HTMLButtonElement = document.querySelector(".model-container__body__addBtn") as HTMLButtonElement;
+let modalAmountInput:HTMLInputElement = document.querySelector(".model-container__body__input") as HTMLInputElement;
+let modalDescriptionSpan:HTMLSpanElement = document.querySelector(".model-container__body__desc") as HTMLSpanElement;
 
 /**
 *! Tar titeln Modal. Kollar min lista över produkter(products[]) och hittar den som har samma namn som modal-titel .   
   */
- addButton.addEventListener('click', (e: MouseEvent) =>{
+ addButton.addEventListener('click', () =>{
   let arriveProduct: Iproducts;
-  let productTittle:string = modalTitle.innerHTML;
-  ProductDetails.forEach((product) =>{
-    productTittle === product.title ? (arriveProduct = product) :null;
-  });
+   let productTittle:string = modalTitle.innerHTML;
+   ProductDetails.forEach((product) => {
+     productTittle == product.title? (arriveProduct = product) : null;
+     return new Product(arriveProduct);
+   });
 
-  /**
-   * !Skapar en ny produkt baserat på den inkommande produkten färg- och antal som användaren har lagt in.
-   */
-
+  if (!localStorage.getItem("cart-List")) {
+    localStorage.setItem("cart-List", "[]");
+  }
+  let cartList : Product [] = (JSON.parse(localStorage.getItem("cartList") || "[]"))
+  .map ((cartList:Product )=>{
+  return new Product(cartList.Iproduct);
  });
+return cartList;
+   
+    modelContainer.className = "";
+// kalla en funtion som skall uppdatera produkten i checkout nåt form av dropworn 
+ 
+});
 }
