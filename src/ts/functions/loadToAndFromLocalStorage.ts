@@ -11,10 +11,10 @@ export function loadToLocalStorage (products: Iproducts []){
 export function loadFromlocalStorage () {
   let products : Product [] = (JSON.parse(localStorage.getItem("productList") || "[]"))
       .map (( products:Product )=>{
-      return new Product(products.Iproduct)
+      return new Product(products.Iproduct, products.Iproduct.amount)
   })
   return products;
+ 
+
 }
-
-
 

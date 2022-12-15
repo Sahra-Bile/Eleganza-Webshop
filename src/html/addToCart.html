@@ -26,15 +26,60 @@
       src="https://kit.fontawesome.com/bc5eefc1c7.js"
       crossorigin="anonymous"></script>
 
-    <script src="../ts/main.ts" type="module" defer></script>
+    <script src="/src/ts/addToCartPage.ts" type="module" defer></script>
 
-    <title>Eleganza Shop</title>
+    <title>BookLizaz Shop</title>
   </head>
   <body>
     <header>
+      <!-- home navbar i mobil läge -->
+      <nav class="container-phone" id="phone">
+        <i class="fas fa-bars" id="menu-icon"></i>
+        <h1 class="container-phone__title">BookLizaz</h1>
+
+        <a href="./products.html">
+          <div class="conatiner-phone__icons" id="cart">
+            <i class="fas fa-shopping-cart" id="shopping-cart"></i>
+            <div id="cartAmount" class="cartAmount">0</div>
+          </div>
+        </a>
+        <div class="shop" id="shop"></div>
+
+        <div class="container-phone__hamburgare" id="hamburger">
+          <i class="fas fa-times" id="close"></i>
+
+          <ul class="container-phone__list">
+            <li id="heading">Eleganza</li>
+            <li class="conatiner-phone__list__item">
+              <a
+                class="conatiner-phone__list__item__links"
+                href="/src/index.html"
+                >home</a
+              >
+            </li>
+            <li class="conatiner-phone__list__item">
+              <a
+                class="conatiner-phone__list__item__links"
+                href="./products.html"
+                >products</a
+              >
+            </li>
+            <li class="conatiner-phone__list__item">
+              <a class="conatiner-phone__list__item__links" href="#about"
+                >about</a
+              >
+            </li>
+            <li class="conatiner-phone__list__item">
+              <a class="conatiner-phone__list__item__links" href="#contact"
+                >contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
       <!-- home navbar i desktop läge -->
       <nav class="container-desktop" id="desktop">
-        <h1 class="conatiner-desktop__Eleganza" id="title">Eleganza</h1>
+        <h1 class="conatiner-desktop__Eleganza" id="title">BookLizaz</h1>
 
         <ul class="conatiner-desktop__list">
           <li class="conatiner-desktop__list__item">
@@ -45,9 +90,7 @@
             >
           </li>
           <li class="conatiner-desktop__list__item">
-            <a
-              class="conatiner-desktop__list__item__links"
-              href="/src/html/products.html"
+            <a class="conatiner-desktop__list__item__links" href="#"
               >products</a
             >
           </li>
@@ -72,50 +115,10 @@
         </a>
         <div class="shop" id="shop"></div>
       </nav>
-      <!-- home navbar i mobil läge -->
-      <nav class="container-phone" id="phone">
-        <i class="fas fa-bars" id="menu-icon"></i>
-        <h1 class="container-phone__title">Eleganza</h1>
-
-        <a href="#">
-          <div class="conatiner-phone__icons" id="cart">
-            <i class="fas fa-shopping-cart" id="shopping-cart"></i>
-            <div id="cartAmount" class="cartAmount">0</div>
-          </div>
-        </a>
-        <div class="shop" id="shop"></div>
-
-        <div class="container-phone__hamburgare" id="hamburger">
-          <i class="fas fa-times" id="close"></i>
-
-          <ul class="container-phone__list">
-            <li id="heading">Eleganza</li>
-            <li class="conatiner-phone__list__item">
-              <a class="conatiner-phone__list__item__links" href="#home"
-                >home</a
-              >
-            </li>
-            <li class="conatiner-phone__list__item">
-              <a
-                class="conatiner-phone__list__item__links"
-                href="/src/html/products.html"
-                >products</a
-              >
-            </li>
-            <li class="conatiner-phone__list__item">
-              <a class="conatiner-phone__list__item__links" href="#about"
-                >about</a
-              >
-            </li>
-            <li class="conatiner-phone__list__item">
-              <a class="conatiner-phone__list__item__links" href="#contact"
-                >contact</a
-              >
-            </li>
-          </ul>
-        </div>
-      </nav>
     </header>
+
+    <!-- model för att lägga produkterna i varrukorgen -->
+    <div class="model-container" id="model-container"></div>
 
     <!--Footer-->
     <footer id="contact" class="mt-5 py-5">
@@ -142,26 +145,31 @@
           </div>
           <div>
             <h6 class="text-uppercase">Email</h6>
-            <p>contact@eleganza.com</p>
+            <p>contact@BookLizaz.com</p>
           </div>
         </div>
         <div class="footer-one col-lg-3 col-md-6 col-sm-12">
           <h5 class="pb-2">Instagram</h5>
           <div class="row">
             <img
-              src="https://www.elgiganten.se/image/dv_web_D1800012549538/pt/mobile-phone--resize-240-240.jpg"
+              src="https://s1.adlibris.com/images/48050781/cant-hurt-me.jpg"
               class="img-fluid w-25 h-100 m-2" />
             <img
-              src="https://www.klockor.se/media/catalog/product/cache/372b6bec62b1dd7ffaea65556e69748b/8/0/80120_3nm_buidn.jpg"
+              src="https://s1.adlibris.com/images/756714/start-with-why.jpg"
               class="img-fluid w-25 h-100 m-2" />
             <img
-              src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQdEN3-n466WDocPjvh1GAaobMsDBDQ7vRftJQAwLsl-_YmSsMeMef2m6HngLHihUyHwkTNnWI&usqp=CAc"
+              src="https://s1.adlibris.com/images/62922708/youve-reached-sam.jpg"
               class="img-fluid w-25 h-100 m-2" />
             <img
-              src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTFPOfLWgXJsE8FVt_-F1Ry6XOrShOUSn7REg9vyJM8-q2EpPumI0zEVU8TbHg7dFSJE8NvZL1AVA&usqp=CAc"
+              src="https://s1.adlibris.com/images/62196331/verity.jpg"
               class="img-fluid w-25 h-100 m-2" />
             <img
-              src="https://www.elgiganten.se/image/dv_web_D1800010021173476/525076/google-pixel-7-pro-smartphone-12128gb-hazel--pdp_zoom-3000--pdp_main-960.jpg"
+              src="https://s1.adlibris.com/images/61501171/book-lovers.jpg"
+              width="50"
+              height="50"
+              class="img-fluid w-25 h-100 m-2" />
+            <img
+              src="https://s2.adlibris.com/images/54065912/when-the-sky-fell-on-splendor.jpg"
               width="50"
               height="50"
               class="img-fluid w-25 h-100 m-2" />
@@ -173,10 +181,10 @@
         <div class="row container mx-auto">
           <div class="col-lg-3 col-md-5 col-sm-12 mb-4">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDM_MZ9ZZStGuHsEq_4tiXhrzUTje9AJzBzQ&usqp=CAU" />
+              src="https://s2.adlibris.com/images/58963733/you-and-me-on-vacation.jpg" />
           </div>
           <div class="col-lg-3 col-md-5 col-sm-12 mb-4 text-nowrap mb-2">
-            <p>E-commerce Eleganza &copy; 2022 All Right Reserved</p>
+            <p>E-commerce BookLizaz &copy; 2022 All Right Reserved</p>
           </div>
           <div class="col-lg-3 col-md-5 col-sm-12 mb-4">
             <a href="https://www.facebook.com/"

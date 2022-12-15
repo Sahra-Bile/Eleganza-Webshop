@@ -36,14 +36,23 @@
     }
 
     &__closeBtn {
-      grid-column: 8;
-      justify-self: end;
-      font-size: 2rem;
+      justify-self: flex-end;
+      grid-column: 6;
       background: none;
+      font-size: 1.6rem;
       font-weight: bold;
-      color: v.$primary_1;
+      color: black;
       border: none;
       cursor: pointer;
+
+      // grid-column: 8;
+      // justify-self: end;
+      // font-size: 2rem;
+      // background: none;
+      // font-weight: bold;
+      // color: v.$primary_1;
+      // border: none;
+      // cursor: pointer;
     }
 
     &__img-wrapper {
