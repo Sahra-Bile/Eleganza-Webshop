@@ -39,11 +39,9 @@
 
         <a href="./products.html">
           <div class="conatiner-phone__icons" id="cart">
-            <i class="fas fa-shopping-cart" id="shopping-cart"></i>
-            <div id="cartAmount" class="cartAmount">0</div>
+            <i class="fas fa-shopping-cart" id="shopping-cart-phone"></i>
           </div>
         </a>
-        <div class="shop" id="shop"></div>
 
         <div class="container-phone__hamburgare" id="hamburger">
           <i class="fas fa-times" id="close"></i>
@@ -110,15 +108,21 @@
         <a href="#">
           <div class="conatiner-desktop__icons" id="cart">
             <i class="fas fa-shopping-cart" id="shopping-cart"></i>
-            <div id="cartAmount" class="cartAmount">0</div>
           </div>
         </a>
-        <div class="shop" id="shop"></div>
       </nav>
     </header>
 
-    <!-- model för att lägga produkterna i varrukorgen -->
-    <div class="model-container" id="model-container"></div>
+    <!-- öppna från korgen -->
+    <div class="cart-container">
+      <div class="cart-container__checkout-products">
+        <div class="imgWrapper">
+          <img
+            src="https://s1.adlibris.com/images/28226190/rich-dad-poor-dad.jpg"
+            alt="" />
+        </div>
+      </div>
+    </div>
 
     <!--Footer-->
     <footer id="contact" class="mt-5 py-5">
@@ -131,10 +135,10 @@
 
         <div class="footer-one col-lg-3 col-md-6 col-sm-12">
           <h5 class="pb-2">Contact Us</h5>
-          <img
+          <!-- <img
             class="Eleganza-img"
             src="/src/assert/Vanilla-1s-280px.svg"
-            alt="" />
+            alt="" /> -->
           <div>
             <h6 class="text-uppercase">Address</h6>
             <p>1234 Street Name, City</p>

@@ -2,16 +2,17 @@
 import { Iproducts } from '../models/Iproducts';
 import{ProductDetails} from "../models/productData" 
 import { Product } from '../models/products';
-import { loadToLocalStorage } from './loadToAndFromLocalStorage';
 
+import { displayModelProducts } from './productModel';
 
  export function createHTMLForProducts(){
 
 let mainProducts: HTMLDivElement = document.getElementById("main-products")as HTMLDivElement;
 
-	// mainProducts.innerHTML = "";
+	mainProducts.innerHTML = "";
 
   for(let i = 0; i < ProductDetails.length; i++){
+   
   
    let productDiv:HTMLDivElement = document.createElement('div');
 
@@ -24,12 +25,12 @@ let mainProducts: HTMLDivElement = document.getElementById("main-products")as HT
    let desc:HTMLParagraphElement = document.createElement('p');
 
    let price:HTMLParagraphElement = document.createElement('p');
-   let addToCartBtn: HTMLButtonElement= document.createElement('button') ;
-   addToCartBtn.innerHTML = "add to cart";
-   
+   let moreInfo: HTMLButtonElement= document.createElement('button') ;
+   moreInfo.innerHTML = "more info";
 
-   title.innerHTML = ProductDetails[i].title
+
    ImgTag.src = ProductDetails[i].url;
+   title.innerHTML = ProductDetails[i].title
    desc.innerHTML = ProductDetails[i].desc;
    price.innerHTML = `${ ProductDetails[i].price}.SEK`;
 
@@ -41,37 +42,29 @@ let mainProducts: HTMLDivElement = document.getElementById("main-products")as HT
   title.classList.add("product-main__product__product-title");
   price.classList.add("product-main__product__price");
   ImgTag.classList.add("product-main__product__img-wrapper__img");
-  addToCartBtn.classList.add("product-main__product__addCart");
+  moreInfo.classList.add("product-main__product__moreInfoBtn");
   mainProducts.appendChild(productDiv);
   productDiv.appendChild(title);
   productDiv.appendChild(imgWrapper);
   imgWrapper.appendChild(ImgTag);
   productDiv.appendChild(price);
-  productDiv.appendChild(addToCartBtn);
+  productDiv.appendChild(moreInfo);
   // productDiv.appendChild(desc);
 
-  addToCartBtn.addEventListener("click", () => {
-    new Product(ProductDetails[i], ProductDetails[i].amount);
-    // ProductDetails[i].amount * ProductDetails[i].amount;
-    addToCart(ProductDetails.push());
-    initSite();
-     deleteOneItem(ProductDetails[i].id);
+  //!*Tar ID för den klickade produkten och anropar en funktion som visar en modal med produkten vilket index är lika med det hämtade ID:t.
+
+  moreInfo.addEventListener("click", () => {;
+			
+    displayModelProducts(ProductDetails[i].id);
+   
+
+    
   });
 
   }
 }
 
 let inCart:Iproducts[] = [];
-
-export function initSite() {
-  let itemCart = localStorage.basketList;
-  if (itemCart) {
-      inCart = JSON.parse(itemCart);
-  }
- let shop = document.getElementById("cart") as HTMLDivElement;
-  shop.innerHTML = inCart.length.toString();
- 
-}
 
 export function addToCart(id:number) {
   let itemToAdd = id;
@@ -85,8 +78,34 @@ export function addToCart(id:number) {
 }
 
 
-function deleteOneItem(id:number){
-  inCart.splice(id, 1);
-    
 
+export function LoadToLS(id:number) {
+  localStorage.setItem("cartList", JSON.stringify(inCart));
+  let itemToAdd = id;
+  for (let i = 0; i < inCart.length; i++) {
+      if (itemToAdd === inCart[i].id) {
+          inCart.push(inCart[i]);
+          let jsonString = JSON.stringify(inCart);
+          localStorage.basketList = jsonString;
+          let itemCart = localStorage.inCart;
+        if (itemCart) {
+        inCart = JSON.parse(itemCart);
+  }
+  let shop = document.getElementById("shop") as HTMLDivElement;
+  shop.innerHTML = inCart.length.toString();
 }
+}
+}
+
+ export function loadFromLs() {
+  let cartFromLs:string = localStorage.getItem("cartList") || "";
+  let cartObject = JSON.parse(cartFromLs);
+  console.log(cartObject);
+  inCart = cartObject.map((cart:Product) => {return new Product( cart.product,cart.amount)}); 
+
+ }
+
+
+
+
+

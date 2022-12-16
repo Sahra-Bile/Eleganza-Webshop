@@ -31,13 +31,31 @@
     <title>BookLizaz Shop</title>
   </head>
   <body>
+    <!-- model för mer info och för att kunna lägga en produkt i korgen  -->
+    <div id="modalContainer">
+      <div id="modalBody">
+        <button id="closeProductsModal"><i class="fas fa-times"></i></button>
+        <div id="modalImgWrapper">
+          <img id="modalImg" />
+        </div>
+        <p id="modalTitle"></p>
+        <p id="modeldesc"></p>
+
+        <label for="productModalAmount" id="productModalAmountLabel"
+          >Quantity:</label
+        >
+        <input value="1" type="number" min="1" id="productModalAmount" />
+        <p id="modalTotal"></p>
+        <button id="addProduct">add to cart</button>
+      </div>
+    </div>
     <header>
       <!-- home navbar i mobil läge -->
       <nav class="container-phone" id="phone">
         <i class="fas fa-bars" id="menu-icon"></i>
         <h1 class="container-phone__title">BookLizaz</h1>
 
-        <a href="./addToCart.html">
+        <a href="#">
           <div class="conatiner-phone__icons" id="cart">
             <i class="fas fa-shopping-cart" id="shopping-cart"></i>
             <div id="cartAmount" class="cartAmount">0</div>
@@ -107,7 +125,7 @@
             >
           </li>
         </ul>
-        <a href="./addToCart.html">
+        <a href="#">
           <div class="conatiner-desktop__icons" id="cart">
             <i class="fas fa-shopping-cart" id="shopping-cart"></i>
             <div id="cartAmount" class="cartAmount">0</div>
@@ -130,9 +148,6 @@
     <!-- load products -->
     <div class="product-main" id="main-products"></div>
 
-    <!-- model för att lägga produkterna i varrukorgen -->
-    <div class="model-container" id="model-container"></div>
-
     <!-- öppna korgen och gå vidare till kassan-->
 
     <!--Footer-->
@@ -146,10 +161,10 @@
 
         <div class="footer-one col-lg-3 col-md-6 col-sm-12">
           <h5 class="pb-2">Contact Us</h5>
-          <img
+          <!-- <img
             class="Eleganza-img"
             src="/src/assert/Vanilla-1s-280px.svg"
-            alt="" />
+            alt="" /> -->
           <div>
             <h6 class="text-uppercase">Address</h6>
             <p>1234 Street Name, City</p>
