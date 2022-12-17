@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <!-- styler footer med bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -18,42 +18,81 @@
       defer></script>
 
     <link rel="stylesheet" href="/src/scss/main.scss" />
+
+    <!-- hämtat menu icon -->
     <script
       src="https://kit.fontawesome.com/ff901abd43.js"
       crossorigin="anonymous"></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+
     <script
       src="https://kit.fontawesome.com/bc5eefc1c7.js"
       crossorigin="anonymous"></script>
 
     <script src="./ts/main.ts" type="module" defer></script>
-    <script src="./ts/functions/cart.ts" type="module" defer></script>
 
-    <title>Eleganza Shop</title>
+    <title>BookLizaz Shop</title>
   </head>
   <body>
     <header>
+      <!-- home navbar i mobil läge -->
+      <nav class="container-phone" id="phone">
+        <i class="fas fa-bars" id="menu-icon"></i>
+        <h1 class="container-phone__title">BookLizaz</h1>
+        <i class="fas fa-shopping-cart" id="shopping-cart-phone"></i>
+        <div class="container-phone__hamburgare" id="hamburger">
+          <i class="fas fa-times" id="close"></i>
+
+          <ul class="container-phone__list">
+            <li id="heading">BookLizaz</li>
+            <li class="conatiner-phone__list__item">
+              <a class="conatiner-phone__list__item__links" href="index.html"
+                >home</a
+              >
+            </li>
+            <li class="conatiner-phone__list__item">
+              <a
+                class="conatiner-phone__list__item__links"
+                href="./html/products.html"
+                >products</a
+              >
+            </li>
+            <li class="conatiner-phone__list__item">
+              <a class="conatiner-phone__list__item__links" href="#about"
+                >about</a
+              >
+            </li>
+            <li class="conatiner-phone__list__item">
+              <a
+                class="conatiner-phone__list__item__links"
+                href="./html/contact.html"
+                >contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
       <!-- home navbar i desktop läge -->
       <nav class="container-desktop" id="desktop">
-        <h1 class="conatiner-desktop__Eleganza" id="title">Eleganza</h1>
+        <h1 class="conatiner-desktop__Eleganza" id="title">BookLizaz</h1>
 
         <ul class="conatiner-desktop__list">
           <li class="conatiner-desktop__list__item">
-            <a class="conatiner-desktop__list__item__links" href="#home"
+            <a class="conatiner-desktop__list__item__links" href="index.html"
               >home</a
             >
           </li>
           <li class="conatiner-desktop__list__item">
-            <a class="conatiner-desktop__list__item__links" href="#"
+            <a
+              class="conatiner-desktop__list__item__links"
+              href="/src/html/products.html"
               >products</a
             >
           </li>
           <li class="conatiner-desktop__list__item">
-            <a class="conatiner-desktop__list__item__links" href="#about"
-              >about</a
-            >
+            <a class="conatiner-desktop__list__item__links" href="#">about</a>
           </li>
           <li class="conatiner-desktop__list__item">
             <a
@@ -63,99 +102,25 @@
             >
           </li>
         </ul>
-        <a href="#">
-          <div class="conatiner-desktop__icons" id="cart">
-            <i class="fas fa-shopping-cart" id="shopping-cart"></i>
-            <div id="cartAmount" class="cartAmount">0</div>
-          </div>
-        </a>
-        <div class="shop" id="shop"></div>
-      </nav>
-      <!-- home navbar i mobil läge -->
-      <nav class="container-phone" id="phone">
-        <i class="fas fa-bars" id="menu-icon"></i>
-        <h1 class="container-phone__title">Eleganza</h1>
-
-        <a href="#">
-          <div class="conatiner-phone__icons" id="cart">
-            <i class="fas fa-shopping-cart" id="shopping-cart"></i>
-            <div id="cartAmount" class="cartAmount">0</div>
-          </div>
-        </a>
-        <div class="shop" id="shop"></div>
-
-        <div class="container-phone__hamburgare" id="hamburger">
-          <i class="fas fa-times" id="close"></i>
-
-          <ul class="container-phone__list">
-            <li id="heading">Eleganza</li>
-            <li class="conatiner-phone__list__item">
-              <a class="conatiner-phone__list__item__links" href="#home"
-                >home</a
-              >
-            </li>
-            <li class="conatiner-phone__list__item">
-              <a class="conatiner-phone__list__item__links" href="#"
-                >categories</a
-              >
-            </li>
-            <li class="conatiner-phone__list__item">
-              <a class="conatiner-phone__list__item__links" href="#about"
-                >about</a
-              >
-            </li>
-            <li class="conatiner-phone__list__item">
-              <a class="conatiner-phone__list__item__links" href="#contact"
-                >contact</a
-              >
-            </li>
-          </ul>
-        </div>
+        <i class="fas fa-shopping-cart" id="shopping-cart"></i>
       </nav>
     </header>
 
-    <!--  Home  hero -->
-    <section id="home" class="section-home">
-      <h2 class="section-home__title">Our new products</h2>
-    </section>
-    <section class="section-container">
-      <article class="section-container__product">
-        <p class="section-container__product__title">iPhone 12 X</p>
-        <img
-          src="https://www.netonnet.se/GetFile/ProductImagePrimary/mobil-smartwatch/mobiltelefoner/samsung-mobil/samsung-galaxy-a53-5g-128gb-black(1023778)_496471_1_Normal_Large.webp"
-          class="section-container__product__image" />
-        <p class="section-container__product__description">
-          You can reflect your personal style by customizing iPhone as you like.
-          Display your favorite images on the lock screen, add widgets to the
-          home screen, adjust text size, ringtones and more.
+    <!-- home -->
+    <section class="home" id="home">
+      <div class="home__container">
+        <p class="home__container__text">
+          You will find everything you want to read at BookLizaz . Fiction and
+          non-fiction from around the world, children's books for all ages and
+          interests, student literature, audiobooks and e-books. We also have a
+          large selection of yarn, toys, puzzles and games. In BookLizaz is also
+          included
         </p>
-      </article>
-      <article class="section-container__product">
-        <p class="section-container__product__title">Dubuis-watch</p>
-        <img
-          src="https://www.newbondstreetpawnbrokers.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2019/01/Roger-Dubuis-watch.jpg.webp"
-          class="section-container__product__image" />
-        <p class="section-container__product__description">
-          best looking watch 2022. Modern and smart watch that makes your life.
-          easier
-        </p>
-      </article>
-      <article class="section-container__product">
-        <p class="section-container__product__title">MacBook Pro gen 13</p>
-        <img
-          src="https://cdn.pocket-lint.com/r/s/970x/assets/images/139319-laptops-news-buyer-s-guide-which-apple-macbook-is-best-for-you-macbook-air-or-macbook-pro-image13-gpzfht5rnc-jpg.webp?v1"
-          class="section-container__product__image" />
-        <p class="section-container__product__description">
-          Mac Pro is a series of workstations and servers for professionals that
-          are designed, developed and marketed by Apple Inc. since 2006. The Mac
-          Pro, by some performance benchmarks, is the most powerful computer
-          that Apple offers
-        </p>
-      </article>
+      </div>
     </section>
 
     <!-- about us -->
-    <main id="about">
+    <!-- <main id="about">
       <article id="about" class="about-container">
         <div class="about-container__us">
           <h2 class="about-container__us__title">
@@ -176,10 +141,10 @@
           </span>
         </div>
       </article>
-    </main>
+    </main> -->
 
     <!--Footer-->
-    <footer id="contact" class="mt-5 py-5">
+    <footer id="contact" class="footer">
       <div class="row container mx-auto pt-5" id="contact">
         <div class="footer-one col-lg-3 col-md-6 col-sm-12">
           <p class="pt-3">
@@ -189,10 +154,10 @@
 
         <div class="footer-one col-lg-3 col-md-6 col-sm-12">
           <h5 class="pb-2">Contact Us</h5>
-          <img
+          <!-- <img
             class="Eleganza-img"
             src="/src/assert/Vanilla-1s-280px.svg"
-            alt="" />
+            alt="" /> -->
           <div>
             <h6 class="text-uppercase">Address</h6>
             <p>1234 Street Name, City</p>
@@ -203,26 +168,31 @@
           </div>
           <div>
             <h6 class="text-uppercase">Email</h6>
-            <p>contact@eleganza.com</p>
+            <p>contact@BookLizaz.com</p>
           </div>
         </div>
         <div class="footer-one col-lg-3 col-md-6 col-sm-12">
           <h5 class="pb-2">Instagram</h5>
           <div class="row">
             <img
-              src="https://www.elgiganten.se/image/dv_web_D1800012549538/pt/mobile-phone--resize-240-240.jpg"
+              src="https://s1.adlibris.com/images/48050781/cant-hurt-me.jpg"
               class="img-fluid w-25 h-100 m-2" />
             <img
-              src="https://www.klockor.se/media/catalog/product/cache/372b6bec62b1dd7ffaea65556e69748b/8/0/80120_3nm_buidn.jpg"
+              src="https://s1.adlibris.com/images/756714/start-with-why.jpg"
               class="img-fluid w-25 h-100 m-2" />
             <img
-              src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQdEN3-n466WDocPjvh1GAaobMsDBDQ7vRftJQAwLsl-_YmSsMeMef2m6HngLHihUyHwkTNnWI&usqp=CAc"
+              src="https://s1.adlibris.com/images/62922708/youve-reached-sam.jpg"
               class="img-fluid w-25 h-100 m-2" />
             <img
-              src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTFPOfLWgXJsE8FVt_-F1Ry6XOrShOUSn7REg9vyJM8-q2EpPumI0zEVU8TbHg7dFSJE8NvZL1AVA&usqp=CAc"
+              src="https://s1.adlibris.com/images/62196331/verity.jpg"
               class="img-fluid w-25 h-100 m-2" />
             <img
-              src="https://www.elgiganten.se/image/dv_web_D1800010021173476/525076/google-pixel-7-pro-smartphone-12128gb-hazel--pdp_zoom-3000--pdp_main-960.jpg"
+              src="https://s1.adlibris.com/images/61501171/book-lovers.jpg"
+              width="50"
+              height="50"
+              class="img-fluid w-25 h-100 m-2" />
+            <img
+              src="https://s2.adlibris.com/images/54065912/when-the-sky-fell-on-splendor.jpg"
               width="50"
               height="50"
               class="img-fluid w-25 h-100 m-2" />
@@ -234,10 +204,10 @@
         <div class="row container mx-auto">
           <div class="col-lg-3 col-md-5 col-sm-12 mb-4">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDM_MZ9ZZStGuHsEq_4tiXhrzUTje9AJzBzQ&usqp=CAU" />
+              src="https://s2.adlibris.com/images/58963733/you-and-me-on-vacation.jpg" />
           </div>
           <div class="col-lg-3 col-md-5 col-sm-12 mb-4 text-nowrap mb-2">
-            <p>E-commerce Eleganza &copy; 2022 All Right Reserved</p>
+            <p>E-commerce BookLizaz &copy; 2022 All Right Reserved</p>
           </div>
           <div class="col-lg-3 col-md-5 col-sm-12 mb-4">
             <a href="https://www.facebook.com/"

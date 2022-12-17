@@ -31,7 +31,8 @@
         }
 
         li {
-          font-family: Nunito, sans-serif;
+          font-family: v.$all_text;
+          text-transform: uppercase;
 
           li:hover {
             border-bottom: 1px solid black;
@@ -54,7 +55,7 @@
         }
       }
       #title {
-        font-family: "Monoton", cursive;
+        font-family: v.$header_font;
         font-size: 3rem;
         display: inline;
         margin: 0;
@@ -64,25 +65,13 @@
         }
       }
 
-      #cart {
-        position: relative;
+      #shopping-cart {
         background-color: v.$primary_2;
-        color: v.$primary_1;
-        font-size: 30px;
+        color: v.$primary_6;
+        font-size: 3rem;
       }
-      #cart i:hover {
+      #shopping-cart i:hover {
         transform: scale(1.2);
-      }
-
-      #cartAmount {
-        position: absolute;
-        top: -15px;
-        right: -10px;
-        font-size: 16px;
-        background-color: v.$primary_6;
-        color: v.$primary_2;
-        padding: 3px;
-        border-radius: 3px;
       }
     }
   }

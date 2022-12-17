@@ -1,0 +1,145 @@
+@use "../variables" as v;
+@use "../mixins" as m;
+@import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
+
+#modalContainer {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 100;
+  @include m.tablet {
+    width: auto;
+  }
+  @include m.desktop {
+    width: auto;
+  }
+
+  #modalBody {
+    height: 80%;
+    padding: 3%;
+    width: 90%;
+    border-radius: 1%;
+    border: 1px solid v.$primary_1;
+    background-color: v.$primary_5;
+    font-family: sans-serif;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    @include m.tablet {
+      width: auto;
+    }
+
+    #closeProductsModal {
+      justify-self: flex-end;
+      grid-column: 6;
+      background: none;
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: v.$primary_1;
+      border: none;
+      cursor: pointer;
+    }
+
+    #modalImgWrapper {
+      grid-column: 2 / 6;
+      grid-row: 3 / 10;
+      display: flex;
+      justify-content: center;
+      #modalImg {
+        // width: 100%;
+        height: 100%;
+        border: 3px solid v.$primary_1;
+      }
+    }
+
+    #productModalAmountLabel {
+      grid-row: 11/11;
+      grid-column: 2/4;
+      justify-self: center;
+      align-self: flex-end;
+      font-size: 1rem;
+      font-weight: bold;
+      grid-column: 2/6;
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      // !styla sen när du kan se producten
+    }
+
+    #productModalAmount {
+      width: 70%;
+      grid-row: 12/12;
+      grid-column: 2/5;
+      justify-self: center;
+      align-self: center;
+      font-family: Nunito sans-serif;
+      grid-column: 3/5;
+    }
+    #modalTotal {
+      grid-column: 1/5;
+      justify-self: center;
+      align-self: center;
+      font-weight: bolder;
+      grid-row: 13/13;
+      grid-column: 2/6;
+    }
+
+    #addProduct {
+      color: v.$primary_2;
+      background-color: v.$primary_3;
+      padding: 1% 5%;
+      border-radius: 5px;
+      border: 1px solid black;
+      grid-column: 2 / 6;
+      justify-self: center;
+      align-self: center;
+      font-weight: bolder;
+      grid-row: 15;
+      grid-row: 16 / 16;
+      padding: 3% 20%;
+      font-size: 1.1rem;
+      font-family: v.$all_text;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    #modalTitle {
+      font-family: v.$first_page_font;
+      font-weight: bolder;
+      font-size: 1.8rem;
+      margin-block-start: 0;
+      margin-block-end: 0;
+      grid-column: 2 / 6;
+      grid-row: 2 / 1;
+      text-align: center;
+      align-self: center;
+    }
+    #modeldesc {
+      font-family: v.$all_text;
+      font-size: 1.3rem;
+      margin-block-start: 0;
+      margin-block-end: 0;
+      grid-column: 2 / 6;
+      grid-row: 14;
+      gap: 20px;
+      text-align: center;
+      align-self: center;
+    }
+
+    .showProduct-modal {
+      display: flex;
+      justify-content: space-evenly;
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+}
