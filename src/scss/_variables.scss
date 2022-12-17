@@ -1,11 +1,13 @@
-// color
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@1,6..96,700&display=swap");
+
 $primary_1: #000;
 $primary_2: #fff;
 $primary_3: #b2b2b2;
 $primary_4: #181818;
 $primary_5: #e2e2e2;
 $primary_6: #2a4b55; // hemsidans färg
-$color-transparent: rgb(42, 75, 85);
+$color-transparent: #496d7c;
 $dark: #374151;
 $darker: #1f2937;
 $darker: #1f2937;
@@ -23,5 +25,7 @@ $tablet_breakpoints: 768px;
 $desktop_breakpoints: 1200px;
 
 // font family
-$header_font: "Monoton", cursive;
+// $header_font: "Monoton", cursive;
 $first_page_font: "Josefin Sans", sans-serif;
+$header_font: "EB Garamond", serif;
+$all_text: "Bodoni Moda", serif;

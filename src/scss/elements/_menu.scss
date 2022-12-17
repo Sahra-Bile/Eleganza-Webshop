@@ -8,7 +8,7 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: v.$primary_1;
+  background-color: v.$primary_4;
 
   .container-desktop {
     // desktop nav
@@ -29,7 +29,7 @@ header {
   #menu-icon {
     font-size: 1.7rem;
     margin: 0;
-    color: #fff;
+    color: v.$primary_2;
   }
 
   &__title {
@@ -38,30 +38,19 @@ header {
     display: inline;
     margin: 10px;
     padding: 0;
-    color: #fff;
+    color: v.$primary_2;
   }
 
-  #cart {
-    position: relative;
-    font-size: 30px;
+  #shopping-cart-phone {
+    font-size: 3rem;
     gap: 40px;
     display: block;
     border-bottom-style: outset;
     background-color: v.$primary_2;
-    color: v.$primary_1;
+    color: v.$primary_6;
     left: 40px;
   }
 
-  #cartAmount {
-    position: absolute;
-    top: -15px;
-    right: -10px;
-    font-size: 16px;
-    background-color: v.$primary_6;
-    color: v.$primary_2;
-    padding: 5px;
-    border-radius: 5px;
-  }
   &__hamburgare {
     display: none;
     width: 100vw;

@@ -12,7 +12,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  opacity: 1;
+  opacity: 0;
   pointer-events: none;
   z-index: 100;
   @include m.tablet {
@@ -107,13 +107,13 @@
       grid-row: 16 / 16;
       padding: 3% 20%;
       font-size: 1.1rem;
-      font-family: sans-serif;
+      font-family: v.$all_text;
       font-weight: 400;
       text-transform: uppercase;
     }
 
     #modalTitle {
-      font-family: Nunito sans-serif;
+      font-family: v.$first_page_font;
       font-weight: bolder;
       font-size: 1.8rem;
       margin-block-start: 0;
@@ -124,7 +124,7 @@
       align-self: center;
     }
     #modeldesc {
-      font-family: sans-serif;
+      font-family: v.$all_text;
       font-size: 1.3rem;
       margin-block-start: 0;
       margin-block-end: 0;

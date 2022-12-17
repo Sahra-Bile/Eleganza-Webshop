@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- styler footer med bootstrap och och alla model-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous" />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+      defer></script>
+
+    <link rel="stylesheet" href="/src/scss/main.scss" />
+
+    <!-- hämtat menu icon -->
+    <script
+      src="https://kit.fontawesome.com/ff901abd43.js"
+      crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+
+    <script
+      src="https://kit.fontawesome.com/bc5eefc1c7.js"
+      crossorigin="anonymous"></script>
+
+    <script src="/src/ts/main.ts" type="module" defer></script>
+
+    <title>BookLizaz Shop</title>
+  </head>
+  <body>
+    <header>
+      <!-- home navbar i mobil läge -->
+      <nav class="container-phone" id="phone">
+        <i class="fas fa-bars" id="menu-icon"></i>
+        <h1 class="container-phone__title">BookLizaz</h1>
+        <i class="fas fa-shopping-cart" id="shopping-cart-phone"></i>
+        <div class="container-phone__hamburgare" id="hamburger">
+          <i class="fas fa-times" id="close"></i>
+
+          <ul class="container-phone__list">
+            <li id="heading">BookLizaz</li>
+            <li class="conatiner-phone__list__item">
+              <a
+                class="conatiner-phone__list__item__links"
+                href="/src/index.html"
+                >home</a
+              >
+            </li>
+            <li class="conatiner-phone__list__item">
+              <a
+                class="conatiner-phone__list__item__links"
+                href="./products.html"
+                >products</a
+              >
+            </li>
+            <li class="conatiner-phone__list__item">
+              <a class="conatiner-phone__list__item__links" href="#about"
+                >about</a
+              >
+            </li>
+            <li class="conatiner-phone__list__item">
+              <a class="conatiner-phone__list__item__links" href="contact.html"
+                >contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- home navbar i desktop läge -->
+      <nav class="container-desktop" id="desktop">
+        <h1 class="conatiner-desktop__Eleganza" id="title">BookLizaz</h1>
+
+        <ul class="conatiner-desktop__list">
+          <li class="conatiner-desktop__list__item">
+            <a class="conatiner-desktop__list__item__links" href="#home"
+              >home</a
+            >
+          </li>
+          <li class="conatiner-desktop__list__item">
+            <a
+              class="conatiner-desktop__list__item__links"
+              href="/src/html/products.html"
+              >products</a
+            >
+          </li>
+          <li class="conatiner-desktop__list__item">
+            <a
+              class="conatiner-desktop__list__item__links"
+              href="/src/index.html"
+              >about</a
+            >
+          </li>
+          <li class="conatiner-desktop__list__item">
+            <a
+              class="conatiner-desktop__list__item__links"
+              href="/src/html/contact.html"
+              >contact</a
+            >
+          </li>
+        </ul>
+        <i class="fas fa-shopping-cart" id="shopping-cart"></i>
+      </nav>
+    </header>
+
+    <!-- contact Us-->
+
+    <div class="bgr">
+      <p class="bgr__text">
+        Can’t find what you’re looking for? <br />
+        Contact us and we will be happy to help you <br />
+        with what you are looking for!
+      </p>
+    </div>
+    <div class="overlay">
+      <form class="overlay__form">
+        <h1 class="overlay__form__heading">Contact Us</h1>
+        <label for="name" class="overlay__form__label"> Name:</label>
+        <input
+          class="overlay__form__input"
+          type="text"
+          id="name"
+          placeholder="Your name" />
+        <small class="error"></small>
+        <label for="email" class="overlay__form__label"> Email:</label>
+        <input
+          class="overlay__form__input"
+          type="text"
+          id="email"
+          placeholder="Your email" />
+        <small class="error"></small>
+
+        <label for="message" class="overlay__form__label"> Message:</label>
+        <textarea id="message" cols="10" rows="6" placeholder="Your message">
+        </textarea>
+        <small class="error"></small>
+
+        <div class="overlay__form__center">
+          <input
+            class="overlay__form__center__submit"
+            type="submit"
+            value="Send message" />
+          <p id="success"></p>
+        </div>
+      </form>
+    </div>
+
+    <!--Footer-->
+    <footer id="contact" class="footer">
+      <div class="row container mx-auto pt-5" id="contact">
+        <div class="footer-one col-lg-3 col-md-6 col-sm-12">
+          <p class="pt-3">
+            We provide the best products for the most affordable prices
+          </p>
+        </div>
+
+        <div class="footer-one col-lg-3 col-md-6 col-sm-12">
+          <h5 class="pb-2">Contact Us</h5>
+
+          <div>
+            <h6 class="text-uppercase">Address</h6>
+            <p>1234 Street Name, City</p>
+          </div>
+          <div>
+            <h6 class="text-uppercase">Phone</h6>
+            <p>123 456 7890</p>
+          </div>
+          <div>
+            <h6 class="text-uppercase">Email</h6>
+            <p>contact@BookLizaz.com</p>
+          </div>
+        </div>
+        <div class="footer-one col-lg-3 col-md-6 col-sm-12">
+          <h5 class="pb-2">Instagram</h5>
+          <div class="row">
+            <img
+              src="https://s1.adlibris.com/images/48050781/cant-hurt-me.jpg"
+              class="img-fluid w-25 h-100 m-2" />
+            <img
+              src="https://s1.adlibris.com/images/756714/start-with-why.jpg"
+              class="img-fluid w-25 h-100 m-2" />
+            <img
+              src="https://s1.adlibris.com/images/62922708/youve-reached-sam.jpg"
+              class="img-fluid w-25 h-100 m-2" />
+            <img
+              src="https://s1.adlibris.com/images/62196331/verity.jpg"
+              class="img-fluid w-25 h-100 m-2" />
+            <img
+              src="https://s1.adlibris.com/images/61501171/book-lovers.jpg"
+              width="50"
+              height="50"
+              class="img-fluid w-25 h-100 m-2" />
+            <img
+              src="https://s2.adlibris.com/images/54065912/when-the-sky-fell-on-splendor.jpg"
+              width="50"
+              height="50"
+              class="img-fluid w-25 h-100 m-2" />
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright mt-5">
+        <div class="row container mx-auto">
+          <div class="col-lg-3 col-md-5 col-sm-12 mb-4">
+            <img
+              src="https://s2.adlibris.com/images/58963733/you-and-me-on-vacation.jpg" />
+          </div>
+          <div class="col-lg-3 col-md-5 col-sm-12 mb-4 text-nowrap mb-2">
+            <p>E-commerce BookLizaz &copy; 2022 All Right Reserved</p>
+          </div>
+          <div class="col-lg-3 col-md-5 col-sm-12 mb-4">
+            <a href="https://www.facebook.com/"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="https://www.instagram.com/"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://twitter.com/intent?"
+              ><i class="fab fa-twitter"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
