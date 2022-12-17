@@ -1,41 +1,83 @@
 @use "../variables" as v;
 @use "../mixins" as m;
 
-.about-container {
-  min-height: 50vh;
-  background-color: v.$primary_6;
-  color: v.$primary_2;
-  font-family: Montserrat, sans-serif;
-  font-weight: 700;
+.about {
+  width: 100%;
+  height: 100%;
   text-align: center;
+  font-family: v.$all_text;
+  padding: 10% 10%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: v.$first_page_font sans-serif;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background: #000;
+  background-color: rgb(0, 0, 0);
+  background-image: url("https://i.pinimg.com/564x/77/82/21/77822195d831202eb2f3d70c3313dcd9.jpg");
+  @include m.tablet {
+    width: 100%;
+  }
+  @include m.desktop {
+    width: 100%;
+  }
 
-  &__us {
-    width: auto;
-    max-width: 900px;
-    padding: 20px 30px;
-    border-radius: 10px;
-    background-color: v.$primary_1;
-    box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.2);
+  &__inner-section {
+    width: 95%;
+    float: right;
+    // background: hsla(330, 28%, 89%, 0.3);
+    // padding: 40px;
+    // box-shadow: 13px 12px 8px rgba(0, 0, 0, 0.3);
     @include m.desktop {
-      margin: auto 20px;
-      max-width: 1500px;
+      padding: 80px;
+    }
+
+    @include m.tablet {
+      width: 100%;
+      padding: 60px;
     }
 
     &__title {
-      font-size: 2.75rem;
-      @include m.desktop {
-        font-size: 4rem;
-      }
+      margin-bottom: 30px;
+      font-size: 3rem;
+      text-align: center;
+      font-weight: 900;
+      color: v.$primary_2;
     }
     &__text {
-      margin-top: 15px;
-      font-size: 2rem;
-      font-weight: 400;
-      font-style: italic;
+      font-size: 1.7rem;
+      font-weight: bold;
+      font-family: v.$header_font;
+      color: v.$primary_2;
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 40px;
+      @include m.desktop {
+        font-size: 2rem;
+      }
+    }
+    #contactBtn {
+      font-size: 1.5rem;
+      text-align: center;
+      letter-spacing: 2px;
+      border: none;
+      border-radius: 20px;
+      padding: 30px;
+      width: 200px;
+      background-color: v.$primary_6;
+      color: v.$primary_2;
+      cursor: pointer;
+
+      &:hover {
+        transition: 1s;
+        background-color: #ecf5f5;
+        color: #00999c;
+      }
+
+      @include m.tablet {
+        font-size: 19px;
+        padding: 10px;
+        width: 250px;
+        font-size: 2rem;
+      }
     }
   }
 }
