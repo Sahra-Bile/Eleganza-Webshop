@@ -14,8 +14,6 @@
       integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
       crossorigin="anonymous"
       defer></script>
-
-    <link rel="stylesheet" href="/src/scss/main.scss" />
     <script
       src="https://kit.fontawesome.com/ff901abd43.js"
       crossorigin="anonymous"></script>
@@ -25,6 +23,8 @@
     <script
       src="https://kit.fontawesome.com/bc5eefc1c7.js"
       crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/src/scss/main.scss" />
 
     <script src="/src/ts/productPage.ts" type="module" defer></script>
 
@@ -54,7 +54,9 @@
       <nav class="container-phone" id="phone">
         <i class="fas fa-bars" id="menu-icon"></i>
         <h1 class="container-phone__title">BookLizaz</h1>
-        <i class="fas fa-shopping-cart" id="shopping-cart-phone"></i>
+        <i
+          class="fas fa-shopping-cart shoppingCartButton"
+          id="shopping-cart-phone"></i>
 
         <div class="container-phone__hamburgare" id="hamburger">
           <i class="fas fa-times" id="close"></i>
@@ -120,7 +122,9 @@
             >
           </li>
         </ul>
-        <i class="fas fa-shopping-cart" id="shopping-cart"></i>
+        <i
+          class="fas fa-shopping-cart shoppingCartButton"
+          id="shopping-cart"></i>
       </nav>
     </header>
     <!-- hero for product page -->
@@ -218,5 +222,28 @@
         </div>
       </div>
     </footer>
+
+    <div id="dropdown-wrapper">
+      <div id="checkout-dropdown">
+        <div id="checkout-header">
+          <i class="fas fa-times" id="close-checkout"></i>
+          <h1><i class="fas fa-shopping-cart"></i>your shopping cart</h1>
+        </div>
+        <div id="empty-container">
+          <p id="empty-text">
+            Your cart is empty, tap an item and add it to the cart to continue!
+          </p>
+        </div>
+        <div id="checkout-products-container"></div>
+        <div id="checkout-info">
+          <div id="price-info">
+            <div id="total-price"></div>
+          </div>
+          <form action="shoppingcart.html">
+            <button type="submit" id="add-button">checkout</button>
+          </form>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

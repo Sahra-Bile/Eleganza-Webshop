@@ -56,10 +56,12 @@ body {
 
   .product-main {
     margin: 0 auto;
+    margin-top: 2vh;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    gap: 1%;
+    height: 100%;
+    gap: 0.5%;
     justify-content: space-evenly;
     @include m.tablet {
       width: 95%;
@@ -67,23 +69,25 @@ body {
     @include m.desktop {
       width: 80%;
       margin-top: 2vh;
+      min-width: 600px;
+      gap: 1%;
     }
 
     &__product {
-      background-color: v.$primary_3;
       width: 48%;
-      height: 42vh;
+      height: 34vh;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      background-color: v.$primary_3;
       box-shadow: black;
       margin-top: 3%;
       border-radius: 5px;
       position: relative;
       @include m.tablet {
-        width: 32%;
-        height: 50vh;
+        width: 24%;
+        height: 35vh;
       }
       @include m.desktop {
         width: 24%;
@@ -91,28 +95,46 @@ body {
       }
       &__img-wrapper {
         width: 80%;
-        height: 60%;
+        height: 70%;
         margin: 0;
         position: relative;
 
         &__img {
-          width: 100%;
-          height: 100%;
+          width: 90%;
+          height: 90%;
           object-fit: contain;
           object-position: top;
+          @include m.desktop {
+            width: 100%;
+            height: 90%;
+            margin-top: 15px;
+          }
         }
       }
 
-      &__addCart {
-        @include m.button_1;
+      &__moreInfoBtn {
+        // @include m.button_1;
         width: 100%;
+        padding: 3% 20%;
+        font-size: 1.1rem;
+        color: white;
+        background-color: v.$primary_3;
+        font-family: v.$all_text;
+        font-weight: 400;
+        text-transform: uppercase;
       }
 
       &__price {
         font-family: v.$first_page_font;
         color: v.$primary_2;
-        font-size: 2rem;
+        font-size: 1rem;
+        font-weight: bold;
         margin: auto 0;
+        padding-top: 2%;
+
+        @include m.desktop {
+          font-size: 1.8rem;
+        }
       }
       &__desc {
         text-align: center;
@@ -130,13 +152,11 @@ body {
 
       &__product-title {
         font-family: v.$first_page_font;
+        font-size: 1rem;
         padding-top: 2%;
-        margin-top: 2%;
-        font-size: 1.3rem;
-        font-weight: bold;
         color: v.$primary_2;
         @include m.desktop {
-          font-size: 1.3rem;
+          font-size: 1.6rem;
         }
       }
     }

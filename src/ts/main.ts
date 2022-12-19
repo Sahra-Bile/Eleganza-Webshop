@@ -1,13 +1,7 @@
-
-import { loadFromlocalStorage } from './functions/loadToAndFromLocalStorage';
-import { activateMenu } from './functions/menu';
+import { activateMenu } from "./functions/menu";
 
 window.onload = () => {
-activateMenu();
+  activateMenu();
 
-
-console.log( "finns inget där" +loadFromlocalStorage());
-
-
-}
-
+  // console.log( "finns inget där" +loadFromlocalStorage());
+};
