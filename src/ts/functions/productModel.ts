@@ -1,4 +1,3 @@
-import { CartItem } from "../models/CartItem";
 import { Product } from "../models/Product";
 import { ProductDetails } from "../models/ProductData";
 import {} from "./createProducts";
