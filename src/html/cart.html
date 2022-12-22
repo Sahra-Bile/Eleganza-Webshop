@@ -26,7 +26,7 @@
       src="https://kit.fontawesome.com/bc5eefc1c7.js"
       crossorigin="anonymous"></script>
 
-    <script src="/src/ts/addToCartPage.ts" type="module" defer></script>
+    <script src="/src/ts/productPage.ts" type="module" defer></script>
 
     <title>BookLizaz Shop</title>
   </head>
@@ -37,17 +37,17 @@
         <i class="fas fa-bars" id="menu-icon"></i>
         <h1 class="container-phone__title">BookLizaz</h1>
 
-        <a href="./products.html">
-          <div class="conatiner-phone__icons" id="cart">
-            <i class="fas fa-shopping-cart" id="shopping-cart-phone"></i>
+        <a href="./cart.html">
+          <div class="cart">
+            <i class="bi bi-cart2" id="cart"></i>
+            <div id="cartAmount" class="cartAmount">0</div>
           </div>
         </a>
-
         <div class="container-phone__hamburgare" id="hamburger">
           <i class="fas fa-times" id="close"></i>
 
           <ul class="container-phone__list">
-            <li id="heading">Eleganza</li>
+            <li id="heading">BookLizaz</li>
             <li class="conatiner-phone__list__item">
               <a
                 class="conatiner-phone__list__item__links"
@@ -88,7 +88,9 @@
             >
           </li>
           <li class="conatiner-desktop__list__item">
-            <a class="conatiner-desktop__list__item__links" href="#"
+            <a
+              class="conatiner-desktop__list__item__links"
+              href="./products.html"
               >products</a
             >
           </li>
@@ -105,22 +107,26 @@
             >
           </li>
         </ul>
-        <a href="#">
-          <div class="conatiner-desktop__icons" id="cart">
-            <i class="fas fa-shopping-cart" id="shopping-cart"></i>
+        <a href="./cart.html">
+          <div class="cart">
+            <i class="bi bi-cart2" id="cart"></i>
+            <div id="cartAmount2" class="cartAmount">0</div>
           </div>
         </a>
       </nav>
     </header>
 
-    <!-- öppna från korgen -->
-    <div class="cart-container">
-      <div class="cart-container__checkout-products">
-        <div class="imgWrapper">
-          <img
-            src="https://s1.adlibris.com/images/28226190/rich-dad-poor-dad.jpg"
-            alt="" />
-        </div>
+    <div id="label" class="text-center"></div>
+
+    <!-- öppna korgen och gå vidare till kassan-->
+    <div id="shoppingCart" class="shop">
+      <div class="shop__heading">
+        <h1 class="shop-main__you-cart">
+          <i class="bi bi-cart2"></i>your shopping cart
+        </h1>
+        <button id="close-button">
+          <i class="fas fa-times"></i>
+        </button>
       </div>
     </div>
 
@@ -135,10 +141,7 @@
 
         <div class="footer-one col-lg-3 col-md-6 col-sm-12">
           <h5 class="pb-2">Contact Us</h5>
-          <!-- <img
-            class="Eleganza-img"
-            src="/src/assert/Vanilla-1s-280px.svg"
-            alt="" /> -->
+
           <div>
             <h6 class="text-uppercase">Address</h6>
             <p>1234 Street Name, City</p>

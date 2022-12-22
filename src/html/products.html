@@ -3,6 +3,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- styler footer med bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -14,24 +15,22 @@
       integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
       crossorigin="anonymous"
       defer></script>
-    <script
-      src="https://kit.fontawesome.com/ff901abd43.js"
-      crossorigin="anonymous"></script>
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+
     <script
       src="https://kit.fontawesome.com/bc5eefc1c7.js"
       crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="/src/scss/main.scss" />
-
     <script src="/src/ts/productPage.ts" type="module" defer></script>
 
     <title>BookLizaz Shop</title>
   </head>
   <body>
-    <!-- model för mer info och för att kunna lägga en produkt i korgen  -->
+    <!-- model för mer info details  -->
     <div id="modalContainer">
       <div id="modalBody">
         <button id="closeProductsModal"><i class="fas fa-times"></i></button>
@@ -49,14 +48,19 @@
         <button id="addProduct">add to cart</button>
       </div>
     </div>
+
     <header>
       <!-- home navbar i mobil läge -->
       <nav class="container-phone" id="phone">
         <i class="fas fa-bars" id="menu-icon"></i>
         <h1 class="container-phone__title">BookLizaz</h1>
-        <i
-          class="fas fa-shopping-cart shoppingCartButton"
-          id="shopping-cart-phone"></i>
+
+        <a href="cart.html">
+          <div class="cart">
+            <i class="bi bi-cart2" id="cart"></i>
+            <div id="cartAmount" class="cartAmount">0</div>
+          </div>
+        </a>
 
         <div class="container-phone__hamburgare" id="hamburger">
           <i class="fas fa-times" id="close"></i>
@@ -122,11 +126,12 @@
             >
           </li>
         </ul>
-        <div id="shopCart">
-          <i
-            class="fas fa-shopping-cart shoppingCartButton"
-            id="shopping-cart"></i>
-        </div>
+        <a href="cart.html">
+          <div class="cart">
+            <i id="cart" class="bi bi-cart2"></i>
+            <div id="cartAmount2" class="cartAmount">0</div>
+          </div>
+        </a>
       </nav>
     </header>
     <!-- hero for product page -->
@@ -144,8 +149,6 @@
     </div>
     <!-- load products -->
     <div class="product-main" id="main-products"></div>
-
-    <!-- öppna korgen och gå vidare till kassan-->
 
     <!--Footer-->
     <footer id="contact" class="footer">
@@ -225,26 +228,15 @@
       </div>
     </footer>
 
-    <div id="dropdown-wrapper">
-      <div id="checkout-dropdown">
-        <div id="checkout-header">
-          <i class="fas fa-times" id="close-checkout"></i>
-          <h1><i class="fas fa-shopping-cart"></i>your shopping cart</h1>
-        </div>
-        <div id="empty-container">
-          <p id="empty-text">
-            Your cart is empty, tap an item and add it to the cart to continue!
-          </p>
-        </div>
-        <div id="checkout-products-container"></div>
-        <div id="checkout-info">
-          <div id="price-info">
-            <div id="total-price"></div>
-          </div>
-          <form action="shoppingcart.html">
-            <button type="submit" id="add-button">checkout</button>
-          </form>
-        </div>
+    <!-- öppna korgen och gå vidare till kassan-->
+    <div id="shoppingCart" class="shop">
+      <div class="shop__heading">
+        <h1 class="shop-main__you-cart">
+          <i class="bi bi-cart2"></i>your shopping cart
+        </h1>
+        <button id="close-button">
+          <i class="fas fa-times"></i>
+        </button>
       </div>
     </div>
   </body>

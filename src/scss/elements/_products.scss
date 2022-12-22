@@ -150,6 +150,11 @@ body {
         }
       }
 
+      &__addBtn {
+        width: 100%;
+        @include m.button_1;
+      }
+
       &__product-title {
         font-family: v.$first_page_font;
         font-size: 1rem;

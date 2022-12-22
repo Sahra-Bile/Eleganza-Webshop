@@ -1,6 +1,5 @@
 import { Product } from "../models/Product";
-import { ProductDetails } from "../models/ProductData";
-import {} from "./createProducts";
+import { ProductDetails } from "../models/productData";
 
 //! funtion för att öppna en produkt
 export const displayModelProducts = (id: number) => {

@@ -1,12 +1,7 @@
-import { ProductDetails } from "../models/ProductData";
+import { CartItem } from "../models/CartItem";
+import { ProductDetails } from "../models/productData";
+import { displayCart, inCart } from "./productAddToCart";
 import { displayModelProducts } from "./productModel";
-
-let addButton: HTMLButtonElement = document.getElementById(
-  "addProduct"
-) as HTMLButtonElement;
-let modalContainer: HTMLDivElement = document.getElementById(
-  "modalContainer"
-) as HTMLDivElement;
 
 export function createHTMLForProducts() {
   let mainProducts: HTMLDivElement = document.getElementById(
@@ -27,11 +22,13 @@ export function createHTMLForProducts() {
     let desc: HTMLParagraphElement = document.createElement("p");
 
     let price: HTMLParagraphElement = document.createElement("p");
+    let addButton: HTMLButtonElement = document.createElement("button");
 
     ImgTag.src = ProductDetails[i].url;
     title.innerHTML = ProductDetails[i].title;
     desc.innerHTML = ProductDetails[i].desc;
     price.innerHTML = `${ProductDetails[i].price}.SEK`;
+    addButton.innerHTML = "add to cart";
 
     //! placera dem
 
@@ -41,16 +38,28 @@ export function createHTMLForProducts() {
     title.classList.add("product-main__product__product-title");
     price.classList.add("product-main__product__price");
     ImgTag.classList.add("product-main__product__img-wrapper__img");
+    addButton.classList.add("product-main__product__addBtn");
     mainProducts.appendChild(productDiv);
     productDiv.appendChild(title);
     productDiv.appendChild(imgWrapper);
     imgWrapper.appendChild(ImgTag);
     productDiv.appendChild(price);
-
-    //!*Tar ID för den klickade produkten och anropar en funktion som visar en modal med produkten vilket index är lika med det hämtade ID:t.
+    productDiv.appendChild(addButton);
 
     imgWrapper.addEventListener("click", () => {
       displayModelProducts(ProductDetails[i].id);
+    });
+    addButton.addEventListener("click", () => {
+      let existingItem: CartItem | undefined = inCart.find(
+        (inCart) => ProductDetails[i].id === inCart.product.id
+      );
+      if (existingItem) {
+        existingItem.amount++;
+        displayCart();
+      } else {
+        inCart.push(new CartItem(ProductDetails[i], 1));
+        displayCart();
+      }
     });
   }
 }
