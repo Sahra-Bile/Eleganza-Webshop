@@ -1,4 +1,3 @@
-import { Product } from "../models/Product";
 import { ProductDetails } from "../models/productData";
 
 //! funtion för att öppna en produkt
@@ -59,9 +58,3 @@ export const displayModelProducts = (id: number) => {
     modalContainer.className = "";
   });
 };
-
-export let cartList: Product[] = [];
-
-export function saveToLS() {
-  localStorage.setItem("cartList", JSON.stringify(cartList));
-}

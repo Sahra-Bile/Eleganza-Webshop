@@ -2,97 +2,125 @@
 @use "../mixins" as m;
 
 .shop {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: green;
-  width: 70%;
-  height: 60vh;
-  z-index: 9;
-  // position: fixed;
+  width: 70vw;
+  height: 100%;
+  background-color: v.$primary_5;
+  display: none;
+  position: absolute;
   top: 0;
+  right: 0;
   @include m.desktop {
-    width: 400px;
+    min-width: 600px;
     transition: transform 0.5s ease-in;
+  }
+  @include m.tablet {
+    width: 60vw;
+  }
+
+  @include m.largeSmartPhone {
+    width: 50vw;
   }
 
   &__item-container {
-    display: display flex;
+    width: 100%;
+    max-height: 72%;
+    margin-top: 90px;
+    display: flex;
+    overflow: auto;
+    flex-direction: column;
+    align-items: center;
+
     &__cards {
-      height: 100vh;
-      width: 100%;
-      position: absolute;
-      top: 0;
-      right: 0;
-      background-color: #fff !important;
-      z-index: 20;
+      height: 100px;
+      width: 80%;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: v.$primary_1;
 
       &__imgs {
         height: 50px;
       }
 
       &__title {
-        font-size: 1rem;
-        font-family: sans-serif;
+        width: 40%;
+        font-family: v.$all_text;
       }
       &__price {
-        font-size: 0.8rem;
-        font-family: sans-serif;
-        font-weight: 600;
-        color: black;
+        width: 20%;
+        font-size: 1rem;
       }
       &__btnsContainer {
-        display: flex;
         width: 20%;
+        display: flex;
         justify-content: space-between;
+        @include m.largeSmartPhone {
+        }
+
+        &__totalAmount {
+          font-size: 2rem;
+          text-align: center;
+          color: v.$primary_2;
+        }
+
+        &__plusBtn,
+        &__minusBtn {
+          border: none;
+          font-size: 1rem;
+          background-color: v.$primary_1;
+          color: v.$primary_2;
+          padding: 3px 5px;
+        }
       }
     }
   }
   &__checkout-div {
-    height: 70%;
-    width: 100%;
-    display: block;
-    margin-top: 10px;
-    overflow-y: scroll;
+    height: 100px;
+    border-top: 1px solid v.$primary_1;
+    justify-content: center;
+    display: flex;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
 
     &__checkoutBtn {
-      width: 50%;
-      height: 50%;
-      margin-top: 10px;
+      width: 80%;
+      height: 80%;
+      color: v.$primary_2;
+      background-color: v.$primary_1;
       border: none;
-      background-color: yellow;
-      color: white;
-      display: inline;
+      margin-top: 10px;
+      text-transform: uppercase;
     }
-
-    // button {
-    //   border: none;
-    //   font-size: 1rem;
-    //   background-color: gray;
-    //   color: white;
-    //   padding: 3px 5px;
-    // }
   }
 }
 
 .shop__heading {
-  background-color: red;
-  width: 50%;
-  height: 20%;
-  margin: 0;
-  text-align: center;
-  font-family: sans-serif;
-  position: relative;
-  color: #fff;
+  border-bottom: 1px solid v.$primary_2;
+  background-color: v.$primary_1;
+  font-family: v.$first_page_font;
+  color: v.$primary_2;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  padding: 10px;
+  font-size: 20px;
+  top: 10px;
+  left: 10px;
+  right: 10px;
 }
 .block {
   display: flex !important;
   transition: transform 0.5s ease-in;
 }
+
 #close-button {
-  position: absolute;
-  right: 2%;
-  font-size: 1.2rem;
   cursor: pointer;
+  background: none;
+  border: none;
+  color: v.$primary_2;
 }

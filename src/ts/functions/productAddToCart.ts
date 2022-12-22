@@ -1,4 +1,5 @@
 import { CartItem } from "../models/CartItem";
+import { Product } from "../models/Product";
 
 export let inCart: CartItem[] = [];
 
@@ -36,18 +37,18 @@ checkoutButton.innerHTML = " Checkout " + totalSum.toString() + " " + " SEK";
 
 export function displayCart(): void {
   saveCartToLs();
-
+  totalSum = 0;
+  counter = 0;
   ItemsContainer.innerHTML = "";
   checkoutButton.innerHTML = "";
   cartAmount.innerHTML = "";
-  totalSum = 0;
-  counter = 0;
 
   for (let i = 0; i < inCart.length; i++) {
     let productCard: HTMLDivElement = document.createElement("div");
+    let imgWrapper: HTMLDivElement = document.createElement("div");
     let productImg: HTMLImageElement = document.createElement("img");
-    let productTitle: HTMLHeadingElement = document.createElement("h1");
-    let productPrice: HTMLParagraphElement = document.createElement("p");
+    let productTitle: HTMLHeadingElement = document.createElement("h6");
+    let productPrice: HTMLHeadingElement = document.createElement("h6");
     let ButtonsContainer: HTMLDivElement = document.createElement("div");
     let minusButton: HTMLButtonElement = document.createElement("button");
     let totalAmount: HTMLParagraphElement = document.createElement("p");
@@ -55,7 +56,7 @@ export function displayCart(): void {
 
     productImg.src = inCart[i].product.url;
     productTitle.innerHTML = inCart[i].product.title;
-    productPrice.innerHTML = inCart[i].product.price.toString() + "SEK";
+    productPrice.innerHTML = inCart[i].product.price.toString() + "$";
     plusButton.innerHTML = "<i class='fa fa-plus'</i>";
     minusButton.innerHTML = "<i class='fa fa-minus'</i>";
     checkoutButton.innerHTML += inCart[i].product.price.toString();
@@ -69,9 +70,11 @@ export function displayCart(): void {
     ButtonsContainer.appendChild(minusButton);
     ButtonsContainer.appendChild(totalAmount);
     ButtonsContainer.appendChild(plusButton);
+    productCard.appendChild(imgWrapper);
 
     productCard.classList.add("shop__item-container__cards");
-    productImg.classList.add("shop__item-container__card__imgs");
+    imgWrapper.classList.add("shop__item-container__cards__img-wrapper");
+    productImg.classList.add("shop__item-container__cards__imgs");
     productTitle.classList.add("shop__item-container__cards__title");
     productPrice.classList.add("shop__item-container__cards__price");
     ButtonsContainer.classList.add(
@@ -88,14 +91,12 @@ export function displayCart(): void {
       "shop__item-container__cards__btnsContainer__totalAmount"
     );
 
-    counter += inCart[i].amount;
-    cartAmount.innerHTML = " " + counter.toString();
-
-    counter += inCart[i].amount;
-    cartAmount2.innerHTML = " " + counter.toString();
-
     totalSum += inCart[i].product.price * inCart[i].amount;
     checkoutButton.innerHTML = "Checkout " + totalSum.toString() + " " + " SEK";
+
+    counter += inCart[i].amount;
+    cartAmount.innerHTML = " " + counter.toString();
+    cartAmount2.innerHTML = " " + counter.toString();
 
     plusButton.addEventListener("click", () => {
       inCart[i].amount++;
@@ -118,25 +119,28 @@ function saveCartToLs() {
   localStorage.setItem("cartList", JSON.stringify(inCart));
 }
 
-// function getCartFromLs() {
-//   let itemFromLs: string = localStorage.getItem("cartList") || "";
-//   let itemObject: CartItem[] = JSON.parse(itemFromLs);
+function getCartFromLs() {
+  let itemFromLs: string = localStorage.getItem("cartList") || "[]";
+  let itemObject: CartItem[] = JSON.parse(itemFromLs);
 
-//   inCart = itemObject.map((cart: CartItem) => {
-//     return new CartItem(
-//       new Product(
-//         cart.product.id,
-//         cart.product.url,
-//         cart.product.title,
-//         cart.product.desc,
-//         cart.product.price,
-//         cart.product.amount
-//       ),
-//       cart.amount
-//     );
-//   });
-//   displayCart();
-//   console.log(inCart);
-// }
+  //*omvandlar strängar som jag frå från ls till ett objekt igen
+  inCart = itemObject.map((cart: CartItem) => {
+    return new CartItem(
+      new Product(
+        cart.product.id,
+        cart.product.url,
+        cart.product.title,
+        cart.product.desc,
+        cart.product.price,
+        cart.product.amount
+      ),
+      cart.amount
+    );
+  });
+  displayCart();
+  console.log("this is strang", itemFromLs);
+  console.log("this is object ", itemObject);
+  console.log("denna är omvandlat objekt från strängar", inCart);
+}
 
-// getCartFromLs();
+getCartFromLs();

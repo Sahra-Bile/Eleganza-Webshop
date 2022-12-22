@@ -27,7 +27,7 @@ export function createHTMLForProducts() {
     ImgTag.src = ProductDetails[i].url;
     title.innerHTML = ProductDetails[i].title;
     desc.innerHTML = ProductDetails[i].desc;
-    price.innerHTML = `${ProductDetails[i].price}.SEK`;
+    price.innerHTML = `${ProductDetails[i].price}.$`;
     addButton.innerHTML = "add to cart";
 
     //! placera dem
@@ -40,9 +40,9 @@ export function createHTMLForProducts() {
     ImgTag.classList.add("product-main__product__img-wrapper__img");
     addButton.classList.add("product-main__product__addBtn");
     mainProducts.appendChild(productDiv);
-    productDiv.appendChild(title);
     productDiv.appendChild(imgWrapper);
     imgWrapper.appendChild(ImgTag);
+    productDiv.appendChild(title);
     productDiv.appendChild(price);
     productDiv.appendChild(addButton);
 

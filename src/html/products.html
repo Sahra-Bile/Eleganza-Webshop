@@ -55,12 +55,10 @@
         <i class="fas fa-bars" id="menu-icon"></i>
         <h1 class="container-phone__title">BookLizaz</h1>
 
-        <a href="cart.html">
-          <div class="cart">
-            <i class="bi bi-cart2" id="cart"></i>
-            <div id="cartAmount" class="cartAmount">0</div>
-          </div>
-        </a>
+        <div class="cart" id="shopping-cart">
+          <i class="bi bi-cart2" id="cart"></i>
+          <div id="cartAmount" class="cartAmount">0</div>
+        </div>
 
         <div class="container-phone__hamburgare" id="hamburger">
           <i class="fas fa-times" id="close"></i>
@@ -126,12 +124,10 @@
             >
           </li>
         </ul>
-        <a href="cart.html">
-          <div class="cart">
-            <i id="cart" class="bi bi-cart2"></i>
-            <div id="cartAmount2" class="cartAmount">0</div>
-          </div>
-        </a>
+        <div class="cart" id="shopping-cart2">
+          <i class="bi bi-cart2" id="cart"></i>
+          <div id="cartAmount2" class="cartAmount">0</div>
+        </div>
       </nav>
     </header>
     <!-- hero for product page -->
@@ -147,10 +143,22 @@
         </p>
       </div>
     </div>
+
+    <!-- öppna korgen och gå vidare till kassan-->
+    <div id="shoppingCart" class="shop">
+      <div class="shop__heading">
+        <i class="bi bi-cart2"></i>
+        your cart
+
+        <button id="close-button">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
     <!-- load products -->
     <div class="product-main" id="main-products"></div>
 
-    <!--Footer-->
+    <!-- Footer -->
     <footer id="contact" class="footer">
       <div class="row container mx-auto pt-5" id="contact">
         <div class="footer-one col-lg-3 col-md-6 col-sm-12">
@@ -227,17 +235,5 @@
         </div>
       </div>
     </footer>
-
-    <!-- öppna korgen och gå vidare till kassan-->
-    <div id="shoppingCart" class="shop">
-      <div class="shop__heading">
-        <h1 class="shop-main__you-cart">
-          <i class="bi bi-cart2"></i>your shopping cart
-        </h1>
-        <button id="close-button">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-    </div>
   </body>
 </html>

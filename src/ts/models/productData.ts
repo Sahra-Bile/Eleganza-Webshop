@@ -11,7 +11,7 @@ export let ProductDetails: Product[] = [
   ),
   new Product(
     2,
-    "Me Before ou ",
+    "Me Before you ",
     "https://s1.adlibris.com/images/78628/me-before-you.jpg",
 
     "Lou Clark knows lots of things. She knows how many footsteps there are between the bus stop and home. She knows she likes working in The Buttered Bun tea shop and she knows she might not love her boyfriend Patrick. What Lou doesn't know is she's about to lose her job or that knowing what's  ",

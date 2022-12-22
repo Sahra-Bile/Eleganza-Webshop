@@ -7,7 +7,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: v.$primary_5;
+  background-color: v.$primary_2;
   margin: 0;
   padding: 0;
 
@@ -55,14 +55,16 @@ body {
   }
 
   .product-main {
-    margin: 0 auto;
-    margin-top: 2vh;
+    width: 100%;
+    height: auto;
+    margin: auto 0;
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
-    height: 100%;
-    gap: 0.5%;
+    margin: 2vh auto 0;
     justify-content: space-evenly;
+    background-color: #5e5867;
+    gap: 0.8%;
+
     @include m.tablet {
       width: 95%;
     }
@@ -74,36 +76,38 @@ body {
     }
 
     &__product {
+      background-color: v.$primary_1;
       width: 48%;
       height: 34vh;
+      border-radius: 5px;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
-      background-color: v.$primary_3;
-      box-shadow: black;
-      margin-top: 3%;
-      border-radius: 5px;
+      margin-top: 4%;
       position: relative;
+
       @include m.tablet {
         width: 24%;
         height: 35vh;
       }
       @include m.desktop {
-        width: 24%;
-        height: 35vh;
+        width: 32%;
+        height: 50vh;
       }
       &__img-wrapper {
-        width: 80%;
+        width: 100%;
         height: 70%;
         margin: 0;
         position: relative;
 
         &__img {
-          width: 90%;
-          height: 90%;
+          width: 80%;
+          height: 100%;
           object-fit: contain;
           object-position: top;
+          margin-top: 60px;
+          padding: 30px;
           @include m.desktop {
             width: 100%;
             height: 90%;
@@ -112,13 +116,13 @@ body {
         }
       }
 
-      &__moreInfoBtn {
+      &__addBtn {
         // @include m.button_1;
         width: 100%;
         padding: 3% 20%;
         font-size: 1.1rem;
         color: white;
-        background-color: v.$primary_3;
+        background-color: v.$primary_1;
         font-family: v.$all_text;
         font-weight: 400;
         text-transform: uppercase;
@@ -129,8 +133,6 @@ body {
         color: v.$primary_2;
         font-size: 1rem;
         font-weight: bold;
-        margin: auto 0;
-        padding-top: 2%;
 
         @include m.desktop {
           font-size: 1.8rem;
@@ -148,11 +150,6 @@ body {
         @include m.desktop {
           font-size: 1rem;
         }
-      }
-
-      &__addBtn {
-        width: 100%;
-        @include m.button_1;
       }
 
       &__product-title {
