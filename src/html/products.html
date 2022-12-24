@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -16,6 +17,12 @@
       crossorigin="anonymous"
       defer></script>
 
+    <link rel="stylesheet" href="/src/scss/main.scss" />
+
+    <!-- hämtat menu icon -->
+    <script
+      src="https://kit.fontawesome.com/ff901abd43.js"
+      crossorigin="anonymous"></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
@@ -24,10 +31,9 @@
       src="https://kit.fontawesome.com/bc5eefc1c7.js"
       crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="/src/scss/main.scss" />
     <script src="/src/ts/productPage.ts" type="module" defer></script>
 
-    <title>BookLizaz Shop</title>
+    <title>BookLizaz products page</title>
   </head>
   <body>
     <!-- model för mer info details  -->
@@ -130,6 +136,7 @@
         </div>
       </nav>
     </header>
+
     <!-- hero for product page -->
     <div class="hero" id="hero">
       <div class="hero__text" id="hero-text">
@@ -144,8 +151,13 @@
       </div>
     </div>
 
+    <!-- load products -->
+    <div class="product-main" id="main-products"></div>
+
     <!-- öppna korgen och gå vidare till kassan-->
     <div id="shoppingCart" class="shop">
+      <div class="shop__item-container" id="item-container"></div>
+
       <div class="shop__heading">
         <i class="bi bi-cart2"></i>
         your cart
@@ -154,9 +166,21 @@
           <i class="fas fa-times"></i>
         </button>
       </div>
+
+      <div class="shop__checkout-div">
+        <!-- <a href="./checkoutPage.html"> -->
+        <form action="checkoutPage.html">
+          <button
+            type="submit"
+            class="shop__checkout-div__checkoutBtn"
+            id="checkoutBtn">
+            checkout
+          </button>
+        </form>
+        <!-- </a> -->
+        <p class="shop__checkout-div__totalPrice" id="totalPrice"></p>
+      </div>
     </div>
-    <!-- load products -->
-    <div class="product-main" id="main-products"></div>
 
     <!-- Footer -->
     <footer id="contact" class="footer">

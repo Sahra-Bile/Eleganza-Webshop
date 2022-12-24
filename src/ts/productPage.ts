@@ -11,18 +11,19 @@ let cart2: HTMLDivElement = document.getElementById(
 let closeButton = document.getElementById("close-button") as HTMLButtonElement;
 
 let shopdiv = document.getElementById("shoppingCart") as HTMLDivElement;
+
 window.onload = () => {
   activateMenu();
   createHTMLForProducts();
 };
 
 shoppingCart.addEventListener("click", () => {
-  shopdiv.style.display = "flex";
+  shopdiv.classList.add("activ");
 });
 closeButton.addEventListener("click", () => {
-  shopdiv.style.display = "none";
+  shopdiv.classList.remove("activ");
 });
 
 cart2.addEventListener("click", () => {
-  shopdiv.style.display = "flex";
+  shopdiv.classList.add("activ");
 });

@@ -1,3 +1,5 @@
+import { activateMenu } from "./menu";
+
 let inputName: HTMLInputElement = document.getElementById(
   "name"
 ) as HTMLInputElement;
@@ -22,7 +24,7 @@ let success: HTMLParagraphElement = document.getElementById(
 
 let e: SubmitEvent;
 function validateForm() {
-  e.preventDefault();
+  // e.preventDefault();
   clearMessage();
 
   let errorFlag = false;
@@ -51,9 +53,8 @@ function validateForm() {
 
 //!* rensa error message / success message
 function clearMessage() {
-  for (let i = 0; i < erroNodes.length; i++) {
-    erroNodes.innerHTML = "";
-  }
+  erroNodes.innerHTML = "";
+  for (let i = 0; i < erroNodes.length; i++) {}
   inputName.classList.remove("error-boder");
   inputEmail.classList.remove("error-boder");
   inputMessage.classList.remove("error-boder");
@@ -65,4 +66,7 @@ function emailIsValid(email: string) {
   return pettern.test(email);
 }
 
-validateForm();
+window.onload = () => {
+  activateMenu();
+  validateForm();
+};

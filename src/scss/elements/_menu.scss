@@ -8,6 +8,7 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  // background: linear-gradient(to top, #807878, #ad98cc);
   background-color: v.$primary_4;
   .container-desktop {
     // desktop nav
@@ -26,7 +27,7 @@ header {
   @include m.mixnav;
 
   #menu-icon {
-    font-size: 2rem;
+    font-size: 3rem;
     margin: 0;
     color: v.$primary_2;
   }
@@ -39,16 +40,6 @@ header {
     padding: 0;
     color: v.$primary_2;
     @include m.mixnav;
-  }
-
-  #shopping-cart-phone {
-    font-size: 3rem;
-    gap: 40px;
-    display: block;
-    border-bottom-style: outset;
-    background-color: v.$primary_2;
-    color: v.$primary_6;
-    left: 40px;
   }
 
   &__hamburgare {
@@ -70,14 +61,8 @@ header {
   }
 }
 
-.block {
-  display: block;
-}
-.none {
-  display: none;
-}
-
-.cart {
+#shopping-cart2,
+#shopping-cart {
   position: relative;
   background-color: #fff;
   color: #212529;
@@ -86,13 +71,25 @@ header {
   border-radius: 4px;
 }
 
-.cartAmount {
+#shopping-cart2 {
+  @include m.desktop {
+    left: 40px;
+    font-size: 40px;
+  }
+}
+
+.cartAmount,
+.cartAmount2 {
   position: absolute;
-  top: -15px;
+  top: -10px;
   right: -10px;
   font-size: 16px;
   background-color: red;
   color: white;
-  padding: 3px;
+  padding: 5px;
   border-radius: 3px;
+}
+
+.block {
+  display: block;
 }
