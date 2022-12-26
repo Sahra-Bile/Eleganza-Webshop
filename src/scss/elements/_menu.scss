@@ -8,8 +8,8 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  // background: linear-gradient(to top, #807878, #ad98cc);
   background-color: v.$primary_4;
-
   .container-desktop {
     // desktop nav
     display: none;
@@ -27,7 +27,7 @@ header {
   @include m.mixnav;
 
   #menu-icon {
-    font-size: 1.7rem;
+    font-size: 3rem;
     margin: 0;
     color: v.$primary_2;
   }
@@ -39,23 +39,14 @@ header {
     margin: 10px;
     padding: 0;
     color: v.$primary_2;
-  }
-
-  #shopping-cart-phone {
-    font-size: 3rem;
-    gap: 40px;
-    display: block;
-    border-bottom-style: outset;
-    background-color: v.$primary_2;
-    color: v.$primary_6;
-    left: 40px;
+    @include m.mixnav;
   }
 
   &__hamburgare {
     display: none;
     width: 100vw;
     height: 100vh;
-    background-color: v.$color-transparent;
+    background-color: v.$primary_5;
     position: fixed;
     top: 0;
     left: 0;
@@ -70,9 +61,35 @@ header {
   }
 }
 
+#shopping-cart2,
+#shopping-cart {
+  position: relative;
+  background-color: #fff;
+  color: #212529;
+  font-size: 30px;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+#shopping-cart2 {
+  @include m.desktop {
+    left: 40px;
+    font-size: 40px;
+  }
+}
+
+.cartAmount,
+.cartAmount2 {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 16px;
+  background-color: red;
+  color: white;
+  padding: 5px;
+  border-radius: 3px;
+}
+
 .block {
   display: block;
-}
-.none {
-  display: none;
 }

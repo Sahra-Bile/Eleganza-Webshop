@@ -1,8 +1,10 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- styler footer med bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -16,22 +18,25 @@
       defer></script>
 
     <link rel="stylesheet" href="/src/scss/main.scss" />
+
+    <!-- hämtat menu icon -->
     <script
       src="https://kit.fontawesome.com/ff901abd43.js"
       crossorigin="anonymous"></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+
     <script
       src="https://kit.fontawesome.com/bc5eefc1c7.js"
       crossorigin="anonymous"></script>
 
     <script src="/src/ts/productPage.ts" type="module" defer></script>
 
-    <title>BookLizaz Shop</title>
+    <title>BookLizaz products page</title>
   </head>
   <body>
-    <!-- model för mer info och för att kunna lägga en produkt i korgen  -->
+    <!-- model för mer info details  -->
     <div id="modalContainer">
       <div id="modalBody">
         <button id="closeProductsModal"><i class="fas fa-times"></i></button>
@@ -49,12 +54,17 @@
         <button id="addProduct">add to cart</button>
       </div>
     </div>
+
     <header>
       <!-- home navbar i mobil läge -->
       <nav class="container-phone" id="phone">
         <i class="fas fa-bars" id="menu-icon"></i>
         <h1 class="container-phone__title">BookLizaz</h1>
-        <i class="fas fa-shopping-cart" id="shopping-cart-phone"></i>
+
+        <div class="cart" id="shopping-cart">
+          <i class="bi bi-cart2" id="cart"></i>
+          <div id="cartAmount" class="cartAmount">0</div>
+        </div>
 
         <div class="container-phone__hamburgare" id="hamburger">
           <i class="fas fa-times" id="close"></i>
@@ -120,27 +130,60 @@
             >
           </li>
         </ul>
-        <i class="fas fa-shopping-cart" id="shopping-cart"></i>
+        <div class="cart" id="shopping-cart2">
+          <i class="bi bi-cart2" id="cart"></i>
+          <div id="cartAmount2" class="cartAmount">0</div>
+        </div>
       </nav>
     </header>
+
     <!-- hero for product page -->
     <div class="hero" id="hero">
       <div class="hero__text" id="hero-text">
         <h1 class="hero__text__header-title">BookLizaz</h1>
         <p class="hero__text__header-text2">
-          We are happy and proud to have you here. here you will find all kinds
-          of books 📚 that you are looking for. All kinds of genres. Don't
-          hesitate to contact us if you have any questions.
+          You will find everything you want to read at BookLizaz . Fiction and
+          non-fiction from around the world, children's books for all ages and
+          interests, student literature, audiobooks and e-books. We also have a
+          large selection of yarn, toys, puzzles and games. In BookLizaz is also
+          included
         </p>
       </div>
     </div>
+
     <!-- load products -->
     <div class="product-main" id="main-products"></div>
 
     <!-- öppna korgen och gå vidare till kassan-->
+    <div id="shoppingCart" class="shop">
+      <div class="shop__item-container" id="item-container"></div>
 
-    <!--Footer-->
-    <footer id="contact" class="mt-5 py-5">
+      <div class="shop__heading">
+        <i class="bi bi-cart2"></i>
+        your cart
+
+        <button id="close-button">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <div class="shop__checkout-div">
+        <!-- <a href="./checkoutPage.html"> -->
+        <form action="checkoutPage.html">
+          <button
+            type="submit"
+            class="shop__checkout-div__checkoutBtn"
+            id="checkoutBtn">
+            checkout
+          </button>
+        </form>
+        <!-- </a> -->
+        <p class="shop__checkout-div__totalPrice" id="totalPrice"></p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
       <div class="row container mx-auto pt-5" id="contact">
         <div class="footer-one col-lg-3 col-md-6 col-sm-12">
           <p class="pt-3">
@@ -150,10 +193,7 @@
 
         <div class="footer-one col-lg-3 col-md-6 col-sm-12">
           <h5 class="pb-2">Contact Us</h5>
-          <!-- <img
-            class="Eleganza-img"
-            src="/src/assert/Vanilla-1s-280px.svg"
-            alt="" /> -->
+
           <div>
             <h6 class="text-uppercase">Address</h6>
             <p>1234 Street Name, City</p>

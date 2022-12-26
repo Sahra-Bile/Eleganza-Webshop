@@ -1,8 +1,10 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- styler footer med bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -15,20 +17,21 @@
       crossorigin="anonymous"
       defer></script>
 
-    <link rel="stylesheet" href="/src/scss/main.scss" />
+    <!-- hämtat menu icon -->
     <script
       src="https://kit.fontawesome.com/ff901abd43.js"
       crossorigin="anonymous"></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+
     <script
       src="https://kit.fontawesome.com/bc5eefc1c7.js"
       crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/src/scss/main.scss" />
+    <script src="/src/ts/checkoutPage.ts" type="module" defer></script>
 
-    <script src="/src/ts/addToCartPage.ts" type="module" defer></script>
-
-    <title>BookLizaz Shop</title>
+    <title>BookLizaz checkout page</title>
   </head>
   <body>
     <header>
@@ -37,11 +40,10 @@
         <i class="fas fa-bars" id="menu-icon"></i>
         <h1 class="container-phone__title">BookLizaz</h1>
 
-        <a href="./products.html">
-          <div class="conatiner-phone__icons" id="cart">
-            <i class="fas fa-shopping-cart" id="shopping-cart-phone"></i>
-          </div>
-        </a>
+        <div class="cart" id="shopping-cart">
+          <i class="bi bi-cart2" id="cart"></i>
+          <div id="cartAmount" class="cartAmount">0</div>
+        </div>
 
         <div class="container-phone__hamburgare" id="hamburger">
           <i class="fas fa-times" id="close"></i>
@@ -68,7 +70,9 @@
               >
             </li>
             <li class="conatiner-phone__list__item">
-              <a class="conatiner-phone__list__item__links" href="#contact"
+              <a
+                class="conatiner-phone__list__item__links"
+                href="./contact.html"
                 >contact</a
               >
             </li>
@@ -105,27 +109,25 @@
             >
           </li>
         </ul>
-        <a href="#">
-          <div class="conatiner-desktop__icons" id="cart">
-            <i class="fas fa-shopping-cart" id="shopping-cart"></i>
-          </div>
-        </a>
+        <div class="cart" id="shopping-cart2">
+          <i class="bi bi-cart2" id="cart"></i>
+          <div id="cartAmount2" class="cartAmount">0</div>
+        </div>
       </nav>
     </header>
 
-    <!-- öppna från korgen -->
-    <div class="cart-container">
-      <div class="cart-container__checkout-products">
-        <div class="imgWrapper">
-          <img
-            src="https://s1.adlibris.com/images/28226190/rich-dad-poor-dad.jpg"
-            alt="" />
-        </div>
+    <div id="wrapper-checkout">
+      <!-- scheckout sida -->
+      <!-- HÄR BÖRJAR kassa-CONTAINER -->
+      <div id="shopping-container">
+        <h1>In your cart</h1>
+        <ul id="ul-chekout"></ul>
+        <h3 id="total-price"></h3>
       </div>
     </div>
 
-    <!--Footer-->
-    <footer id="contact" class="mt-5 py-5">
+    <!-- Footer -->
+    <footer id="contact" class="footer">
       <div class="row container mx-auto pt-5" id="contact">
         <div class="footer-one col-lg-3 col-md-6 col-sm-12">
           <p class="pt-3">
@@ -135,10 +137,7 @@
 
         <div class="footer-one col-lg-3 col-md-6 col-sm-12">
           <h5 class="pb-2">Contact Us</h5>
-          <!-- <img
-            class="Eleganza-img"
-            src="/src/assert/Vanilla-1s-280px.svg"
-            alt="" /> -->
+
           <div>
             <h6 class="text-uppercase">Address</h6>
             <p>1234 Street Name, City</p>
