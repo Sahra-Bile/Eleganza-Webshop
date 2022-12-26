@@ -56,30 +56,17 @@ export function createHTMLForProducts() {
     });
 
     addButton.addEventListener("click", () => {
-      let existingItem: CartItem | undefined = inCart.find(
-        (inCart) => ProductDetails[i].id === inCart.product.id
-      );
-      if (existingItem) {
-        existingItem.amount++;
-        displayCart();
-      } else {
-        inCart.push(new CartItem(ProductDetails[i], 1));
-        displayCart();
+      for (let matchIndex = 0; matchIndex < inCart.length; matchIndex++) {
+        if (inCart[matchIndex].product.title === ProductDetails[i].title) {
+          inCart[matchIndex].amount++;
+          displayCart();
+          localStorage.setItem("cartList", JSON.stringify(inCart));
+          return;
+        }
       }
-    });
-
-    let matchIndex: number = 1;
-    addButtonModel.addEventListener("click", () => {
-      let existingItem: CartItem | undefined = inCart.find(
-        (inCart) => ProductDetails[i].id === inCart.product.id
-      );
-      if (existingItem) {
-        existingItem.amount++;
-        displayCart();
-      } else {
-        inCart.push(new CartItem(ProductDetails[i], matchIndex));
-        displayCart();
-      }
+      inCart.push(new CartItem(ProductDetails[i], 1));
+      displayCart();
+      localStorage.setItem("cartList", JSON.stringify(inCart));
     });
   }
 }
