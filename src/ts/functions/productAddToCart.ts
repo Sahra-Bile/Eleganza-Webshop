@@ -150,12 +150,13 @@ export function getCartFromLs() {
   console.log("denna är omvandlat objekt från strängar", inCart);
 }
 
+// document.addEventListener("DOMContentLoaded", getCartFromLs);
+
 getCartFromLs();
 
 let checkoutBtn: HTMLAnchorElement = document.getElementById(
   "checkoutBtn"
 ) as HTMLAnchorElement;
-
 checkoutBtn.addEventListener("click", () => {
   checkoutBtn.href = "./checkoutPage.html";
 });
