@@ -1,12 +1,7 @@
 import { CartItem } from "../models/CartItem";
 import { Product } from "../models/Product";
-import { ProductDetails } from "../models/productData";
-import { displayCheckoutPage } from "./checkoutPage";
 
-let addButtonModel: HTMLButtonElement = document.getElementById(
-  "addProduct"
-) as HTMLButtonElement;
-
+//*  lista för att spara till LS och hämta från LS
 export let inCart: CartItem[] = [];
 
 let cartAmount: HTMLDivElement = document.getElementById(
@@ -21,30 +16,29 @@ let ItemsContainer: HTMLDivElement = document.getElementById(
   "item-container"
 ) as HTMLDivElement;
 
-let checkoutButton: HTMLButtonElement = document.getElementById(
-  "checkoutBtn"
-) as HTMLButtonElement;
-
 let totalSumOfProduct: HTMLParagraphElement = document.getElementById(
   "totalPrice"
 ) as HTMLParagraphElement;
 
-let totalSum: number = 0;
-
-//* klager på att denna är tomt
-// totalSumOfProduct.innerHTML = +totalSum.toString() + " " + " SEK";
+//* klager på att totalSumOfProduct är tomt
 
 export function displayCart(): void {
+  //! sparar listan i LS
   saveCartToLs();
+  //! vill att det töms varje gång så att ingen bild blir kvar efter man har tagit bort en produk från korgen.
   ItemsContainer.innerHTML = "";
-  totalSumOfProduct.innerHTML = "";
+  //! korgen ska också vara tom när det inte finns produkt i korgen
   cartAmount.innerHTML = "";
   cartAmount2.innerHTML = "";
-  totalSum = 0;
-  let counter = 0;
-  totalSumOfProduct.innerHTML = +totalSum.toString() + " " + " SEK";
+  //! totala priset ska inte finns från början den dyrker upp när man har lagt produkt i korgen
 
+  totalSumOfProduct.innerHTML = "";
+  let totalSum = 0;
+  //! räknar antal av produkten
+  let counter = 0;
+  //! looper listan från LS
   for (let i = 0; i < inCart.length; i++) {
+    //! create HTML elements
     let productCard: HTMLDivElement = document.createElement("div");
     let imgWrapper: HTMLDivElement = document.createElement("div");
     let productImg: HTMLImageElement = document.createElement("img");
@@ -54,15 +48,20 @@ export function displayCart(): void {
     let minusButton: HTMLButtonElement = document.createElement("button");
     let totalAmount: HTMLParagraphElement = document.createElement("p");
     let plusButton: HTMLButtonElement = document.createElement("button");
-
+    //! innerHTML, value, src
     productTitle.innerHTML = inCart[i].product.title;
     productImg.src = inCart[i].product.url;
     productPrice.innerHTML = inCart[i].product.price.toString() + "$";
-    plusButton.innerHTML = "<i class='fa fa-plus'</i>";
-    minusButton.innerHTML = "<i class='fa fa-minus'</i>";
+    plusButton.innerHTML = `<i class="bi bi-plus-lg"></i>`;
+    minusButton.innerHTML = `<i class="bi bi-dash-lg"></i>`;
+
     totalSumOfProduct.innerHTML += inCart[i].product.price.toString();
+
+    console.log(" är just nu steg två :", totalSumOfProduct.innerHTML);
+
     totalAmount.innerHTML = inCart[i].amount.toString();
 
+    //! class name
     productCard.classList.add("shop__item-container__cards");
     imgWrapper.classList.add("shop__item-container__cards__img-wrapper");
     productImg.classList.add("shop__item-container__cards__imgs");
@@ -81,7 +80,7 @@ export function displayCart(): void {
     totalAmount.classList.add(
       "shop__item-container__cards__btnsContainer__totalAmount"
     );
-
+    //! appenchild
     ItemsContainer.appendChild(productCard);
     productCard.appendChild(productImg);
     productCard.appendChild(productTitle);
@@ -93,6 +92,7 @@ export function displayCart(): void {
     productCard.appendChild(imgWrapper);
 
     minusButton.addEventListener("click", () => {
+      //! om amount = 1 tas  bort en produkt dvs minska antalet med en
       if (inCart[i].amount === 1) {
         inCart.splice(i, 1);
         displayCart();
@@ -102,24 +102,34 @@ export function displayCart(): void {
       }
     });
 
+    //! öka produkten med 1
     plusButton.addEventListener("click", () => {
       inCart[i].amount++;
       displayCart();
     });
+    //! totala summan priset gånger med antalet av produkten .
+
     totalSum += inCart[i].product.price * inCart[i].amount;
-    totalSumOfProduct.innerHTML = +totalSum.toString() + " " + " SEK";
+
+    totalSumOfProduct.innerHTML = +totalSum.toString() + "$";
+
+    console.log(" är just nu steg tre :", totalSumOfProduct.innerHTML);
 
     counter += inCart[i].amount;
+
     cartAmount.innerHTML = " " + counter.toString();
+
     cartAmount2.innerHTML = " " + counter.toString();
   }
 }
 
+//* funktion för spara till LS
 export function saveCartToLs() {
   localStorage.setItem("cartList", JSON.stringify(inCart));
 }
-
+//* funktion hämta listan från LS
 export function getCartFromLs() {
+  //! om listan är tomt då är listan tomt så att den inte klagar om att den försker hämta något om inte finns.
   if (!localStorage.getItem("cartList") || "[]") {
     inCart = [];
   }
@@ -146,4 +156,4 @@ export function getCartFromLs() {
   console.log("denna är omvandlat objekt från strängar", inCart);
 }
 
-getCartFromLs();
+document.addEventListener("DOMContentLoaded", getCartFromLs);

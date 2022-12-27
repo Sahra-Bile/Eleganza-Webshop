@@ -1,21 +1,18 @@
 import { CartItem } from "../models/CartItem";
-import { Product } from "../models/Product";
-import { inCart, saveCartToLs } from "./productAddToCart";
-
-let totalSumOfProduct: HTMLParagraphElement = document.getElementById(
-  "totalPrice"
-) as HTMLParagraphElement;
+import { getCartFromLs, inCart, saveCartToLs } from "./productAddToCart";
+import { removeModal } from "./removeModel";
 
 export const displayCheckoutPage = () => {
   let checkoutUlContainer: HTMLUListElement = document.getElementById(
     "ul-chekout"
   ) as HTMLUListElement;
-  let checkoutButton: HTMLButtonElement = document.getElementById(
-    "checkoutBtn"
-  ) as HTMLButtonElement;
+  let total: HTMLHeadingElement = document.getElementById(
+    "total-price"
+  ) as HTMLHeadingElement;
 
   let totalSum = 0;
   checkoutUlContainer.innerHTML = "";
+  total.innerHTML = "";
 
   //* om det inte finns något att hämta från LS
   if (!localStorage.getItem("cartList")) {
@@ -26,14 +23,11 @@ export const displayCheckoutPage = () => {
       "shopping-container"
     ) as HTMLDivElement;
 
-    let noProductSpan: HTMLSpanElement = document.createElement(
-      "span"
-    ) as HTMLSpanElement;
-    noProductSpan.className = "no-product";
-    noProductSpan.innerHTML = "There are no products in the shopping cart";
-    let total: HTMLHeadingElement = document.getElementById(
-      "total-price"
-    ) as HTMLDivElement;
+    let noProductSpan: HTMLSpanElement = document.createElement("span");
+    noProductSpan.classList.add("no-product");
+    noProductSpan.innerHTML =
+      "There are no products in the shopping cart to checkout";
+
     wrapper.insertBefore(noProductSpan, total);
   } else {
     let productCartList: string = localStorage.getItem("cartList") || "[]";
@@ -53,30 +47,27 @@ export const displayCheckoutPage = () => {
       let quantityInput: HTMLInputElement = document.createElement("input");
       let reduceButton: HTMLDivElement = document.createElement("div");
       let increaseButton: HTMLDivElement = document.createElement("div");
-      let removeButton: HTMLParagraphElement = document.createElement("p");
+      let removeButton: HTMLButtonElement = document.createElement("button");
       let flexContainer: HTMLDivElement = document.createElement("div");
 
       //*innerHTML , value, src
       reduceButton.innerHTML = "<i class='fas fa-angle-left'></i>";
       increaseButton.innerHTML = "<i class='fas fa-angle-right'></i>";
-      removeButton.innerHTML = "<i class='fas fa-trash-alt'></i>" + " remove";
+      removeButton.innerHTML = "<i class='fas fa-trash-alt'></i>";
       productTitle.innerHTML = productCartListObject[i].product.title;
+      productPrice.innerHTML =
+        productCartListObject[i].product.price.toString() + "$";
       quantityInput.value = productCartListObject[i].amount.toString();
       quantityInput.setAttribute("readonly", "true");
-      //* total summan bredvid checkoutbutton
-      // totalSumOfProduct.innerHTML = productCartListObject[i].amount.toString();
-      productImage.src = productCartListObject[i].product.url;
 
-      let totalPrice: HTMLHeadingElement = document.getElementById(
-        "total-price"
-      ) as HTMLHeadingElement;
+      productImage.src = productCartListObject[i].product.url;
 
       totalSum +=
         productCartListObject[i].product.price *
         productCartListObject[i].amount;
-      totalPrice.innerHTML = "accomplish " + totalSum.toString() + " " + " SEK";
+      total.innerHTML = "total " + totalSum.toString() + " " + " $";
 
-      // Minska och öka antal
+      //* Minska och öka antal
       increaseButton.addEventListener("click", () => {
         let currentValue: number = parseInt(quantityInput.value);
         if (currentValue < 15) currentValue++;
@@ -100,8 +91,13 @@ export const displayCheckoutPage = () => {
         displayCheckoutPage();
       });
 
+      let title = productCartListObject[i].product.url;
+      let image = productCartListObject[i].product.title;
+
+      //* anroper remove model, skickar med tittle, img, och listan så att man kan ta bort oavsett hur många amount
       removeButton.addEventListener("click", () => {
-        inCart.splice(i, 1);
+        removeModal(title, image, i, productCartListObject);
+        displayCheckoutPage();
       });
 
       //* appendChild
@@ -121,7 +117,7 @@ export const displayCheckoutPage = () => {
       quantityBox.appendChild(reduceButton);
       quantityBox.appendChild(quantityInput);
       quantityBox.appendChild(increaseButton);
-
+      //! class name
       liList.classList.add("ul-chekout__item");
       productContainer.classList.add("ul-chekout__item__product-container");
       productContainerLeft.classList.add(
@@ -131,6 +127,7 @@ export const displayCheckoutPage = () => {
       productFactContainer.classList.add(
         "ul-chekout__item__product-container__fact-container"
       );
+
       productContainerRight.classList.add(
         "ul-chekout__item__product-container__right-div"
       );
@@ -139,7 +136,7 @@ export const displayCheckoutPage = () => {
       );
 
       productImage.classList.add(
-        "ul-chekout__item__product-container__left-div__img-container_product-img"
+        "ul-chekout__item__product-container__left-div__img-container__product-img"
       );
 
       flexContainer.classList.add(
@@ -152,21 +149,21 @@ export const displayCheckoutPage = () => {
         "ul-chekout__item__product-container__fact-container__product-price"
       );
       quantityBox.classList.add(
-        "ul-chekout__item__product-container__right-div__flex-container_quantity-box"
+        "ul-chekout__item__product-container__right-div__flex-container__quantity-box"
       );
       removeButton.classList.add(
-        "ul-chekout__item__product-container__right-div__flex-container_removeBtn"
+        "ul-chekout__item__product-container__right-div__flex-container__removeBtn"
       );
       quantityInput.classList.add(
-        "ul-chekout__item__product-container__right-div__flex-container_quantity-box__quantity-input"
+        "ul-chekout__item__product-container__right-div__flex-container__quantity-box__quantity-input"
       );
 
       reduceButton.classList.add(
-        "ul-chekout__item__product-container__right-div__flex-container_quantity-box__reduceBtn"
+        "ul-chekout__item__product-container__right-div__flex-container__quantity-box__reduceBtn"
       );
 
       increaseButton.classList.add(
-        "ul-chekout__item__product-container__right-div__flex-container_quantity-box__increaseBtn"
+        "ul-chekout__item__product-container__right-div__flex-container__quantity-box__increaseBtn"
       );
     } //*else stutar här
   }

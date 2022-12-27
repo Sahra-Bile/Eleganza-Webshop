@@ -3,187 +3,166 @@
 
 @import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
+.hero {
+  margin: auto 0;
+  width: 100%;
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://images.unsplash.com/photo-1535905557558-afc4877a26fc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80");
+
+  &__text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    font-family: v.$all_text;
+    padding: 2% 5%;
+    background-color: #5e5867;
+    background-image: url("data:image/svg+xml,%3Csvg width='32' height='26' viewBox='0 0 32 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14 0v3.994C14 7.864 10.858 11 7 11c-3.866 0-7-3.138-7-7.006V0h2v4.005C2 6.765 4.24 9 7 9c2.756 0 5-2.236 5-4.995V0h2zm0 26v-5.994C14 16.138 10.866 13 7 13c-3.858 0-7 3.137-7 7.006V26h2v-6.005C2 17.235 4.244 15 7 15c2.76 0 5 2.236 5 4.995V26h2zm2-18.994C16 3.136 19.142 0 23 0c3.866 0 7 3.138 7 7.006v9.988C30 20.864 26.858 24 23 24c-3.866 0-7-3.138-7-7.006V7.006zm2-.01C18 4.235 20.244 2 23 2c2.76 0 5 2.236 5 4.995v10.01C28 19.765 25.756 22 23 22c-2.76 0-5-2.236-5-4.995V6.995z' fill='%232d2b2f' fill-opacity='0.19' fill-rule='evenodd'/%3E%3C/svg%3E");
+
+    @include m.tablet {
+      width: 60%;
+    }
+    @include m.desktop {
+      width: 40%;
+    }
+    &__header-text2 {
+      color: v.$primary_2;
+      font-size: 1.5rem;
+      font-family: v.$all_text;
+      font-weight: bold;
+    }
+
+    &__header-title {
+      margin: 0;
+      font-size: 1.5rem;
+      text-align: center;
+      color: v.$primary_2;
+      font-family: v.$header_font;
+    }
+  }
 }
 
-body {
+.product-main {
+  width: 70%;
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: linear-gradient(to top, #807878, #ad98cc);
-  // background-color: v.$primary_1;
-  margin: 0;
-  padding: 0;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 
-  .hero {
-    margin: auto 0;
+  margin-bottom: 30px;
+  margin-top: 3%;
+  gap: 2%;
+
+  @include m.tablet {
+    width: 85%;
+  }
+  @include m.desktop {
+    width: 90%;
+  }
+
+  &__product {
+    background-color: #5e5867;
     width: 100%;
     height: 50vh;
-    background-size: cover;
-    background-position: center;
+    margin: auto 0;
+    margin-bottom: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("https://images.unsplash.com/photo-1535905557558-afc4877a26fc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80");
-
-    &__text {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      text-align: center;
-      font-family: v.$all_text;
-      padding: 2% 5%;
-      background-color: #5e5867;
-      background-image: url("data:image/svg+xml,%3Csvg width='32' height='26' viewBox='0 0 32 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14 0v3.994C14 7.864 10.858 11 7 11c-3.866 0-7-3.138-7-7.006V0h2v4.005C2 6.765 4.24 9 7 9c2.756 0 5-2.236 5-4.995V0h2zm0 26v-5.994C14 16.138 10.866 13 7 13c-3.858 0-7 3.137-7 7.006V26h2v-6.005C2 17.235 4.244 15 7 15c2.76 0 5 2.236 5 4.995V26h2zm2-18.994C16 3.136 19.142 0 23 0c3.866 0 7 3.138 7 7.006v9.988C30 20.864 26.858 24 23 24c-3.866 0-7-3.138-7-7.006V7.006zm2-.01C18 4.235 20.244 2 23 2c2.76 0 5 2.236 5 4.995v10.01C28 19.765 25.756 22 23 22c-2.76 0-5-2.236-5-4.995V6.995z' fill='%232d2b2f' fill-opacity='0.19' fill-rule='evenodd'/%3E%3C/svg%3E");
-
-      @include m.tablet {
-        width: 60%;
-      }
-      @include m.desktop {
-        width: 40%;
-      }
-      &__header-text2 {
-        color: v.$primary_2;
-        font-size: 1.5rem;
-        font-family: v.$all_text;
-        font-weight: bold;
-      }
-
-      &__header-title {
-        margin: 0;
-        font-size: 1.5rem;
-        text-align: center;
-        color: v.$primary_2;
-        font-family: v.$header_font;
-      }
-    }
-  }
-
-  .product-main {
-    width: 70%;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-
-    margin-bottom: 30px;
+    flex-direction: column;
     margin-top: 3%;
-    gap: 2%;
+    border-radius: 5px;
+    position: relative;
+    &:hover {
+      transition: 1s;
+      background-color: #945d5e;
+      color: #945d5e;
+    }
 
     @include m.tablet {
-      width: 85%;
+      width: 40%;
+      height: 50vh;
     }
     @include m.desktop {
-      width: 90%;
+      width: 40%;
+      height: 50vh;
+      gap: 1%;
+    }
+    &__img-wrapper {
+      width: 60%;
+      height: 50%;
+      margin: 0;
+      position: relative;
+      border-radius: 2px;
+
+      &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: top;
+      }
     }
 
-    &__product {
-      background-color: #5e5867;
-      width: 100%;
-      height: 50vh;
-      margin: auto 0;
-      margin-bottom: 10px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      margin-top: 3%;
-      border-radius: 5px;
-      position: relative;
-      &:hover {
-        transition: 1s;
-        background-color: #945d5e;
-        color: #945d5e;
-      }
-
-      @include m.tablet {
-        width: 40%;
-        height: 50vh;
-      }
+    &__addBtn {
+      width: 85%;
+      padding: 1% 5%;
+      font-size: 1.1rem;
+      color: v.$primary_2;
+      border: 1px solid;
+      cursor: pointer;
+      border: none;
+      text-shadow: 0 2px 5px v.$primary_1;
+      background: linear-gradient(to top, #945d5e, #5e5867);
+      border: 2px solid v.$primary_1;
+      border-radius: 3px;
+      background-color: v.$grey;
+      font-family: v.$all_text;
+      font-weight: 400;
+      text-transform: uppercase;
       @include m.desktop {
-        width: 40%;
-        height: 50vh;
-        gap: 1%;
+        width: 100%;
+        border-radius: 5px;
+        padding: 3% 20%;
       }
-      &__img-wrapper {
-        width: 60%;
-        height: 50%;
-        margin: 0;
-        position: relative;
-        border-radius: 2px;
+    }
 
-        &__img {
-          width: 100%;
-          height: 100%;
-          object-fit: contain;
-          object-position: top;
-        }
+    &__price {
+      font-family: v.$first_page_font;
+      color: v.$primary_2;
+      font-size: 2rem;
+      margin: auto 0;
+    }
+    &__desc {
+      text-align: center;
+      color: v.$primary_1;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-block-end: 0;
+      margin-block-start: 0;
+      font-family: v.$all_text;
+
+      @include m.desktop {
+        font-size: 1rem;
       }
+    }
 
-      &__addBtn {
-        width: 85%;
-        padding: 1% 5%;
-        font-size: 1.1rem;
-        color: v.$primary_2;
-        border: 1px solid;
-        cursor: pointer;
-        border: none;
-        text-shadow: 0 2px 5px v.$primary_1;
-        background: linear-gradient(to top, #945d5e, #5e5867);
-        border: 2px solid v.$primary_1;
-        border-radius: 3px;
-        background-color: v.$grey;
-        font-family: v.$all_text;
-        font-weight: 400;
-        text-transform: uppercase;
-        @include m.desktop {
-          width: 100%;
-          border-radius: 5px;
-          padding: 3% 20%;
-        }
-      }
+    &__product-title {
+      font-family: v.$first_page_font;
+      padding-top: 2%;
+      margin-top: 2%;
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
 
-      &__price {
-        font-family: v.$first_page_font;
-        color: v.$primary_2;
-        font-size: 2rem;
-        margin: auto 0;
-        // margin-block-end: 0;
-        // margin-block-start: 0;
-      }
-      &__desc {
-        text-align: center;
-        color: v.$primary_1;
-        font-size: 1.5rem;
-        font-weight: bold;
-        margin-block-end: 0;
-        margin-block-start: 0;
-        font-family: v.$all_text;
-
-        @include m.desktop {
-          font-size: 1rem;
-        }
-      }
-
-      &__product-title {
-        font-family: v.$first_page_font;
-        padding-top: 2%;
-        margin-top: 2%;
-        font-size: 2rem;
-        font-weight: bold;
-        text-align: center;
-        // margin-block-end: -1;
-        // margin-block-start: -1;
-
-        color: v.$primary_2;
-        @include m.desktop {
-          width: 50%;
-        }
+      color: v.$primary_2;
+      @include m.desktop {
+        width: 50%;
       }
     }
   }
