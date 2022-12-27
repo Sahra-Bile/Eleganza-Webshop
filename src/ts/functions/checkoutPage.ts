@@ -1,5 +1,6 @@
 import { CartItem } from "../models/CartItem";
 import { getCartFromLs, inCart, saveCartToLs } from "./productAddToCart";
+import { removeModal } from "./removeModel";
 
 export const displayCheckoutPage = () => {
   let checkoutUlContainer: HTMLUListElement = document.getElementById(
@@ -7,10 +8,11 @@ export const displayCheckoutPage = () => {
   ) as HTMLUListElement;
   let total: HTMLHeadingElement = document.getElementById(
     "total-price"
-  ) as HTMLDivElement;
+  ) as HTMLHeadingElement;
 
   let totalSum = 0;
   checkoutUlContainer.innerHTML = "";
+  total.innerHTML = "";
 
   //* om det inte finns något att hämta från LS
   if (!localStorage.getItem("cartList")) {
@@ -21,9 +23,7 @@ export const displayCheckoutPage = () => {
       "shopping-container"
     ) as HTMLDivElement;
 
-    let noProductSpan: HTMLSpanElement = document.createElement(
-      "span"
-    ) as HTMLSpanElement;
+    let noProductSpan: HTMLSpanElement = document.createElement("span");
     noProductSpan.classList.add("no-product");
     noProductSpan.innerHTML =
       "There are no products in the shopping cart to checkout";
@@ -47,13 +47,13 @@ export const displayCheckoutPage = () => {
       let quantityInput: HTMLInputElement = document.createElement("input");
       let reduceButton: HTMLDivElement = document.createElement("div");
       let increaseButton: HTMLDivElement = document.createElement("div");
-      let removeButton: HTMLParagraphElement = document.createElement("p");
+      let removeButton: HTMLButtonElement = document.createElement("button");
       let flexContainer: HTMLDivElement = document.createElement("div");
 
       //*innerHTML , value, src
       reduceButton.innerHTML = "<i class='fas fa-angle-left'></i>";
       increaseButton.innerHTML = "<i class='fas fa-angle-right'></i>";
-      removeButton.innerHTML = "<i class='fas fa-trash-alt'></i>" + " remove";
+      removeButton.innerHTML = "<i class='fas fa-trash-alt'></i>";
       productTitle.innerHTML = productCartListObject[i].product.title;
       productPrice.innerHTML =
         productCartListObject[i].product.price.toString() + "$";
@@ -65,7 +65,7 @@ export const displayCheckoutPage = () => {
       totalSum +=
         productCartListObject[i].product.price *
         productCartListObject[i].amount;
-      total.innerHTML = "totalt " + totalSum.toString() + " " + " $";
+      total.innerHTML = "total " + totalSum.toString() + " " + " $";
 
       //* Minska och öka antal
       increaseButton.addEventListener("click", () => {
@@ -91,10 +91,12 @@ export const displayCheckoutPage = () => {
         displayCheckoutPage();
       });
 
+      let title = productCartListObject[i].product.url;
+      let image = productCartListObject[i].product.title;
+
+      //* anroper remove model, skickar med tittle, img, och listan så att man kan ta bort oavsett hur många amount
       removeButton.addEventListener("click", () => {
-        let currentItem = productCartListObject[i];
-        let currentItemIndex = productCartListObject.indexOf(currentItem);
-        productCartListObject.splice(currentItemIndex, 1);
+        removeModal(title, image, i, productCartListObject);
         displayCheckoutPage();
       });
 
@@ -134,7 +136,7 @@ export const displayCheckoutPage = () => {
       );
 
       productImage.classList.add(
-        "ul-chekout__item__product-container__left-div__img-container_product-img"
+        "ul-chekout__item__product-container__left-div__img-container__product-img"
       );
 
       flexContainer.classList.add(
@@ -147,24 +149,24 @@ export const displayCheckoutPage = () => {
         "ul-chekout__item__product-container__fact-container__product-price"
       );
       quantityBox.classList.add(
-        "ul-chekout__item__product-container__right-div__flex-container_quantity-box"
+        "ul-chekout__item__product-container__right-div__flex-container__quantity-box"
       );
       removeButton.classList.add(
-        "ul-chekout__item__product-container__right-div__flex-container_removeBtn"
+        "ul-chekout__item__product-container__right-div__flex-container__removeBtn"
       );
       quantityInput.classList.add(
-        "ul-chekout__item__product-container__right-div__flex-container_quantity-box__quantity-input"
+        "ul-chekout__item__product-container__right-div__flex-container__quantity-box__quantity-input"
       );
 
       reduceButton.classList.add(
-        "ul-chekout__item__product-container__right-div__flex-container_quantity-box__reduceBtn"
+        "ul-chekout__item__product-container__right-div__flex-container__quantity-box__reduceBtn"
       );
 
       increaseButton.classList.add(
-        "ul-chekout__item__product-container__right-div__flex-container_quantity-box__increaseBtn"
+        "ul-chekout__item__product-container__right-div__flex-container__quantity-box__increaseBtn"
       );
     } //*else stutar här
   }
 };
 
-getCartFromLs();
+displayCheckoutPage();

@@ -56,7 +56,9 @@ export function displayCart(): void {
     minusButton.innerHTML = `<i class="bi bi-dash-lg"></i>`;
 
     totalSumOfProduct.innerHTML += inCart[i].product.price.toString();
+
     console.log(" är just nu steg två :", totalSumOfProduct.innerHTML);
+
     totalAmount.innerHTML = inCart[i].amount.toString();
 
     //! class name
@@ -106,13 +108,17 @@ export function displayCart(): void {
       displayCart();
     });
     //! totala summan priset gånger med antalet av produkten .
+
     totalSum += inCart[i].product.price * inCart[i].amount;
 
     totalSumOfProduct.innerHTML = +totalSum.toString() + "$";
+
     console.log(" är just nu steg tre :", totalSumOfProduct.innerHTML);
 
     counter += inCart[i].amount;
+
     cartAmount.innerHTML = " " + counter.toString();
+
     cartAmount2.innerHTML = " " + counter.toString();
   }
 }
@@ -150,13 +156,4 @@ export function getCartFromLs() {
   console.log("denna är omvandlat objekt från strängar", inCart);
 }
 
-// document.addEventListener("DOMContentLoaded", getCartFromLs);
-
-getCartFromLs();
-
-let checkoutBtn: HTMLAnchorElement = document.getElementById(
-  "checkoutBtn"
-) as HTMLAnchorElement;
-checkoutBtn.addEventListener("click", () => {
-  checkoutBtn.href = "./checkoutPage.html";
-});
+document.addEventListener("DOMContentLoaded", getCartFromLs);

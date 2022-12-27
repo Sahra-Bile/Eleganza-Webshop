@@ -4,8 +4,8 @@
 .shop {
   width: 65%;
   height: 100%;
-  background-color: #945d5e;
-  background: linear-gradient(to top, #807878, #945d5e);
+  background: linear-gradient(to top, #b5b1b1, #c6c4c500);
+  background-color: v.$primary_6;
   display: none;
   position: absolute;
   z-index: 20;
@@ -36,7 +36,6 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      color: v.$primary_1;
       overflow-y: scroll;
 
       &__imgs {
