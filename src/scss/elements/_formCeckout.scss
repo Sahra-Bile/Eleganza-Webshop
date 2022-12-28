@@ -1,0 +1,75 @@
+@use "../variables" as v;
+@use "../mixins" as m;
+
+.text {
+  color: v.$primary_2;
+  font-size: 1.5rem;
+  text-align: center;
+  font-family: v.$header_font;
+  margin-top: 10px;
+  border: 1px solid v.$primary_2;
+}
+.container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  &__form {
+    width: 300px;
+    margin: 3vh auto 0 auto;
+    margin-bottom: 50px;
+    padding: 20px;
+    background-color: whitesmoke;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #c2aaaf;
+    @include m.desktop {
+      width: 700px;
+    }
+
+    .input-control {
+      display: flex;
+      flex-direction: column;
+
+      &__input {
+        border: 2px solid #ead2d2;
+        border-radius: 4px;
+        display: block;
+        font-size: 12px;
+        padding: 10px;
+        width: 100%;
+        font-family: v.$all_text;
+        color: v.$primary_1;
+
+        &:focus {
+          outline: 0;
+        }
+      }
+
+      &__label {
+        font-family: v.$all_text;
+        color: v.$primary_2;
+      }
+    }
+
+    #buyBtn {
+      padding: 10px;
+      margin-top: 10px;
+      width: 100%;
+      color: white;
+      background-color: rgb(105, 108, 134);
+      border: none;
+      border-radius: 4px;
+    }
+  }
+}
+
+.input-control.success input {
+  border-color: #09c372;
+}
+
+.input-control .error {
+  color: #ff3860;
+  font-size: 0.9rem;
+  height: 13px;
+}

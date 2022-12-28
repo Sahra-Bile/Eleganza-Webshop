@@ -28,6 +28,7 @@ function validateForm() {
   clearMessage();
 
   let errorFlag = false;
+
   if (inputName.value.length < 1) {
     erroNodes.innerHTML = "Name cannot be blank";
     inputName.classList.add("error-boder");
@@ -54,10 +55,11 @@ function validateForm() {
 //!* rensa error message / success message
 function clearMessage() {
   erroNodes.innerHTML = "";
-  for (let i = 0; i < erroNodes.length; i++) {}
-  inputName.classList.remove("error-boder");
-  inputEmail.classList.remove("error-boder");
-  inputMessage.classList.remove("error-boder");
+  for (let i = 0; i < erroNodes.length; i++) {
+    inputName.classList.remove("error-boder");
+    inputEmail.classList.remove("error-boder");
+    inputMessage.classList.remove("error-boder");
+  }
 }
 
 //!* kolla om emailet är giltig

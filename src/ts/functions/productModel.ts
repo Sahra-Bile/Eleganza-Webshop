@@ -1,4 +1,7 @@
+import { CartItem } from "../models/CartItem";
+import { Product } from "../models/Product";
 import { ProductDetails } from "../models/productData";
+import { displayCart, inCart } from "./productAddToCart";
 
 //! funtion för att öppna en produkt
 export const displayModelProducts = (id: number) => {
@@ -49,6 +52,21 @@ export const displayModelProducts = (id: number) => {
       totalprice = parseInt(amountInput.value) * ProductDetails[id].price;
       modalTotalPrice.innerText = `Total amount: ${totalprice} SEK`;
     }
+  });
+
+  let books: Product;
+  addButton.addEventListener("click", () => {
+    for (let matchIndex = 0; matchIndex < inCart.length; matchIndex++) {
+      if (inCart[matchIndex].product.title === books.title) {
+        inCart[matchIndex].amount++;
+        displayCart();
+        localStorage.setItem("cartList", JSON.stringify(inCart));
+        return;
+      }
+    }
+    inCart.push(new CartItem(books, 1));
+    displayCart();
+    localStorage.setItem("cartList", JSON.stringify(inCart));
   });
 
   //!stänga fönstret Modal

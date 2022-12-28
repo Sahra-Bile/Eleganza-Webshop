@@ -67,7 +67,7 @@
   }
 
   &__product {
-    background-color: #5e5867;
+    background-color: #945d5e;
     width: 100%;
     height: 50vh;
     margin: auto 0;
@@ -81,7 +81,7 @@
     position: relative;
     &:hover {
       transition: 1s;
-      background-color: #945d5e;
+      background-color: #d3c0c0;
       color: #945d5e;
     }
 
@@ -118,7 +118,7 @@
       cursor: pointer;
       border: none;
       text-shadow: 0 2px 5px v.$primary_1;
-      background: linear-gradient(to top, #945d5e, #5e5867);
+      background-color: rgb(105, 108, 134);
       border: 2px solid v.$primary_1;
       border-radius: 3px;
       background-color: v.$grey;

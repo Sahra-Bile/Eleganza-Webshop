@@ -141,15 +141,14 @@ export function getCartFromLs() {
     return new CartItem(
       new Product(
         cart.product.id,
-        cart.product.url,
         cart.product.title,
+        cart.product.url,
         cart.product.desc,
         cart.product.price
       ),
       cart.amount
     );
   });
-
   displayCart();
   console.log("this is strang", itemFromLs);
   console.log("this is object ", itemObject);
