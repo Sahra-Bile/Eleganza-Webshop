@@ -28,34 +28,37 @@
 
 @mixin mixnav {
   ul {
-    padding: 0;
+    padding: 0px;
     margin: 0;
     display: flex;
     flex-direction: column;
-    height: 60%;
-    justify-content: space-around;
-    align-items: center;
+    height: 70%;
+    justify-content: space-evenly;
+    align-content: center;
     list-style: none;
   }
   li {
-    font-size: 1.5rem;
-    font-family: v.$all_text;
+    font-size: 1rem;
+    font-family: v.$first_page_font;
     text-transform: uppercase;
+    text-align: center;
   }
 
   a {
     text-decoration: none;
     color: v.$primary_1;
+    text-align: center;
     &:hover {
       color: v.$primary_2;
     }
   }
 
   #heading {
-    font-size: 2rem;
+    font-size: 1.5em;
     text-align: center;
     color: v.$primary_1;
-    font-family: v.$header_font;
+    font-family: v.$first_page_font;
+    text-align: center;
   }
 }
 
