@@ -4,36 +4,26 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- styler footer med bootstrap och och alla model-->
+    <!-- styler footer med bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
       crossorigin="anonymous" />
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
-      crossorigin="anonymous"
-      defer></script>
-
-    <link rel="stylesheet" href="/src/scss/main.scss" />
-
-    <!-- hämtat menu icon -->
-    <script
-      src="https://kit.fontawesome.com/ff901abd43.js"
-      crossorigin="anonymous"></script>
+    <!-- korg icon  -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
 
+    <!--  social medie icons -->
     <script
       src="https://kit.fontawesome.com/bc5eefc1c7.js"
       crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/src/scss/main.scss" />
+    <script src="/src/ts/functions/contact.ts" type="module" defer></script>
 
-    <script src="/src/ts/main.ts" type="module" defer></script>
-
-    <title>BookLizaz Shop</title>
+    <title>contact</title>
   </head>
   <body>
     <header>
@@ -41,7 +31,7 @@
       <nav class="container-phone" id="phone">
         <i class="fas fa-bars" id="menu-icon"></i>
         <h1 class="container-phone__title">BookLizaz</h1>
-        <i class="fas fa-shopping-cart" id="shopping-cart-phone"></i>
+
         <div class="container-phone__hamburgare" id="hamburger">
           <i class="fas fa-times" id="close"></i>
 
@@ -67,7 +57,7 @@
               >
             </li>
             <li class="conatiner-phone__list__item">
-              <a class="conatiner-phone__list__item__links" href="contact.html"
+              <a class="conatiner-phone__list__item__links" href="#contact"
                 >contact</a
               >
             </li>
@@ -80,7 +70,9 @@
 
         <ul class="conatiner-desktop__list">
           <li class="conatiner-desktop__list__item">
-            <a class="conatiner-desktop__list__item__links" href="#home"
+            <a
+              class="conatiner-desktop__list__item__links"
+              href="/src/index.html"
               >home</a
             >
           </li>
@@ -92,21 +84,16 @@
             >
           </li>
           <li class="conatiner-desktop__list__item">
-            <a
-              class="conatiner-desktop__list__item__links"
-              href="/src/index.html"
+            <a class="conatiner-desktop__list__item__links" href="#about"
               >about</a
             >
           </li>
           <li class="conatiner-desktop__list__item">
-            <a
-              class="conatiner-desktop__list__item__links"
-              href="/src/html/contact.html"
+            <a class="conatiner-desktop__list__item__links" href="#contact"
               >contact</a
             >
           </li>
         </ul>
-        <i class="fas fa-shopping-cart" id="shopping-cart"></i>
       </nav>
     </header>
 
@@ -114,9 +101,10 @@
 
     <div class="bgr">
       <p class="bgr__text">
-        Can’t find what you’re looking for? <br />
-        Contact us and we will be happy to help you <br />
-        with what you are looking for!
+        We are happy and proud to have you here. <br />
+        Here you will find all kinds of books 📚that you are looking for. <br />
+        All kinds of genres. Don't hesitate to contact us if you have any
+        questions.
       </p>
     </div>
     <div class="overlay">
@@ -128,26 +116,27 @@
           type="text"
           id="name"
           placeholder="Your name" />
-        <small class="error"></small>
+        <small class="error" id="error"></small>
         <label for="email" class="overlay__form__label"> Email:</label>
         <input
           class="overlay__form__input"
           type="text"
           id="email"
           placeholder="Your email" />
-        <small class="error"></small>
+        <small class="error" id="error"></small>
 
         <label for="message" class="overlay__form__label"> Message:</label>
         <textarea id="message" cols="10" rows="6" placeholder="Your message">
         </textarea>
-        <small class="error"></small>
+        <small class="error" id="error"></small>
 
         <div class="overlay__form__center">
-          <input
-            class="overlay__form__center__submit"
-            type="submit"
-            value="Send message" />
-          <p id="success"></p>
+          <p id="success">
+            <input
+              class="overlay__form__center__submit"
+              type="submit"
+              value="Send message" />
+          </p>
         </div>
       </form>
     </div>

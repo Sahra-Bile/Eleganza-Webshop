@@ -1,9 +1,9 @@
+import { createHTMLForProducts } from "./functions/createProducts";
+import { activateMenu } from "./functions/menu";
+import { activateBaket } from "./functions/shoppingCart";
 
-import { createHTMLForProducts } from './functions/createProducts';
-import { activateMenu } from './functions/menu';
 window.onload = () => {
   activateMenu();
+  activateBaket();
   createHTMLForProducts();
- 
- 
-  }
+};

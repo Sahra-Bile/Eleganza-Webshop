@@ -1,0 +1,106 @@
+@use "../variables" as v;
+@use "../mixins" as m;
+
+.main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("https://images.unsplash.com/photo-1591925323327-2b12e3f3fcc2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2148&q=80");
+  background-size: cover;
+  opacity: 0.8;
+
+  &__text-container {
+    width: 90%;
+    height: 80vh;
+    margin-top: 50px;
+    margin-bottom: 70px;
+    background-color: v.$primary_2;
+    border-radius: 10px;
+    position: relative;
+    z-index: 8;
+
+    @include m.tablet {
+      width: 70%;
+      height: 50vh;
+      margin-top: 300px;
+    }
+
+    @include m.desktop {
+      width: 50%;
+      height: 60vh;
+    }
+
+    #bold {
+      font-size: 60pt;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation-name: confetti;
+      animation-duration: 2s;
+      height: 30%;
+    }
+
+    &__text-wrapper {
+      height: 70%;
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      text-align: center;
+      width: 90%;
+      padding: 0 5%;
+    }
+
+    .headingText {
+      padding: 0;
+      margin: 0;
+      font-size: 2rem;
+      font-family: v.$header_font;
+    }
+
+    .totalOrder {
+      font-family: v.$header_font;
+      font-size: 1rem;
+      @include m.desktop {
+        font-size: 1.2rem;
+      }
+    }
+    a {
+      width: 100%;
+      #button {
+        background-color: v.$primary_6;
+        width: 50%;
+        border: 0;
+        height: 5vh;
+        border-radius: 10px;
+        color: v.$primary_2;
+        font-family: v.$all_text;
+        text-align: center;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+@keyframes confetti {
+  0% {
+    font-size: 0pt;
+  }
+  25% {
+    font-size: 80pt;
+  }
+  50% {
+    font-size: 60pt;
+  }
+  75% {
+    font-size: 80pt;
+  }
+  100% {
+    font-size: 60pt;
+  }
+}
