@@ -59,20 +59,6 @@
   }
 }
 
-@mixin for-lebels {
-  grid-row: 12/13;
-  grid-column: 2/4;
-  justify-self: center;
-  align-self: flex-end;
-  font-size: 1rem;
-  font-weight: bold;
-  width: 70%;
-  grid-row: 13/13;
-  justify-self: center;
-  align-self: center;
-  font-family: sans-serif;
-}
-
 // förberede några buttons
 @mixin button_1 {
   cursor: pointer;

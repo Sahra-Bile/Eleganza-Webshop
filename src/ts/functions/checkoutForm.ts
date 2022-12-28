@@ -12,33 +12,44 @@ const email: HTMLInputElement = document.getElementById(
   "email"
 ) as HTMLInputElement;
 
-const tel: HTMLInputElement = document.getElementById(
-  "phone"
-) as HTMLInputElement;
+let inputControl: HTMLDivElement = document.getElementById(
+  "input-control"
+) as HTMLDivElement;
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   validateInputs();
+
+  let buyBtn: HTMLButtonElement = document.getElementById(
+    "buyBtn"
+  ) as HTMLButtonElement;
+  buyBtn.addEventListener("click", () => {
+    location.href = "./thankYou.html";
+  });
 });
 
-const setError = (element: any, message: string) => {
-  const inputControl: HTMLDivElement = element.parentElement;
-  const errorDisplay = inputControl.querySelector(".error") as HTMLDivElement;
+const setError = (element: HTMLInputElement, message: string) => {
+  inputControl = element.parentElement as HTMLDivElement;
+  let errorDisplay = inputControl.getElementsByClassName("error");
 
-  errorDisplay.innerText = message;
-  inputControl.classList.add("error");
-  inputControl.classList.remove("success");
+  for (let i = 0; i < errorDisplay.length; i++) {
+    errorDisplay[i].innerHTML = message;
+    inputControl.classList.add("error");
+    inputControl.classList.remove("success");
+  }
 };
 
 //* om jag vill komma åt parentElement vilka datatyp ska man ha i variabeln?
-const setSuccess = (element: any) => {
-  const inputControl: HTMLDivElement = element.parentElement;
-  const errorDisplay = inputControl.querySelector(".error") as HTMLDivElement;
+const setSuccess = (element: HTMLInputElement) => {
+  inputControl = element.parentElement as HTMLDivElement;
+  let errorDisplay = inputControl.getElementsByClassName("error");
 
-  errorDisplay.innerText = "";
-  inputControl.classList.add("success");
-  inputControl.classList.remove("error");
+  for (let i = 0; i < errorDisplay.length; i++) {
+    errorDisplay[i].innerHTML = "";
+    inputControl.classList.add("success");
+    inputControl.classList.remove("error");
+  }
 };
 
 const isValidEmail = (email: string) => {
@@ -48,11 +59,10 @@ const isValidEmail = (email: string) => {
 };
 
 const validateInputs = () => {
-  const firstNameValue = firstName.value.trim();
-  const emailValue = email.value.trim();
-  const lastNameValue = lastName.value.trim();
-  const yourNumer = tel.innerHTML.trim();
-
+  const firstNameValue =
+    firstName && firstName.value ? firstName.value.trim() : "";
+  const emailValue = email && email.value ? email.value.trim() : "";
+  const lastNameValue = lastName && lastName.value ? lastName.value.trim() : "";
   if (firstNameValue === "") {
     setError(firstName, "firstName is required");
   } else {
@@ -71,13 +81,5 @@ const validateInputs = () => {
     setError(email, "Provide a valid email address");
   } else {
     setSuccess(email);
-  }
-
-  if (yourNumer === null) {
-    setError(tel, "number is required");
-  } else if (tel.innerHTML.length < 10) {
-    setError(tel, "the length of the number must be 10.");
-  } else {
-    setSuccess(tel);
   }
 };

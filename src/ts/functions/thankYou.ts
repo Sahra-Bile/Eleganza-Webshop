@@ -17,7 +17,7 @@ export const ThankForYourOrder = () => {
   headingText.innerHTML = " &#127881;  Thank you for your order!";
 
   let totalOrder: HTMLParagraphElement = document.createElement("p");
-  totalOrder.innerHTML = `Your order for ${amountOfProducts} st books from us BookLizaz is ordered and will be shipped soon from our warehouse!`;
+  totalOrder.innerHTML = `Your order of ${amountOfProducts}  quantity/items from us BookLizaz is ordered and will be shipped soon from our warehouse!`;
 
   const orderDetails: HTMLDivElement = document.getElementById(
     "order-details"
@@ -30,12 +30,12 @@ export const ThankForYourOrder = () => {
 
   totalOrder.classList.add("totalOrder");
 
-  if (document.URL.includes("thankYou.html")) {
-    const buyBtn: HTMLButtonElement = document.getElementById(
-      "buyBtn"
-    ) as HTMLButtonElement;
-    buyBtn.addEventListener("click", () => {
-      ThankForYourOrder();
-    });
-  }
+  let buyBtn: HTMLButtonElement = document.getElementById(
+    "button"
+  ) as HTMLButtonElement;
+  buyBtn.addEventListener("click", clearLsAllProduct);
+};
+
+const clearLsAllProduct = () => {
+  localStorage.clear();
 };

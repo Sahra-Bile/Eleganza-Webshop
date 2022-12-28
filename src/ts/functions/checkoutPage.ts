@@ -1,5 +1,5 @@
 import { CartItem } from "../models/CartItem";
-import { getCartFromLs, inCart, saveCartToLs } from "./productAddToCart";
+import { saveCartToLs } from "./productAddToCart";
 import { removeModal } from "./removeModel";
 
 export const displayCheckoutPage = () => {

@@ -24,6 +24,7 @@
     <!-- klagar den på dig? -->
     <link rel="stylesheet" href="/src/scss/main.scss" />
     <script src="/src/ts/checkoutPage.ts" type="module" defer></script>
+
     <script
       src="/src/ts/functions/checkoutForm.ts"
       type="module"
@@ -142,10 +143,10 @@
 
     <!-- kassa formuläret -->
 
-    <h1 class="text">complete the purchase now</h1>
+    <h1 class="text">complete the purchase</h1>
     <div class="container">
-      <form id="form" action="/" class="container__form">
-        <div class="input-control">
+      <form id="form" action="./thankYou.html" class="container__form">
+        <div id="input-control" class="input-control">
           <label for="firstName" class="input-control__label"
             >First Name:</label
           >
@@ -154,40 +155,29 @@
             name="firstName"
             type="text"
             class="input-control__input" />
-          <div class="error"></div>
+          <div id="error" class="error"></div>
         </div>
 
-        <div class="input-control">
+        <div id="input-control" class="input-control">
           <label for="lastName" class="input-control__label">Last Name:</label>
           <input
             id="lastName"
             name="lastName"
             type="text"
             class="input-control__input" />
-          <div class="error"></div>
+          <div id="error" class="error"></div>
         </div>
 
-        <div class="input-control">
+        <div id="input-control" class="input-control">
           <label for="email" class="input-control__label">Email:</label>
           <input
             id="email"
             name="email"
             type="text"
             class="input-control__input" />
-          <div class="error"></div>
+          <div id="error" class="error"></div>
         </div>
-        <div class="input-control">
-          <label for="phone" class="input-control__label">Phone:</label>
-          <input
-            id="phone"
-            name="phone"
-            type="text"
-            class="input-control__input" />
-          <div class="error"></div>
-        </div>
-        <a href="./thankYou.html">
-          <button id="buyBtn" type="submit">Buy</button>
-        </a>
+        <button id="buyBtn" type="submit">Buy</button>
       </form>
     </div>
     <!-- Footer -->

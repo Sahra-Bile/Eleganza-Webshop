@@ -19,10 +19,9 @@
     margin: 3vh auto 0 auto;
     margin-bottom: 50px;
     padding: 20px;
-    background-color: whitesmoke;
     border-radius: 4px;
     font-size: 1rem;
-    background-color: #c2aaaf;
+    background: linear-gradient(to top, #ab8d8d, #a58282);
     @include m.desktop {
       width: 700px;
     }
@@ -32,7 +31,7 @@
       flex-direction: column;
 
       &__input {
-        border: 2px solid #ead2d2;
+        border: 2px solid #000;
         border-radius: 4px;
         display: block;
         font-size: 12px;
@@ -48,7 +47,7 @@
 
       &__label {
         font-family: v.$all_text;
-        color: v.$primary_2;
+        color: whitesmoke;
       }
     }
 
