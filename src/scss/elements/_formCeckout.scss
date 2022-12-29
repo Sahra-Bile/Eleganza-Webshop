@@ -7,7 +7,7 @@
   text-align: center;
   font-family: v.$header_font;
   margin-top: 10px;
-  border: 1px solid v.$primary_2;
+  border: 1px solid v.$primary_1;
 }
 .container {
   display: flex;
@@ -21,7 +21,7 @@
     padding: 20px;
     border-radius: 4px;
     font-size: 1rem;
-    background: linear-gradient(to top, #ab8d8d, #a58282);
+    background-color: v.$color_1;
     @include m.desktop {
       width: 700px;
     }
@@ -31,14 +31,15 @@
       flex-direction: column;
 
       &__input {
-        border: 2px solid #000;
+        border: 2px solid v.$primary_2;
         border-radius: 4px;
         display: block;
-        font-size: 12px;
+        font-size: 1.5rem;
         padding: 10px;
         width: 100%;
         font-family: v.$all_text;
-        color: v.$primary_1;
+        background-color: v.$color_4;
+        color: v.$primary_2;
 
         &:focus {
           outline: 0;
@@ -47,7 +48,7 @@
 
       &__label {
         font-family: v.$all_text;
-        color: whitesmoke;
+        color: v.$primary_2;
       }
     }
 
@@ -55,8 +56,8 @@
       padding: 10px;
       margin-top: 10px;
       width: 100%;
-      color: white;
-      background-color: rgb(105, 108, 134);
+      color: v.$primary_2;
+      background-color: v.$color_2;
       border: none;
       border-radius: 4px;
     }
@@ -68,7 +69,7 @@
 }
 
 .input-control .error {
-  color: #ff3860;
-  font-size: 0.9rem;
-  height: 13px;
+  color: v.$color_6;
+  font-size: 1rem;
+  height: 16px;
 }

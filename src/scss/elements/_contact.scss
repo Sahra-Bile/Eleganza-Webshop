@@ -17,7 +17,7 @@
     font-size: 1rem;
     font-weight: bold;
     font-family: v.$all_text;
-    color: v.$primary_2;
+    color: v.$primary_1;
 
     @include m.tablet {
       font-size: 1.5rem;
@@ -31,13 +31,13 @@
 .overlay {
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.689);
   background-image: url("https://images.unsplash.com/photo-1543039625-14cbd3802e7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2674&q=80");
 
   &__form {
     max-width: 550px;
     width: 90%;
-    background: hsla(329, 72%, 65%, 0.4);
+
+    background-color: v.$color_4;
     margin: 17vh auto 0 auto;
     padding: 40px;
     margin-bottom: 40px;
@@ -52,6 +52,7 @@
     &__label {
       display: block;
       margin: 20px;
+      color: v.$primary_2;
     }
     &__input,
     #message {
@@ -61,19 +62,20 @@
       outline: none;
       resize: none;
       border: none;
-      border-bottom: 1px solid #d3d3d3;
+      border-bottom: 1px solid #242222;
+      // background-color: v.$color_3;
     }
 
     &__input[type="text"]:focus,
     #message:focus {
-      border-bottom: 1px solid rgb(91, 74, 81);
+      border-bottom: 1px solid rgb(98, 91, 94);
     }
     #message::-webkit-scrollbar {
       width: 4px;
     }
 
     #message::-webkit-scrollbar-thumb {
-      border-bottom: 1px solid rgb(138, 87, 109);
+      border-bottom: 1px solid rgb(102, 98, 100);
     }
 
     .center {
@@ -89,7 +91,7 @@ input[type="submit"] {
   font-size: 2.5rem;
   border-radius: 5px;
   cursor: pointer;
-  background: linear-gradient(to right, rgb(104, 99, 102), rgb(197, 170, 170));
+  background-color: v.$color_3;
 }
 
 .error {

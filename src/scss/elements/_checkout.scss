@@ -14,10 +14,9 @@
 
   #shopping-container {
     width: 75%;
-    background: linear-gradient(to top, #7b6767, #a58282);
-    background-color: v.$primary_6;
     padding: 15px;
     border-radius: 5px;
+    background-color: v.$color_1;
 
     @include m.desktop {
       width: 90%;
