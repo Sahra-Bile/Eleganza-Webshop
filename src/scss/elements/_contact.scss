@@ -17,7 +17,7 @@
     font-size: 1rem;
     font-weight: bold;
     font-family: v.$all_text;
-    color: v.$primary_1;
+    color: v.$primary_2;
 
     @include m.tablet {
       font-size: 1.5rem;
@@ -30,14 +30,14 @@
 
 .overlay {
   width: 100%;
-  height: 100%;
-  background-image: url("https://images.unsplash.com/photo-1543039625-14cbd3802e7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2674&q=80");
+  height: 50%;
+  margin: auto 0;
+  background-color: v.$color_4;
 
   &__form {
     max-width: 550px;
     width: 90%;
-
-    background-color: v.$color_4;
+    background-color: v.$color_1;
     margin: 17vh auto 0 auto;
     padding: 40px;
     margin-bottom: 40px;
@@ -48,6 +48,7 @@
     &__heading {
       margin: 0;
       text-align: center;
+      color: v.$primary_2;
     }
     &__label {
       display: block;
@@ -63,7 +64,7 @@
       resize: none;
       border: none;
       border-bottom: 1px solid #242222;
-      // background-color: v.$color_3;
+      background-color: v.$color_2;
     }
 
     &__input[type="text"]:focus,
@@ -92,6 +93,7 @@ input[type="submit"] {
   border-radius: 5px;
   cursor: pointer;
   background-color: v.$color_3;
+  color: v.$primary_2;
 }
 
 .error {
