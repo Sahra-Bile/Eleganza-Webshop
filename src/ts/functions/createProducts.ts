@@ -1,12 +1,7 @@
 import { CartItem } from "../models/CartItem";
-import { Product } from "../models/Product";
 import { ProductDetails } from "../models/productData";
 import { displayCart, inCart } from "./productAddToCart";
 import { displayModelProducts } from "./productModel";
-
-let addButtonModel: HTMLButtonElement = document.getElementById(
-  "addProduct"
-) as HTMLButtonElement;
 
 export function createHTMLForProducts() {
   let mainProducts: HTMLDivElement = document.getElementById(

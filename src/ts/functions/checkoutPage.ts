@@ -1,5 +1,5 @@
 import { CartItem } from "../models/CartItem";
-import { getCartFromLs, inCart, saveCartToLs } from "./productAddToCart";
+import { saveCartToLs } from "./productAddToCart";
 import { removeModal } from "./removeModel";
 
 export const displayCheckoutPage = () => {
@@ -70,7 +70,7 @@ export const displayCheckoutPage = () => {
       //* Minska och öka antal
       increaseButton.addEventListener("click", () => {
         let currentValue: number = parseInt(quantityInput.value);
-        if (currentValue < 15) currentValue++;
+        if (currentValue < 20) currentValue++; //! kan ökas amount  upp till 20
         quantityInput.value = currentValue.toString();
         productCartListObject[i].amount = currentValue;
 
@@ -82,7 +82,7 @@ export const displayCheckoutPage = () => {
 
       reduceButton.addEventListener("click", () => {
         let currentValue: number = parseInt(quantityInput.value);
-        if (currentValue > 1) currentValue--;
+        if (currentValue > 1) currentValue--; //! quantityInput är inte mindre än 1 dvs en produkt måste finns
         quantityInput.value = currentValue.toString();
         productCartListObject[i].amount = currentValue;
         let productTostring = JSON.stringify(productCartListObject);

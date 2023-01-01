@@ -7,7 +7,7 @@ export let inCart: CartItem[] = [];
 let cartAmount: HTMLDivElement = document.getElementById(
   "cartAmount"
 ) as HTMLDivElement;
-//* fråga Sebastian hur du ska lösa med dina två varukorg
+
 let cartAmount2: HTMLDivElement = document.getElementById(
   "cartAmount2"
 ) as HTMLDivElement;
@@ -19,8 +19,6 @@ let ItemsContainer: HTMLDivElement = document.getElementById(
 let totalSumOfProduct: HTMLParagraphElement = document.getElementById(
   "totalPrice"
 ) as HTMLParagraphElement;
-
-//* klager på att totalSumOfProduct är tomt
 
 export function displayCart(): void {
   //! sparar listan i LS
@@ -141,15 +139,14 @@ export function getCartFromLs() {
     return new CartItem(
       new Product(
         cart.product.id,
-        cart.product.url,
         cart.product.title,
+        cart.product.url,
         cart.product.desc,
         cart.product.price
       ),
       cart.amount
     );
   });
-
   displayCart();
   console.log("this is strang", itemFromLs);
   console.log("this is object ", itemObject);

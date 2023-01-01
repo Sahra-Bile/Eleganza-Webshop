@@ -25,6 +25,11 @@
     <link rel="stylesheet" href="/src/scss/main.scss" />
     <script src="/src/ts/checkoutPage.ts" type="module" defer></script>
 
+    <script
+      src="/src/ts/functions/checkoutForm.ts"
+      type="module"
+      defer></script>
+
     <title>BookLizaz checkout page</title>
   </head>
   <body>
@@ -33,11 +38,6 @@
       <nav class="container-phone" id="phone">
         <i class="fas fa-bars" id="menu-icon"></i>
         <h1 class="container-phone__title">BookLizaz</h1>
-
-        <div class="cart" id="shopping-cart">
-          <i class="bi bi-cart2" id="cart"></i>
-          <div id="cartAmount" class="cartAmount">0</div>
-        </div>
 
         <div class="container-phone__hamburgare" id="hamburger">
           <i class="fas fa-times" id="close"></i>
@@ -105,10 +105,6 @@
             >
           </li>
         </ul>
-        <div class="cart" id="shopping-cart2">
-          <i class="bi bi-cart2" id="cart"></i>
-          <div id="cartAmount2" class="cartAmount">0</div>
-        </div>
       </nav>
     </header>
 
@@ -143,6 +139,45 @@
       </div>
     </div>
 
+    <!-- kassa formuläret -->
+
+    <h1 class="text">complete the purchase</h1>
+    <div class="container">
+      <form id="form" action="./thankYou.html" class="container__form">
+        <div id="input-control" class="input-control">
+          <label for="firstName" class="input-control__label"
+            >First Name:</label
+          >
+          <input
+            id="firstName"
+            name="firstName"
+            type="text"
+            class="input-control__input" />
+          <div id="error" class="error"></div>
+        </div>
+
+        <div id="input-control" class="input-control">
+          <label for="lastName" class="input-control__label">Last Name:</label>
+          <input
+            id="lastName"
+            name="lastName"
+            type="text"
+            class="input-control__input" />
+          <div id="error" class="error"></div>
+        </div>
+
+        <div id="input-control" class="input-control">
+          <label for="email" class="input-control__label">Email:</label>
+          <input
+            id="email"
+            name="email"
+            type="text"
+            class="input-control__input" />
+          <div id="error" class="error"></div>
+        </div>
+        <button id="buyBtn" type="submit">Buy</button>
+      </form>
+    </div>
     <!-- Footer -->
     <footer id="contact" class="footer">
       <div class="row container mx-auto pt-5" id="contact">

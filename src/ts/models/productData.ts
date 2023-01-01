@@ -62,12 +62,4 @@ export let ProductDetails: Product[] = [
     "'A brave and heartbreaking novel that digs its claws into you and doesn't let go, long after you've finished it' Anna Todd, author of the After series",
     240
   ),
-
-  // new Product(
-  //   3,
-  //   "Where the Crawdads Sing",
-  //   "https://s2.adlibris.com/images/49550148/where-the-crawdads-sing.jpg",
-  //   "Perfect for fans of Barbara Kingsolver and Celeste Ng, Where the Crawdads Sing is at once an exquisite ode to the natural world, a heartbreaking coming-of-age story, and a surprising tale of possible murder.",
-  //   250
-  // ),
 ];

@@ -116,26 +116,27 @@
           type="text"
           id="name"
           placeholder="Your name" />
-        <small class="error"></small>
+        <small class="error" id="error"></small>
         <label for="email" class="overlay__form__label"> Email:</label>
         <input
           class="overlay__form__input"
           type="text"
           id="email"
           placeholder="Your email" />
-        <small class="error"></small>
+        <small class="error" id="error"></small>
 
         <label for="message" class="overlay__form__label"> Message:</label>
         <textarea id="message" cols="10" rows="6" placeholder="Your message">
         </textarea>
-        <small class="error"></small>
+        <small class="error" id="error"></small>
 
         <div class="overlay__form__center">
-          <input
-            class="overlay__form__center__submit"
-            type="submit"
-            value="Send message" />
-          <p id="success"></p>
+          <p id="success">
+            <input
+              class="overlay__form__center__submit"
+              type="submit"
+              value="Send message" />
+          </p>
         </div>
       </form>
     </div>
