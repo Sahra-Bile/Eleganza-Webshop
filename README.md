@@ -8,7 +8,7 @@ the techniques that I used are the following:
  * SASS
  * TYPESCRIPT
 
-<img width="500" alt="Skärmavbild 2022-12-29 kl  22 42 35" src="https://user-images.githubusercontent.com/114146124/210014011-7f6bd4d8-c51d-49a4-a776-e267cc739034.png">
+
 
 <img width="1660" alt="Skärmavbild 2022-12-29 kl  22 40 47" src="https://user-images.githubusercontent.com/114146124/210014041-41363a84-4123-4d40-88b3-bb060acc2e66.png">
 
