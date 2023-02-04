@@ -10,7 +10,7 @@ export function createHTMLForProducts() {
 
   mainProducts.innerHTML = "";
 
-  for (let i = 0; i < ProductDetails.length; i++) {
+  for (let i = ProductDetails.length - 1; i >= 0; i--) {
     let productDiv: HTMLDivElement = document.createElement("div");
 
     let imgWrapper: HTMLDivElement = document.createElement("div");
